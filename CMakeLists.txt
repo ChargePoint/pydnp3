@@ -35,8 +35,6 @@ add_subdirectory(deps/dnp3)
 
 # include paths for all the local libraries
 include_directories(deps/dnp3/cpp/libs/include)
-#include_directories(/Users/bbarcklay/.virtualenvs/dnp3/include/python3.5m)
-#include_directories(/Users/bbarcklay/.virtualenvs/dnp3/bin/../include/site/python3.5)
 
 # asio
 include_directories(deps/dnp3/deps/asio/asio/include)
