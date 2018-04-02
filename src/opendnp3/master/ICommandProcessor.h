@@ -29,6 +29,7 @@
  */
 
 #include <pybind11/pybind11.h>
+#include <pybind11/functional.h>
 #include <python2.7/Python.h>
 
 #include <opendnp3/master/ICommandProcessor.h>
@@ -255,4 +256,31 @@ void bind_ICommandProcessor(py::module &m)
         py::arg("commands"), py::arg("callback"), py::arg("config") = opendnp3::TaskConfig::Default()
     );
 }
+
+// @todo This code is a work-around for pybind11 issue related to 'const ref' arguments. However,
+// it is seg faulting on the callback.  For now, the workaround is to reply on the pybind11 patch
+// that ignores the copy constructor/non-copyable error and seems to work without issue.
+//
+//    cls.def(
+//            "DirectOperate",
+//            [](opendnp3::ICommandProcessor &self,
+//               opendnp3::CommandSet& commands,
+//               py::function callback,
+//               const opendnp3::TaskConfig& config) {
+//                return self.DirectOperate(
+//                    std::move(commands),
+//                    [callback](const opendnp3::ICommandTaskResult& result) -> void {
+//                        std::cout << "In lambda callback" << std::endl ;
+//                        auto py_result = py::cast(result, py::return_value_policy::reference);
+//                        callback(py_result);
+//                    },
+//                    config
+//                );
+//            },
+//            directOperate_commandSet,
+//            py::call_guard<py::gil_scoped_release>(),
+//            py::arg("commands"), py::arg("callback"), py::arg("config") = opendnp3::TaskConfig::Default(),
+//            py::return_value_policy::reference
+//        );
+//}
 
