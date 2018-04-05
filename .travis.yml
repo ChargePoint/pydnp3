@@ -1,17 +1,39 @@
 language: python
 
-python:
-  - "2.7"
-  - "3.6"
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+            - cmake
+      env:
+         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+         - PYTHON=2.7
+      sudo: required
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+            - cmake
+      env:
+         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+         - PYTHON=3.6
+      sudo: required
 
-# For linux
 before_install:
+  - eval "${MATRIX_EVAL}"
   - sudo apt-get update -qq
-  - sudo apt-get install -qq [build-essential, python-dev, openssl, libssl-dev, libevent-dev]
-
-install:
-  - pip install -r requirements.txt
-  - python setup.py -q install
+  - sudo apt-get install -y build-essential python-dev openssl libssl-dev libevent-dev
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+  - pip install -U pip
+  - python setup.py install
 
 script:
-  - pytest
+  - pytest tests/
