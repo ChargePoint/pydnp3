@@ -31,44 +31,32 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <openpal/executor/IMonotonicTimeSource.h>
+#include <asiopal/SerialChannel.h>
 
 namespace py = pybind11;
 using namespace std;
 
-namespace openpal
+void bind_SerialChannel(py::module &m)
 {
-/**
-* Overriding virtual functions from interface class IMonotonicTimeSource.
-*/
-    class PyIMonotonicTimeSource : public IMonotonicTimeSource
-    {
-    public:
-        /* Inherit the constructors */
-        using IMonotonicTimeSource::IMonotonicTimeSource;
-
-        /* Trampoline for IMonotonicTimeSource virtual functions */
-        MonotonicTimestamp GetTime() override {
-            PYBIND11_OVERLOAD_PURE(
-                MonotonicTimestamp,
-                IMonotonicTimeSource,
-                GetTime,
-            );
-        }
-    };
-}
-
-void bind_IMonotonicTimeSource(py::module &m) {
-    // ----- class: openpal::IMonotonicTimeSource -----
-    py::class_<openpal::IMonotonicTimeSource,
-               openpal::PyIMonotonicTimeSource,
-               std::shared_ptr<openpal::IMonotonicTimeSource>>(m, "IMonotonicTimeSource")
-
-        .def(py::init<>())
+    // ----- class: asiopal::SerialChannel -----
+    py::class_<asiopal::SerialChannel,
+               asiopal::IAsyncChannel,
+               std::shared_ptr<asiopal::SerialChannel>>(m, "SerialChannel")
 
         .def(
-            "GetTime",
-            &openpal::IMonotonicTimeSource::GetTime,
-            ":return: a non-absolute timestamp for the monotonic time source"
+            py::init<std::shared_ptr<asiopal::Executor>>(),
+            py::arg("executor")
+        )
+
+        .def_static(
+            "Create",
+            &asiopal::SerialChannel::Create,
+            py::arg("executor")
+        )
+
+        .def(
+            "Open",
+            &asiopal::SerialChannel::Open,
+            py::arg("settings"), py::arg("ec")
         );
 }

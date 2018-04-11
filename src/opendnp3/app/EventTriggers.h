@@ -41,6 +41,11 @@ void bind_EventTriggers(py::module &m)
     // ----- func: opendnp3::IsEvent -----
     m.def(
         "IsEvent",
+        &opendnp3::measurements::IsEvent<uint32_t, uint64_t>
+    );
+
+    m.def(
+        "IsEvent",
         (bool (*)(const opendnp3::TypedMeasurement<double>&, const opendnp3::TypedMeasurement<double>&, double))
         &opendnp3::measurements::IsEvent,
         py::arg("newMeas"), py::arg("oldMeas"), py::arg("deadband")

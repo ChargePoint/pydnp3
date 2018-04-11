@@ -96,12 +96,12 @@ void bind_ITransactable(py::module &m)
         "Uses RAII to safely perform a transaction.")
 
         .def(
-            py::init<opendnp3::ITransactable &>(),
+            py::init<opendnp3::ITransactable&>(),
             py::arg("transactable")
         )
 
         .def(
-            py::init<opendnp3::ITransactable *>(),
+            py::init<opendnp3::ITransactable*>(),
             py::arg("pTransactable")
         )
 
@@ -115,5 +115,11 @@ void bind_ITransactable(py::module &m)
             "End",
             &opendnp3::Transaction::End,
             py::arg("pTransactable")
+        )
+
+        .def_static(
+            "Apply",
+            &opendnp3::Transaction::Apply<void, opendnp3::ITransactable&, std::function<void(const opendnp3::Transaction&)>>,
+            py::arg("transactable"), py::arg("fun")
         );
 }

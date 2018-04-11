@@ -39,22 +39,20 @@ using namespace std;
 void bind_Executor(py::module &m)
 {
     // ----- class: asiopal::Executor -----
-    py::class_<asiopal::Executor>(m, "Executor",
+    py::class_<asiopal::Executor, openpal::IExecutor, std::shared_ptr<asiopal::Executor>>(m, "Executor",
         "Implementation of openpal::IExecutor backed by asio::strand. \n"
-        "Shutdown life-cycle guarantees are provided by using std::shared_ptr.");
+        "Shutdown life-cycle guarantees are provided by using std::shared_ptr.")
 
         .def(
             py::init<const std::shared_ptr<asiopal::IO>&>(),
-            py::arg("io"),
-            py::return_value_policy::reference
+            py::arg("io")
         )
 
         .def_static(
             "Create",
             &asiopal::Executor::Create,
             ":return: shared_ptr to openpal.Executor",
-            py::arg("io"),
-            py::return_value_policy::reference
+            py::arg("io")
         )
 
         .def(
@@ -64,24 +62,46 @@ void bind_Executor(py::module &m)
 
         .def(
             "Start",
-            (openpal::ITimer* (openpal::Executor:*)(const openpal::TimeDuration&, const openpal::action_t&))
+            (openpal::ITimer* (asiopal::Executor::*)(const openpal::TimeDuration&, const openpal::action_t&))
             &asiopal::Executor::Start,
-            py::arg("duration"), py::arg("runnable"),
-            py::return_value_policy::reference
+            py::arg("duration"), py::arg("runnable")
         )
 
         .def(
             "Start",
-            (openpal::ITimer* (openpal::Executor:*)(const openpal::MonotonicTimestamp&, const openpal::action_t&))
+            (openpal::ITimer* (asiopal::Executor::*)(const openpal::MonotonicTimestamp&, const openpal::action_t&))
             &asiopal::Executor::Start,
-            py::arg("timestamp"), py::arg("runnable"),
-            py::return_value_policy::reference
+            py::arg("duration"), py::arg("runnable")
         )
 
         .def(
             "Post",
             &asiopal::Executor::Post,
             py::arg("runnable")
+        )
+
+        .def(
+            "ReturnFrom",
+            &asiopal::Executor::ReturnFrom<bool>,
+            py::arg("action")
+        )
+
+        .def(
+            "ReturnFrom",
+            &asiopal::Executor::ReturnFrom<opendnp3::StackStatistics>,
+            py::arg("action")
+        )
+
+        .def(
+            "ReturnFrom",
+            &asiopal::Executor::ReturnFrom<opendnp3::LinkStatistics>,
+            py::arg("action")
+        )
+
+        .def(
+            "ReturnFrom",
+            &asiopal::Executor::ReturnFrom<openpal::LogFilters>,
+            py::arg("action")
         )
 
         .def(
@@ -102,7 +122,7 @@ void bind_Executor(py::module &m)
             "Create a new Executor that shares the underling std::shared_ptr<IO>."
         )
 
-        .def_readwrite(
+        .def_readonly(
             "strand",
             &asiopal::Executor::strand
         );

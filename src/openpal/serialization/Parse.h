@@ -101,5 +101,60 @@ void bind_Parse(py::module &m)
             (bool (*)(openpal::RSlice &, float&))
             &openpal::Parse::Read,
             py::arg("input"), py::arg("output")
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int, int>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int, float>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int, double>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int, opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int, int, int>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int, int, opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int, float, opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<int, double, opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Parse::Many<opendnp3::DNPTime, int, int>
         );
 }

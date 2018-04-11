@@ -38,7 +38,9 @@ namespace py = pybind11;
 void bind_MasterTCPServer(py::module &m)
 {
 	// ----- class: asiodnp3::MasterTCPServer -----
-    py::class_<asiodnp3::MasterTCPServer, std::shared_ptr<asiodnp3::MasterTCPServer>>(m, "MasterTCPServer",
+    py::class_<asiodnp3::MasterTCPServer,
+               asiopal::TCPServer,
+               std::shared_ptr<asiodnp3::MasterTCPServer>>(m, "MasterTCPServer",
         "Binds and listens on an IPv4 TCP port. Meant to be used exclusively as a shared_ptr.")
 
         .def(

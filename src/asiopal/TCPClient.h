@@ -31,44 +31,33 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <openpal/executor/IMonotonicTimeSource.h>
+#include <asiopal/TCPClient.h>
 
 namespace py = pybind11;
 using namespace std;
 
-namespace openpal
+void bind_TCPClient(py::module &m)
 {
-/**
-* Overriding virtual functions from interface class IMonotonicTimeSource.
-*/
-    class PyIMonotonicTimeSource : public IMonotonicTimeSource
-    {
-    public:
-        /* Inherit the constructors */
-        using IMonotonicTimeSource::IMonotonicTimeSource;
-
-        /* Trampoline for IMonotonicTimeSource virtual functions */
-        MonotonicTimestamp GetTime() override {
-            PYBIND11_OVERLOAD_PURE(
-                MonotonicTimestamp,
-                IMonotonicTimeSource,
-                GetTime,
-            );
-        }
-    };
-}
-
-void bind_IMonotonicTimeSource(py::module &m) {
-    // ----- class: openpal::IMonotonicTimeSource -----
-    py::class_<openpal::IMonotonicTimeSource,
-               openpal::PyIMonotonicTimeSource,
-               std::shared_ptr<openpal::IMonotonicTimeSource>>(m, "IMonotonicTimeSource")
-
-        .def(py::init<>())
+    // ----- class: asiopal::TCPClient -----
+    py::class_<asiopal::TCPClient, std::shared_ptr<asiopal::TCPClient>>(m, "TCPClient")
 
         .def(
-            "GetTime",
-            &openpal::IMonotonicTimeSource::GetTime,
-            ":return: a non-absolute timestamp for the monotonic time source"
+            py::init<openpal::Logger&, std::shared_ptr<asiopal::Executor>&, asiopal::IPEndpoint&, std::string&>(),
+            py::arg("logger"), py::arg("executor"), py::arg("remote"), py::arg("adapter")
+        )
+
+        .def_static(
+            "Create",
+            &asiopal::TCPClient::Create
+        )
+
+        .def(
+            "Cancel",
+            &asiopal::TCPClient::Cancel
+        )
+
+        .def(
+            "BeginConnect",
+            &asiopal::TCPClient::BeginConnect
         );
 }

@@ -31,44 +31,64 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <openpal/executor/IMonotonicTimeSource.h>
+#include <asiopal/TCPServer.h>
 
 namespace py = pybind11;
 using namespace std;
 
-namespace openpal
+namespace asiopal
 {
 /**
-* Overriding virtual functions from interface class IMonotonicTimeSource.
+* Overriding virtual functions from interface class TCPServer.
 */
-    class PyIMonotonicTimeSource : public IMonotonicTimeSource
+    class PyTCPServer : public TCPServer
     {
     public:
         /* Inherit the constructors */
-        using IMonotonicTimeSource::IMonotonicTimeSource;
+        using TCPServer::TCPServer;
 
-        /* Trampoline for IMonotonicTimeSource virtual functions */
-        MonotonicTimestamp GetTime() override {
+        /* Trampoline for TCPServer virtual functions */
+        void OnShutdown() override {
             PYBIND11_OVERLOAD_PURE(
-                MonotonicTimestamp,
-                IMonotonicTimeSource,
-                GetTime,
+                void,
+                TCPServer,
+                OnShutdown,
+            );
+        }
+        void AcceptConnection(uint64_t sessionid,
+                              const std::shared_ptr<Executor>& executor,
+                              asio::ip::tcp::socket socket) override {
+            PYBIND11_OVERLOAD_PURE(
+                void,
+                TCPServer,
+                AcceptConnection,
+                sessionid, executor, socket
             );
         }
     };
 }
 
-void bind_IMonotonicTimeSource(py::module &m) {
-    // ----- class: openpal::IMonotonicTimeSource -----
-    py::class_<openpal::IMonotonicTimeSource,
-               openpal::PyIMonotonicTimeSource,
-               std::shared_ptr<openpal::IMonotonicTimeSource>>(m, "IMonotonicTimeSource")
-
-        .def(py::init<>())
+void bind_TCPServer(py::module &m)
+{
+    // ----- class: asiopal::TCPServer -----
+    py::class_<asiopal::TCPServer,
+               asiopal::PyTCPServer,
+               asiopal::IListener,
+               std::shared_ptr<asiopal::TCPServer>>(m, "TCPServer",
+        "Binds and listens on an IPv4 TCP port. \n"
+        "Meant to be used exclusively as a shared_ptr.")
 
         .def(
-            "GetTime",
-            &openpal::IMonotonicTimeSource::GetTime,
-            ":return: a non-absolute timestamp for the monotonic time source"
+            py::init<const openpal::Logger&,
+                     const std::shared_ptr<asiopal::Executor>&,
+                     const asiopal::IPEndpoint&,
+                     std::error_code&>(),
+            py::arg("logger"), py::arg("executor"), py::arg("endpoint"), py::arg("ec")
+        )
+
+        .def(
+            "Shutdown",
+            &asiopal::TCPServer::Shutdown,
+            "Implement IListener."
         );
 }

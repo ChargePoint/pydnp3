@@ -74,18 +74,17 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_SequenceNum(openpal);                  //@todo: operator uint8_t() const
     bind_ToHex(openpal);
     bind_HasSize(openpal);
-    bind_ArrayView(openpal);                    //@todo: foreach & foreachIndex with template <class Action>
-    bind_Array(openpal);                        //@todo: foreach & foreachIndex with template <class Action>
+    bind_ArrayView(openpal);
+    bind_Array(openpal);
     bind_RSlice(openpal);                       //@todo: operator uint8_t const* () const {}
     bind_WSlice(openpal);                       //@todo: operator uint8_t const* () const {}
     bind_Buffer(openpal);
-    bind_LinkedList(openpal);                   //@todo: FindFirst, While, Foreach, RemoveFirst, RemoveAll with template <class Selector>
-                                                //@todo: Insert with template <class LessThan>
+    bind_LinkedList(openpal);
     bind_Pair(openpal);
     bind_Queue(openpal);
     bind_RingBuffer(openpal);
     bind_SecureBuffer(openpal);
-    bind_Settable(openpal);                     //@todo: IsSetAnd, Foreach with template <class Action>
+    bind_Settable(openpal);
     bind_StaticBuffer(openpal);
     //bind_IPhysicalLayer(openpal);             //@todo: can't include "ChannelStatistics.h"
     bind_IPhysicalLayerCallbacks(openpal);
@@ -96,7 +95,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_IExecutor(openpal);
     bind_UTCTimestamp(openpal);
     bind_IUTCTimeSource(openpal);
-    bind_TimerRef(openpal);                     //@todo: Start & Restart with template <class Lambda>
+    bind_TimerRef(openpal);
     bind_LogFilters(openpal);                   //@todo: bool operator &(const LogFilters& rhs) const {}
     bind_LogEntry(openpal);
     bind_ILogHandler(openpal);
@@ -105,8 +104,8 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_StringFormatting(openpal);
     bind_DoubleFloat(openpal);
     bind_FloatByteOrder(openpal);
-    bind_Format(openpal);                       //@todo: Many with template <typename T, typename... Args>
-    bind_Parse(openpal);                        //@todo: Many with template <typename T, typename... Args>
+    bind_Format(openpal);
+    bind_Parse(openpal);
     bind_SerializationTemplatesLE(openpal);     //already defined: Int16, UInt16, Int32, UInt32 (bind_Serialization)
     bind_SingleFloat(openpal);
     bind_Serialization(openpal);
@@ -186,7 +185,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_LinkHeaderFields(opendnp3);
     bind_LinkStatistics(opendnp3);
     bind_GroupVariationID(opendnp3);
-    bind_ICollection(opendnp3);                 //@todo: ICollection::ForeachItem with template <class Fun>
+    bind_ICollection(opendnp3);
     bind_DNPTime(opendnp3);                     //@todo: operator int64_t() const
     bind_AnalogCommandEvent(opendnp3);
     bind_AnalogOutput(opendnp3);
@@ -199,9 +198,9 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_ClassField(opendnp3);
     bind_ControlRelayOutputBlock(opendnp3);
     bind_EventCells(opendnp3);                  //@todo: DeadbandEventCell
-    bind_EventTriggers(opendnp3);               //@todo: namespace measurements, IsEvent with template
+    bind_EventTriggers(opendnp3);               //@todo: namespace measurements
     bind_IINField(opendnp3);
-    bind_ITransactable(opendnp3);               //@todo: Transaction::Apply with template <class ReturnType, class TransactionType, class Fun>
+    bind_ITransactable(opendnp3);
     bind_Indexed(opendnp3);
     bind_MeasurementTypes(opendnp3);
     bind_SecurityStat(opendnp3);
@@ -248,20 +247,20 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_ChannelRetry(asiopal);
     bind_IO(asiopal);
     bind_SteadyClock(asiopal);
-    //bind_Executor(asiopal);                   //@todo: holder_type binding
+    bind_Executor(asiopal);
     bind_IChannelCallbacks(asiopal);
-    //bind_IAsyncChannel(asiopal);              //@todo: holder_type binding
+    bind_IAsyncChannel(asiopal);
     bind_IResourceManager(asiopal);
     bind_IListener(asiopal);
     bind_IPEndpoint(asiopal);
-    bind_LoggingConnectionCondition(asiopal);   //@todo: Iterator operator() with template <typename Iterator>
-    bind_ResourceManager(asiopal);              //@todo: Bind with template <class R, class T>
-    //bind_SerialChannel(asiopal);              //@todo: holder_type binding
-    //bind_SocketChannel(asiopal);              //@todo: holder_type binding
-    bind_SocketHelpers(asiopal);                //@todo: BindToLocalAddress with template <class SocketType>
+    bind_LoggingConnectionCondition(asiopal);
+    bind_ResourceManager(asiopal);
+    bind_SerialChannel(asiopal);
+    bind_SocketChannel(asiopal);                //@todo: init, Create (error: call to implicitly-deleted copy constructor)
+    bind_SocketHelpers(asiopal);
     bind_Synchronized(asiopal);
-    //bind_TCPClient(asiopal);                  //@todo: holder_type binding
-    //bind_TCPServer(asiopal);                  //@todo: holder_type binding
+    bind_TCPClient(asiopal);
+    bind_TCPServer(asiopal);
     bind_TLSConfig(asiopal);
     bind_ThreadPool(asiopal);
     bind_TimeConversions(asiopal);
@@ -273,7 +272,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     py::module asiodnp3 = M("asiodnp3");
 
     bind_ConsoleLogger(asiodnp3);
-    bind_IStack(asiodnp3);                      //@todo: experiment with GIL (enable, disable)
+    bind_IStack(asiodnp3);                      // GIL release: enable, disable
     bind_IMasterScan(asiodnp3);
     bind_IMasterOperations(asiodnp3);
     bind_IMaster(asiodnp3);
@@ -288,12 +287,12 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_ISessionAcceptor(asiodnp3);
     bind_X509Info(asiodnp3);
     bind_IListenCallbacks(asiodnp3);
-    bind_DNP3Manager(asiodnp3);                 //@todo: DNP3ManagerImpl & experiment with GIL (AddTCPClient, AddTCPServer)
+    bind_DNP3Manager(asiodnp3);                 // GIL release: AddTCPClient, AddTCPServer
     bind_PrintingSOEHandler(asiodnp3);
     bind_DefaultMasterApplication(asiodnp3);
     bind_DefaultListenCallbacks(asiodnp3);
     bind_ErrorCodes(asiodnp3);                  //@todo: referenced unknown base type "std::error_category"
-    bind_MasterTCPServer(asiodnp3);             //@todo: referenced unknown base type "asiopal::TCPServer"
+    bind_MasterTCPServer(asiodnp3);
     bind_PrintingChannelListener(asiodnp3);
     bind_PrintingCommandCallback(asiodnp3);
     bind_UpdateBuilder(asiodnp3);

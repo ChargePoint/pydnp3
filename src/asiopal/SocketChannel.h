@@ -31,44 +31,15 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <openpal/executor/IMonotonicTimeSource.h>
+#include <asiopal/SocketChannel.h>
 
 namespace py = pybind11;
 using namespace std;
 
-namespace openpal
+void bind_SocketChannel(py::module &m)
 {
-/**
-* Overriding virtual functions from interface class IMonotonicTimeSource.
-*/
-    class PyIMonotonicTimeSource : public IMonotonicTimeSource
-    {
-    public:
-        /* Inherit the constructors */
-        using IMonotonicTimeSource::IMonotonicTimeSource;
-
-        /* Trampoline for IMonotonicTimeSource virtual functions */
-        MonotonicTimestamp GetTime() override {
-            PYBIND11_OVERLOAD_PURE(
-                MonotonicTimestamp,
-                IMonotonicTimeSource,
-                GetTime,
-            );
-        }
-    };
-}
-
-void bind_IMonotonicTimeSource(py::module &m) {
-    // ----- class: openpal::IMonotonicTimeSource -----
-    py::class_<openpal::IMonotonicTimeSource,
-               openpal::PyIMonotonicTimeSource,
-               std::shared_ptr<openpal::IMonotonicTimeSource>>(m, "IMonotonicTimeSource")
-
-        .def(py::init<>())
-
-        .def(
-            "GetTime",
-            &openpal::IMonotonicTimeSource::GetTime,
-            ":return: a non-absolute timestamp for the monotonic time source"
-        );
+    // ----- class: asiopal::SocketChannel -----
+    py::class_<asiopal::SocketChannel,
+               asiopal::IAsyncChannel,
+               std::shared_ptr<asiopal::SocketChannel>>(m, "SocketChannel");
 }

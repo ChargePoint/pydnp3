@@ -86,7 +86,10 @@ namespace openpal
 
 void bind_IExecutor(py::module &m) {
     // ----- class: openpal::IExecutor -----
-    py::class_<openpal::IExecutor, openpal::PyIExecutor, openpal::IMonotonicTimeSource>(m, "IExecutor",
+    py::class_<openpal::IExecutor,
+               openpal::PyIExecutor,
+               openpal::IMonotonicTimeSource,
+               std::shared_ptr<openpal::IExecutor>>(m, "IExecutor",
         "Interface for posting events to a queue. \n"
         "Events can be posted for immediate consumption or some time in the future. \n"
         "Events are processed in the order they are received.")

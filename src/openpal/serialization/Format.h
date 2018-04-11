@@ -101,5 +101,55 @@ void bind_Format(py::module &m)
             (bool (*)(openpal::WSlice&, const float&))
             &openpal::Format::Write,
             py::arg("dest"), py::arg("value")
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, int>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, float>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, double>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, int, int>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, int, opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, float, opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, double, opendnp3::DNPTime>
+        )
+
+        .def_static(
+            "Many",
+            &openpal::Format::Many<int, int, int, opendnp3::DNPTime>
         );
 }

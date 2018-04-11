@@ -35,8 +35,6 @@
 
 namespace py = pybind11;
 
-typedef std::function<py::module & (std::string const &) > ModuleGetter;
-
 class sizes {};
 
 void bind_Configure(py::module &m)
