@@ -250,7 +250,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_Executor(asiopal);
     bind_IChannelCallbacks(asiopal);
     bind_IAsyncChannel(asiopal);
-    bind_IResourceManager(asiopal);
+    bind_IResourceManager(asiopal);             // GIL release: Shutdown
     bind_IListener(asiopal);
     bind_IPEndpoint(asiopal);
     bind_LoggingConnectionCondition(asiopal);
@@ -281,13 +281,13 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_MasterStackConfig(asiodnp3);
     bind_DatabaseConfig(asiodnp3);
     bind_OutstationStackConfig(asiodnp3);
-    bind_IChannel(asiodnp3);
+    bind_IChannel(asiodnp3);                    // GIL release: AddMaster, AddOutstation
     bind_IChannelListener(asiodnp3);
     bind_IMasterSession(asiodnp3);
     bind_ISessionAcceptor(asiodnp3);
     bind_X509Info(asiodnp3);
     bind_IListenCallbacks(asiodnp3);
-    bind_DNP3Manager(asiodnp3);                 // GIL release: AddTCPClient, AddTCPServer
+    bind_DNP3Manager(asiodnp3);                 // GIL release: AddTCPClient, AddTCPServer, Shutdown
     bind_PrintingSOEHandler(asiodnp3);
     bind_DefaultMasterApplication(asiodnp3);
     bind_DefaultListenCallbacks(asiodnp3);

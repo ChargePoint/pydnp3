@@ -61,7 +61,9 @@ namespace asiodnp3
 void bind_IChannelListener(py::module &m)
 {
     // ----- class: asiodnp3::IChannelListener -----
-    py::class_<asiodnp3::IChannelListener, asiodnp3::PyIChannelListener, std::shared_ptr<asiodnp3::IChannelListener>>(m, "IChannelListener",
+    py::class_<asiodnp3::IChannelListener,
+               asiodnp3::PyIChannelListener,
+               std::shared_ptr<asiodnp3::IChannelListener>>(m, "IChannelListener",
         "Callback interface for receiving information about a running channel.")
 
         .def(py::init<>())

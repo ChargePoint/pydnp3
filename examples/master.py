@@ -203,20 +203,22 @@ class MasterApplication(opendnp3.IMasterApplication):
 
             The debug messages may be helpful if errors occur during shutdown.
         """
-        _log.debug('Exiting application...')
-        _log.debug('Shutting down scans...')
-        self.fast_scan = None
-        self.slow_scan = None
-        _log.debug('Shutting down Master...')
-        self.get_master().Disable()
-        _log.debug('Shutting down stack config...')
-        self.stack_config = None
-        _log.debug('Shutting down channel...')
-        self.channel = None
-        _log.debug('Shutting down Master...')
-        self.master = None
-        _log.debug('Shutting down DNP3Manager...')
-        self.manager = None
+        # _log.debug('Exiting application...')
+        # _log.debug('Shutting down scans...')
+        # self.fast_scan = None
+        # self.slow_scan = None
+        # _log.debug('Shutting down Master...')
+        # self.get_master().Disable()
+        # _log.debug('Shutting down stack config...')
+        # self.stack_config = None
+        # _log.debug('Shutting down channel...')
+        # self.channel = None
+        # _log.debug('Shutting down Master...')
+        # self.master = None
+        # _log.debug('Shutting down DNP3Manager...')
+        # self.manager = None
+
+        self.manager.Shutdown()
 
 
 class SOEHandler(opendnp3.ISOEHandler):

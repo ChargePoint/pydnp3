@@ -134,7 +134,7 @@ void bind_IChannel(py::module &m)
         )
 
         .def(
-            "AddMaster", 
+            "AddMaster",
             &asiodnp3::IChannel::AddMaster,
             "   Add a master to the channel. \n"
             ":param id: An ID that gets used for logging. \n"
@@ -142,6 +142,7 @@ void bind_IChannel(py::module &m)
             ":param application: The master application bound to the master session \n"
             ":param config: Configuration object that controls how the master behaves \n"
             ":return: shared_ptr to the running master",
+            py::call_guard<py::gil_scoped_release>(),
             py::arg("id"), py::arg("SOEHandler"), py::arg("application"), py::arg("config")
         )
 
@@ -154,6 +155,7 @@ void bind_IChannel(py::module &m)
             ":param application: Callback object for user code \n"
             ":param config: Configuration object that controls how the outstation behaves \n"
             ":return: shared_ptr to the running outstation",
+            py::call_guard<py::gil_scoped_release>(),
             py::arg("id"), py::arg("commandHandler"), py::arg("application"), py::arg("config")
         );
 }

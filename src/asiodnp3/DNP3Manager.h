@@ -72,7 +72,8 @@ void bind_DNP3Manager(py::module &m)
         .def(
             "Shutdown", 
             &asiodnp3::DNP3Manager::Shutdown,
-            "Permanently shutdown the manager and all sub-objects that have been created. Stop the thread pool."
+            "Permanently shutdown the manager and all sub-objects that have been created. Stop the thread pool.",
+            py::call_guard<py::gil_scoped_release>()
         )
 
         // the GIL is held when calling Log (py::gil_scoped_acquire by default)

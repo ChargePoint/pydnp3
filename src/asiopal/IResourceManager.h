@@ -88,7 +88,8 @@ void bind_IResourceManager(py::module &m)
 
         .def(
             "Shutdown",
-            &asiopal::IResource::Shutdown
+            &asiopal::IResource::Shutdown,
+            py::call_guard<py::gil_scoped_release>()
         );
 
     // ----- struct: asiopal::IResourceManager -----
