@@ -35,11 +35,8 @@
 
 namespace py = pybind11;
 
-class sizes {};
-
 void bind_Configure(py::module &m)
 {
     // ----- const: openpal::sizes::MAX_ERASURE_SIZE -----
-    py::class_<sizes>(m, "sizes")
-        .attr("MAX_ERASURE_SIZE") = &openpal::sizes::MAX_ERASURE_SIZE;
+    m.def_submodule("sizes").attr("MAX_ERASURE_SIZE") = &openpal::sizes::MAX_ERASURE_SIZE;
 }

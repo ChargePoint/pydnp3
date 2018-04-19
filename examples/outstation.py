@@ -54,8 +54,8 @@ class OutstationApplication(opendnp3.IOutstationApplication):
 
         _log.debug('Creating a DNP3Manager.')
         threads_to_allocate = 1
-        self.log_handler = MyLogger()
-        # self.log_handler = asiodnp3.ConsoleLogger().Create()              # (or use this during regression testing)
+        # self.log_handler = MyLogger()
+        self.log_handler = asiodnp3.ConsoleLogger().Create()              # (or use this during regression testing)
         self.manager = asiodnp3.DNP3Manager(threads_to_allocate, self.log_handler)
 
         _log.debug('Creating the DNP3 channel, a TCP server.')
@@ -118,15 +118,17 @@ class OutstationApplication(opendnp3.IOutstationApplication):
 
             The debug messages may be helpful if errors occur during shutdown.
         """
-        _log.debug('Exiting application...')
-        _log.debug('Shutting down outstation...')
-        OutstationApplication.set_outstation(None)
-        _log.debug('Shutting down stack config...')
-        self.stack_config = None
-        _log.debug('Shutting down channel...')
-        self.channel = None
-        _log.debug('Shutting down DNP3Manager...')
-        self.manager = None
+        # _log.debug('Exiting application...')
+        # _log.debug('Shutting down outstation...')
+        # OutstationApplication.set_outstation(None)
+        # _log.debug('Shutting down stack config...')
+        # self.stack_config = None
+        # _log.debug('Shutting down channel...')
+        # self.channel = None
+        # _log.debug('Shutting down DNP3Manager...')
+        # self.manager = None
+
+        self.manager.Shutdown()
 
     @classmethod
     def get_outstation(cls):

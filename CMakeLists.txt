@@ -35,6 +35,7 @@ add_subdirectory(deps/dnp3)
 
 # include paths for all the local libraries
 include_directories(deps/dnp3/cpp/libs/include)
+include_directories(deps/dnp3/cpp/libs/src)
 
 # asio
 include_directories(deps/dnp3/deps/asio/asio/include)

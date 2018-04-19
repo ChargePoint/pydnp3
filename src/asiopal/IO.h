@@ -52,7 +52,7 @@ namespace asiopal
 void bind_IO(py::module &m)
 {
     // ----- class: asiopal::IO -----
-    py::class_<asiopal::IO, asiopal::PyIO>(m, "IO",
+    py::class_<asiopal::IO, asiopal::PyIO, std::shared_ptr<asiopal::IO>>(m, "IO",
         "Container class for an asio::io_service.")
 
         .def(py::init<>())

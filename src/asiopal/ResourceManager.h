@@ -58,5 +58,21 @@ void bind_ResourceManager(py::module &m)
         .def(
             "Shutdown",
             &asiopal::ResourceManager::Shutdown
+        )
+
+        .def(
+            "Bind",
+            [](asiopal::ResourceManager &self, std::function<std::shared_ptr<asiodnp3::IChannel>()> create)
+            {
+                return self.Bind<asiodnp3::IChannel>(create);
+            }
+        )
+
+        .def(
+            "Bind",
+            [](asiopal::ResourceManager &self, std::function<std::shared_ptr<asiopal::IListener>()> create)
+            {
+                return self.Bind<asiopal::IListener>(create);
+            }
         );
 }

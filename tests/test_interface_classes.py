@@ -48,6 +48,7 @@ class TestInterfaceClasses():
         assert asiodnp3.IOutstation() is not None
         assert asiodnp3.ISessionAcceptor() is not None
         assert asiodnp3.IStack() is not None
+        assert asiopal.IAsyncChannel(asiopal.Executor(asiopal.IO())) is not None
         assert asiopal.IChannelCallbacks() is not None
         assert asiopal.IListener() is not None
         assert asiopal.IO() is not None

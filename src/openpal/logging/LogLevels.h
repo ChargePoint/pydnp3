@@ -35,15 +35,12 @@
 
 namespace py = pybind11;
 
-class logflags {};
-
 void bind_OpenpalLogLevels(py::module &m)
 {
 	// ----- constants openpal::logflags -----
-	py::class_<logflags>cls(m, "logflags", "Some common log flags.");
-	cls.attr("EVENT") = &openpal::logflags::EVENT;
-	cls.attr("ERR") = &openpal::logflags::ERR;
-	cls.attr("WARN") = &openpal::logflags::WARN;
-	cls.attr("INFO") = &openpal::logflags::INFO;
-	cls.attr("DBG") = &openpal::logflags::DBG;
+	m.def_submodule("logflags").attr("EVENT") = &openpal::logflags::EVENT;
+	m.def_submodule("logflags").attr("ERR") = &openpal::logflags::ERR;
+	m.def_submodule("logflags").attr("WARN") = &openpal::logflags::WARN;
+	m.def_submodule("logflags").attr("INFO") = &openpal::logflags::INFO;
+	m.def_submodule("logflags").attr("DBG") = &openpal::logflags::DBG;
 }

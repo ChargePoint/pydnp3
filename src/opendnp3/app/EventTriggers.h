@@ -38,13 +38,13 @@ using namespace std;
 
 void bind_EventTriggers(py::module &m)
 {
-    // ----- func: opendnp3::IsEvent -----
-    m.def(
+    // ----- func: opendnp3::measurements::IsEvent -----
+    m.def_submodule("measurements").def(
         "IsEvent",
         &opendnp3::measurements::IsEvent<uint32_t, uint64_t>
     );
 
-    m.def(
+    m.def_submodule("measurements").def(
         "IsEvent",
         (bool (*)(const opendnp3::TypedMeasurement<double>&, const opendnp3::TypedMeasurement<double>&, double))
         &opendnp3::measurements::IsEvent,

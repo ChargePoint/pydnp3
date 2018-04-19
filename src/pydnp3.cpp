@@ -39,28 +39,24 @@
 
 namespace py = pybind11;
 
-typedef std::function<py::module & (std::string const &) > ModuleGetter;
+typedef std::function<py::module&(std::string const &)> ModuleGetter;
 
 PYBIND11_MODULE(pydnp3, root_module) {
 
     // -------------------- SET-UP --------------------
     root_module.doc() = "Python bindings for opendnp3 library";
 
-    std::map <std::string, pybind11::module> modules;
-    ModuleGetter M = [&](std::string const &namespace_) -> pybind11::module & {
+    std::map<std::string, py::module> modules = {
+        {"asiodnp3", root_module.def_submodule("asiodnp3", "Bindings for asiodnp3 namespace")},
+        {"asiopal",  root_module.def_submodule("asiopal",  "Bindings for asiopal namespace")},
+        {"opendnp3", root_module.def_submodule("opendnp3", "Bindings for opendnp3 namespace")},
+        {"openpal",  root_module.def_submodule("openpal",  "Bindings for openpal namespace")}
+    };
+
+    ModuleGetter M = [&](std::string const &namespace_) -> py::module&
+    {
         return (modules.find(namespace_))->second;
     };
-
-    modules[""] = root_module;
-
-    std::vector< std::pair<std::string, std::string> > sub_modules {
-        {"", "asiodnp3"},
-        {"", "asiopal"},
-        {"", "opendnp3"},
-        {"", "openpal"},
-    };
-    for(auto &p : sub_modules) modules[p.first.size() ? p.first+"::"+p.second : p.second] =
-        modules[p.first].def_submodule(p.second.c_str(), ("Bindings for " + p.second + " namespace").c_str());
 
     // -------------------- PYDNP3.OPENPAL --------------------
 
@@ -71,13 +67,13 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_Uncopyable(openpal);
     bind_Finally(openpal);
     bind_Limits(openpal);
-    bind_SequenceNum(openpal);                  //@todo: operator uint8_t() const
+    bind_SequenceNum(openpal);
     bind_ToHex(openpal);
     bind_HasSize(openpal);
     bind_ArrayView(openpal);
     bind_Array(openpal);
-    bind_RSlice(openpal);                       //@todo: operator uint8_t const* () const {}
-    bind_WSlice(openpal);                       //@todo: operator uint8_t const* () const {}
+    bind_RSlice(openpal);
+    bind_WSlice(openpal);
     bind_Buffer(openpal);
     bind_LinkedList(openpal);
     bind_Pair(openpal);
@@ -88,7 +84,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_StaticBuffer(openpal);
     //bind_IPhysicalLayer(openpal);             //@todo: can't include "ChannelStatistics.h"
     bind_IPhysicalLayerCallbacks(openpal);
-    bind_TimeDuration(openpal);                 //@todo: operator T() const {}
+    bind_TimeDuration(openpal);
     bind_MonotonicTimestamp(openpal);
     bind_ITimer(openpal);
     bind_IMonotonicTimeSource(openpal);
@@ -96,7 +92,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_UTCTimestamp(openpal);
     bind_IUTCTimeSource(openpal);
     bind_TimerRef(openpal);
-    bind_LogFilters(openpal);                   //@todo: bool operator &(const LogFilters& rhs) const {}
+    bind_LogFilters(openpal);
     bind_LogEntry(openpal);
     bind_ILogHandler(openpal);
     bind_OpenpalLogLevels(openpal);
@@ -109,7 +105,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_SerializationTemplatesLE(openpal);     //already defined: Int16, UInt16, Int32, UInt32 (bind_Serialization)
     bind_SingleFloat(openpal);
     bind_Serialization(openpal);
-    bind_Serializer(openpal);                   //@todo: init with typedef as args
+    bind_Serializer(openpal);
 
     // -------------------- PYDNP3.OPENDNP3 --------------------
 
@@ -186,7 +182,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_LinkStatistics(opendnp3);
     bind_GroupVariationID(opendnp3);
     bind_ICollection(opendnp3);
-    bind_DNPTime(opendnp3);                     //@todo: operator int64_t() const
+    bind_DNPTime(opendnp3);
     bind_AnalogCommandEvent(opendnp3);
     bind_AnalogOutput(opendnp3);
     bind_AppConstants(opendnp3);
@@ -198,7 +194,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_ClassField(opendnp3);
     bind_ControlRelayOutputBlock(opendnp3);
     bind_EventCells(opendnp3);                  //@todo: DeadbandEventCell
-    bind_EventTriggers(opendnp3);               //@todo: namespace measurements
+    bind_EventTriggers(opendnp3);
     bind_IINField(opendnp3);
     bind_ITransactable(opendnp3);
     bind_Indexed(opendnp3);

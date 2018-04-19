@@ -36,10 +36,18 @@
 template <class T>
 void declareSerializer(py::module &m, string const &type)
 {
+    typedef bool (*ReadFunc)(openpal::RSlice& buffer, T& output);
+    typedef bool (*WriteFunc)(const T& value, openpal::WSlice& buffer);
+
     // ----- class: openpal::Serializer<T> -----
     py::class_<openpal::Serializer<T>>(m, ("Serializer" + type).c_str())
 
         .def(py::init<>())
+
+        .def(
+            py::init<uint32_t, ReadFunc, WriteFunc>(),
+            py::arg("size"), py::arg("pReadFunc"), py::arg("pWriteFunc")
+        )
 
         .def(
             "Size",

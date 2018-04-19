@@ -170,8 +170,15 @@ class TestConstructors():
         assert asiopal.ChannelRetry(openpal.TimeDuration(), openpal.TimeDuration()) is not None
         assert asiopal.ChannelRetry(openpal.TimeDuration(), openpal.TimeDuration(),
                                     asiopal.IOpenDelayStrategy()) is not None
+        assert asiopal.Executor(asiopal.IO()) is not None
         assert asiopal.IPEndpoint("127.0.0.1", 502) is not None
         assert asiopal.LoggingConnectionCondition(openpal.Logger()) is not None
+        assert asiopal.SerialChannel(asiopal.Executor(asiopal.IO())) is not None
+        assert asiopal.TCPClient(openpal.Logger(),
+                                 asiopal.Executor(asiopal.IO()),
+                                 asiopal.IPEndpoint("127.0.0.1", 502),
+                                 "adapter") is not None
+        assert asiopal.ThreadPool(openpal.Logger(), asiopal.IO(), 1) is not None
         assert asiopal.TLSConfig("~/files/peerCert", "~/files/localCert", "~/files/privateKey") is not None
         assert opendnp3.AnalogOutputInt16(1, opendnp3.CommandStatus.TIMEOUT) is not None
         assert opendnp3.AnalogOutputInt32(1, opendnp3.CommandStatus.FORMAT_ERROR) is not None

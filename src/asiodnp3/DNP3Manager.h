@@ -37,9 +37,6 @@ namespace py = pybind11;
 
 void bind_DNP3Manager(py::module &m)
 {
-    // ----- class: asiodnp3::DNP3ManagerImpl -----
-//    py::class_<asiodnp3::DNP3ManagerImpl>(m, "DNP3ManagerImpl");
-
     // ----- class: asiodnp3::DNP3Manager -----
     py::class_<asiodnp3::DNP3Manager, std::shared_ptr<asiodnp3::DNP3Manager>>(m, "DNP3Manager",
         "Root DNP3 object used to create channels and sessions.")
@@ -70,13 +67,16 @@ void bind_DNP3Manager(py::module &m)
         )
 
         .def(
-            "Shutdown", 
-            &asiodnp3::DNP3Manager::Shutdown,
+            "Shutdown",
+            [](asiodnp3::DNP3Manager &self)
+            {
+                self.Shutdown();
+                self.~DNP3Manager();
+            },
             "Permanently shutdown the manager and all sub-objects that have been created. Stop the thread pool.",
             py::call_guard<py::gil_scoped_release>()
         )
 
-        // the GIL is held when calling Log (py::gil_scoped_acquire by default)
         .def(
             "AddTCPClient", 
             &asiodnp3::DNP3Manager::AddTCPClient,
@@ -95,7 +95,7 @@ void bind_DNP3Manager(py::module &m)
         )
 
         // @todo Return value policies still experimental
-//        .def("AddTCPServer", &asiodnp3::DNP3Manager::AddTCPServer, py::return_value_policy::reference_internal, py::keep_alive<1,0>())
+        //.def("AddTCPServer", &asiodnp3::DNP3Manager::AddTCPServer, py::return_value_policy::reference_internal, py::keep_alive<1,0>())
         .def(
             "AddTCPServer", 
             &asiodnp3::DNP3Manager::AddTCPServer,

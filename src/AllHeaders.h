@@ -206,6 +206,7 @@
 #include "opendnp3/StackStatistics.h"
 
 // ---------- OPENPAL HEADERS ----------
+//#include "openpal/channel/IPhysicalLayer.h"                   //missing "ChannelStatistics.h" file
 #include "openpal/channel/IPhysicalLayerCallbacks.h"
 #include "openpal/container/Array.h"
 #include "openpal/container/ArrayView.h"

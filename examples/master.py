@@ -283,10 +283,11 @@ class MyLogger(openpal.ILogHandler):
         super(MyLogger, self).__init__()
 
     def Log(self, entry):
+        flag = opendnp3.LogFlagToString(entry.filters.GetBitfield())
         filters = entry.filters.GetBitfield()
         location = entry.location.rsplit('/')[-1] if entry.location else ''
         message = entry.message
-        _log.debug('Log\tfilters={}\tlocation={}\tentry={}'.format(filters, location, message))
+        _log.debug('LOG\t\t{:<10}\tfilters={:<5}\tlocation={:<25}\tentry={}'.format(flag, filters, location, message))
 
 
 def main():
