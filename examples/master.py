@@ -1,17 +1,14 @@
 import logging
 import sys
+import time
 
 from pydnp3 import opendnp3, openpal, asiopal, asiodnp3
+from visitors import *
 
-from visitors import VisitorIndexedBinary, VisitorIndexedDoubleBitBinary
-from visitors import VisitorIndexedCounter, VisitorIndexedFrozenCounter
-from visitors import VisitorIndexedAnalog, VisitorIndexedBinaryOutputStatus
-from visitors import VisitorIndexedAnalogOutputStatus, VisitorIndexedTimeAndInterval
-
-LOG_LEVELS = opendnp3.levels.NORMAL | opendnp3.levels.ALL_APP_COMMS
-SERVER_IP = "127.0.0.1"
-CLIENT_IP = "0.0.0.0"
-PORT_NUMBER = 20000
+FILTERS = opendnp3.levels.NORMAL | opendnp3.levels.ALL_COMMS
+HOST = "127.0.0.1"
+LOCAL = "0.0.0.0"
+PORT = 20000
 
 stdout_stream = logging.StreamHandler(sys.stdout)
 stdout_stream.setFormatter(logging.Formatter('%(asctime)s\t%(name)s\t%(levelname)s\t%(message)s'))
@@ -21,27 +18,7 @@ _log.addHandler(stdout_stream)
 _log.setLevel(logging.DEBUG)
 
 
-def collection_callback(result=None):
-    """
-    :type result: opendnp3.CommandPointResult
-    """
-    print("Header: {0} | Index:  {1} | State:  {2} | Status: {3}".format(
-        result.headerIndex,
-        result.index,
-        opendnp3.CommandPointStateToString(result.state),
-        opendnp3.CommandStatusToString(result.status)
-    ))
-
-
-def command_callback(result=None):
-    """
-    :type result: opendnp3.ICommandTaskResult
-    """
-    print("Received command result with summary: {}".format(opendnp3.TaskCompletionToString(result.summary)))
-    result.ForeachItem(collection_callback)
-
-
-class MasterApplication(opendnp3.IMasterApplication):
+class MyMaster:
     """
         Interface for all master application callback info except for measurement values.
 
@@ -60,40 +37,41 @@ class MasterApplication(opendnp3.IMasterApplication):
                 - Either precise times of transmission or the ability to set time values
                   into outgoing messages.
     """
-
-    master = None
-
-    def __init__(self):
-        super(MasterApplication, self).__init__()
-
-        _log.debug('Configuring the DNP3 stack.')
-        self.stack_config = self.configure_stack()
+    def __init__(self,
+                 log_handler=asiodnp3.ConsoleLogger().Create(),
+                 listener=asiodnp3.PrintingChannelListener().Create(),
+                 soe_handler=asiodnp3.PrintingSOEHandler().Create(),
+                 master_application=asiodnp3.DefaultMasterApplication().Create(),
+                 stack_config=None):
 
         _log.debug('Creating a DNP3Manager.')
-        threads_to_allocate = 1
-        self.log_handler = MyLogger()
-        # self.log_handler = asiodnp3.ConsoleLogger().Create()          # (or use this during regression testing)
-        self.manager = asiodnp3.DNP3Manager(threads_to_allocate, self.log_handler)
+        self.log_handler = log_handler
+        self.manager = asiodnp3.DNP3Manager(1, self.log_handler)
 
         _log.debug('Creating the DNP3 channel, a TCP client.')
         self.retry = asiopal.ChannelRetry().Default()
-        self.listener = AppChannelListener()
-        # self.listener = asiodnp3.PrintingChannelListener().Create()   # (or use this during regression testing)
+        self.listener = listener
         self.channel = self.manager.AddTCPClient("tcpclient",
-                                                 LOG_LEVELS,
-                                                 self.retry,
-                                                 SERVER_IP,
-                                                 CLIENT_IP,
-                                                 PORT_NUMBER,
-                                                 self.listener)
+                                        FILTERS,
+                                        self.retry,
+                                        HOST,
+                                        LOCAL,
+                                        PORT,
+                                        self.listener)
+
+        _log.debug('Configuring the DNP3 stack.')
+        if not stack_config:
+            self.stack_config = asiodnp3.MasterStackConfig()
+            self.stack_config.master.responseTimeout = openpal.TimeDuration().Seconds(2)
+            self.stack_config.link.RemoteAddr = 10
 
         _log.debug('Adding the master to the channel.')
-        self.soe_handler = SOEHandler()
-        # self.soe_handler = asiodnp3.PrintingSOEHandler().Create()     # (or use this during regression testing)
-        self.master = self.channel.AddMaster("master", self.soe_handler, self, self.stack_config)
-
-        # Hold the Master singleton in MasterApplication.
-        self.set_master(self.master)
+        self.soe_handler = soe_handler
+        self.master_application = master_application
+        self.master = self.channel.AddMaster("master",
+                                   asiodnp3.PrintingSOEHandler().Create(),
+                                   self.master_application,
+                                   self.stack_config)
 
         _log.debug('Configuring some scans (periodic reads).')
         # Set up a "slow scan", an infrequent integrity poll that requests events and static data for all classes.
@@ -110,116 +88,86 @@ class MasterApplication(opendnp3.IMasterApplication):
 
         _log.debug('Enabling the master. At this point, traffic will start to flow between the Master and Outstations.')
         self.master.Enable()
+        time.sleep(5)
 
-    @classmethod
-    def get_master(cls):
-        return cls.master
+    def send_direct_operate_command(self, command, index, callback=asiodnp3.PrintingCommandCallback.Get(),
+                                    config=opendnp3.TaskConfig().Default()):
+        """
+            Direct operate a single command
 
-    @classmethod
-    def set_master(cls, mstr):
-        cls.master = mstr
+        :param command: command to operate
+        :param index: index of the command
+        :param callback: callback that will be invoked upon completion or failure
+        :param config: optional configuration that controls normal callbacks and allows the user to be specified for SA
+        """
+        self.master.DirectOperate(command, index, callback, config)
 
-    # Overridden method
-    def AssignClassDuringStartup(self):
-        _log.debug('In MasterApplication.AssignClassDuringStartup')
-        return False
+    def send_direct_operate_command_set(self, command_set, callback=asiodnp3.PrintingCommandCallback.Get(),
+                                        config=opendnp3.TaskConfig().Default()):
+        """
+            Direct operate a set of commands
 
-    # Overridden method
-    def OnClose(self):
-        _log.debug('In MasterApplication.OnClose')
+        :param command_set: set of command headers
+        :param callback: callback that will be invoked upon completion or failure
+        :param config: optional configuration that controls normal callbacks and allows the user to be specified for SA
+        """
+        self.master.DirectOperate(command_set, callback, config)
 
-    # Overridden method
-    def OnOpen(self):
-        _log.debug('In MasterApplication.OnOpen')
+    def send_select_and_operate_command(self, command, index, callback=asiodnp3.PrintingCommandCallback.Get(),
+                                        config=opendnp3.TaskConfig().Default()):
+        """
+            Select and operate a single command
 
-    # Overridden method
-    def OnReceiveIIN(self, iin):
-        _log.debug('In MasterApplication.OnReceiveIIN')
+        :param command: command to operate
+        :param index: index of the command
+        :param callback: callback that will be invoked upon completion or failure
+        :param config: optional configuration that controls normal callbacks and allows the user to be specified for SA
+        """
+        self.master.SelectAndOperate(command, index, callback, config)
 
-    # Overridden method
-    def OnTaskComplete(self, info):
-        _log.debug('In MasterApplication.OnTaskComplete')
+    def send_select_and_operate_command_set(self, command_set, callback=asiodnp3.PrintingCommandCallback.Get(),
+                                            config=opendnp3.TaskConfig().Default()):
+        """
+            Select and operate a set of commands
 
-    # Overridden method
-    def OnTaskStart(self, type, id):
-        _log.debug('In MasterApplication.OnTaskStart')
-
-    @staticmethod
-    def configure_stack():
-        """Set up the OpenDNP3 configuration."""
-        stack_config = asiodnp3.MasterStackConfig()
-        stack_config.master.responseTimeout = openpal.TimeDuration().Seconds(2)
-        stack_config.master.disableUnsolOnStartup = True
-        stack_config.link.LocalAddr = 1
-        stack_config.link.RemoteAddr = 10
-        return stack_config
-
-    def write_integer_value(self, index, value):
-        """Write a single integer value to the outstation."""
-        _log.debug('Writing integer value {} at index {}'.format(value, index))
-        self.write_value(index, opendnp3.AnalogOutputInt32(value))
-
-    def write_floating_point_value(self, index, value):
-        """Write a single floating-point value to the outstation."""
-        _log.debug('Writing floating-point value {} at index {}'.format(value, index))
-        self.write_value(index, opendnp3.AnalogOutputFloat32(value))
-
-    def write_value(self, index, wrapped_value):
-        """Write a single analog value (which is already wrapped) to the outstation."""
-        self.master.DirectOperate(wrapped_value,
-                                  index,
-                                  command_callback,
-                                  opendnp3.TaskConfig().Default())
-
-    def send_direct_operate_command(self, index, control_code=opendnp3.ControlCode.LATCH_ON):
-        """Send a single DirectOperate command to the outstation."""
-        self.master.DirectOperate(opendnp3.ControlRelayOutputBlock(control_code),
-                                  index,
-                                  command_callback,
-                                  opendnp3.TaskConfig().Default())
-
-    def send_direct_operate_command_set(self, command_set):
-        """Send a DirectOperate CommandSet to the outstation."""
-        self.master.DirectOperate(command_set,
-                                  command_callback,
-                                  opendnp3.TaskConfig().Default())
-
-    def send_select_and_operate_command(self, index, control_code=opendnp3.ControlCode.LATCH_ON):
-        """Send a single SelectAndOperate command to the outstation."""
-        self.master.SelectAndOperate(opendnp3.ControlRelayOutputBlock(control_code),
-                                     index,
-                                     command_callback,
-                                     opendnp3.TaskConfig().Default())
-
-    def send_select_and_operate_command_set(self, command_set):
-        """Send a SelectAndOperate CommandSet to the outstation."""
-        self.master.SelectAndOperate(command_set,
-                                     command_callback,
-                                     opendnp3.TaskConfig().Default())
+        :param command_set: set of command headers
+        :param callback: callback that will be invoked upon completion or failure
+        :param config: optional configuration that controls normal callbacks and allows the user to be specified for SA
+        """
+        self.master.SelectAndOperate(command_set, callback, config)
 
     def shutdown(self):
-        """
-            Execute an orderly shutdown of the Master.
-
-            The debug messages may be helpful if errors occur during shutdown.
-        """
-        # _log.debug('Exiting application...')
-        # _log.debug('Shutting down scans...')
-        # self.fast_scan = None
-        # self.slow_scan = None
-        # _log.debug('Shutting down Master...')
-        # self.get_master().Disable()
-        # _log.debug('Shutting down stack config...')
-        # self.stack_config = None
-        # _log.debug('Shutting down channel...')
-        # self.channel = None
-        # _log.debug('Shutting down Master...')
-        # self.master = None
-        # _log.debug('Shutting down DNP3Manager...')
-        # self.manager = None
-
+        del self.slow_scan
+        del self.fast_scan
+        del self.master
+        del self.channel
         self.manager.Shutdown()
 
+class MyLogger(openpal.ILogHandler):
+    """
+        Override ILogHandler in this manner to implement application-specific logging behavior.
+    """
+
+    def __init__(self):
+        super(MyLogger, self).__init__()
+
+    def Log(self, entry):
+        flag = opendnp3.LogFlagToString(entry.filters.GetBitfield())
+        filters = entry.filters.GetBitfield()
+        location = entry.location.rsplit('/')[-1] if entry.location else ''
+        message = entry.message
+        _log.debug('LOG\t\t{:<10}\tfilters={:<5}\tlocation={:<25}\tentry={}'.format(flag, filters, location, message))
+
+class AppChannelListener(asiodnp3.IChannelListener):
+    """
+        Override IChannelListener in this manner to implement application-specific channel behavior.
+    """
+
+    def __init__(self):
+        super(AppChannelListener, self).__init__()
+
+    def OnStateChange(self, state):
+        _log.debug('In AppChannelListener.OnStateChange: state={}'.format(state))
 
 class SOEHandler(opendnp3.ISOEHandler):
     """
@@ -262,37 +210,70 @@ class SOEHandler(opendnp3.ISOEHandler):
         _log.debug('In SOEHandler.End')
 
 
-class AppChannelListener(asiodnp3.IChannelListener):
-    """
-        Override IChannelListener in this manner to implement application-specific channel behavior.
-    """
-
+class MasterApplication(opendnp3.IMasterApplication):
     def __init__(self):
-        super(AppChannelListener, self).__init__()
+        super(MasterApplication, self).__init__()
 
-    def OnStateChange(self, state):
-        _log.debug('In AppChannelListener.OnStateChange: state={}'.format(state))
+        # Overridden method
+        def AssignClassDuringStartup(self):
+            _log.debug('In MasterApplication.AssignClassDuringStartup')
+            return False
+
+        # Overridden method
+        def OnClose(self):
+            _log.debug('In MasterApplication.OnClose')
+
+        # Overridden method
+        def OnOpen(self):
+            _log.debug('In MasterApplication.OnOpen')
+
+        # Overridden method
+        def OnReceiveIIN(self, iin):
+            _log.debug('In MasterApplication.OnReceiveIIN')
+
+        # Overridden method
+        def OnTaskComplete(self, info):
+            _log.debug('In MasterApplication.OnTaskComplete')
+
+        # Overridden method
+        def OnTaskStart(self, type, id):
+            _log.debug('In MasterApplication.OnTaskStart')
 
 
-class MyLogger(openpal.ILogHandler):
+def collection_callback(result=None):
     """
-        Override ILogHandler in this manner to implement application-specific logging behavior.
+    :type result: opendnp3.CommandPointResult
     """
+    print("Header: {0} | Index:  {1} | State:  {2} | Status: {3}".format(
+        result.headerIndex,
+        result.index,
+        opendnp3.CommandPointStateToString(result.state),
+        opendnp3.CommandStatusToString(result.status)
+    ))
 
-    def __init__(self):
-        super(MyLogger, self).__init__()
 
-    def Log(self, entry):
-        flag = opendnp3.LogFlagToString(entry.filters.GetBitfield())
-        filters = entry.filters.GetBitfield()
-        location = entry.location.rsplit('/')[-1] if entry.location else ''
-        message = entry.message
-        _log.debug('LOG\t\t{:<10}\tfilters={:<5}\tlocation={:<25}\tentry={}'.format(flag, filters, location, message))
+def command_callback(result=None):
+    """
+    :type result: opendnp3.ICommandTaskResult
+    """
+    print("Received command result with summary: {}".format(opendnp3.TaskCompletionToString(result.summary)))
+    result.ForeachItem(collection_callback)
+
+
+def restart_callback(result=opendnp3.RestartOperationResult()):
+    if result.summary == opendnp3.TaskCompletion.SUCCESS:
+        print("Restart success | Restart Time: {}".format(result.restartTime.GetMilliseconds()))
+    else:
+        print("Restart fail | Failure: {}".format(opendnp3.TaskCompletionToString(result.summary)))
 
 
 def main():
     """The Master has been started from the command line. Execute ad-hoc tests if desired."""
-    app = MasterApplication()
+    # app = MyMaster()
+    app = MyMaster(log_handler=MyLogger(),
+                   listener=AppChannelListener(),
+                   soe_handler=SOEHandler(),
+                   master_application=MasterApplication())
     _log.debug('Initialization complete. In command loop.')
     # Ad-hoc tests can be performed at this point. See master_cmd.py for examples.
     app.shutdown()
