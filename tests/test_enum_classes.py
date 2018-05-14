@@ -64,6 +64,7 @@ class TestEnumClasses():
         assert opendnp3.EventCounterVariation is not None
         assert opendnp3.EventDoubleBinaryVariation is not None
         assert opendnp3.EventFrozenCounterVariation is not None
+        assert opendnp3.EventSecurityStatVariation is not None
         assert opendnp3.EventMode is not None
         assert opendnp3.EventSecurityStatVariation is not None
         assert opendnp3.FlagsType is not None
@@ -73,6 +74,7 @@ class TestEnumClasses():
         assert opendnp3.GroupVariation is not None
         assert opendnp3.HMACType is not None
         assert opendnp3.IndexMode is not None
+        assert opendnp3.IndexQualifierMode is not None
         assert opendnp3.IntervalUnits is not None
         assert opendnp3.KeyChangeMethod is not None
         assert opendnp3.KeyStatus is not None
@@ -87,6 +89,7 @@ class TestEnumClasses():
         assert opendnp3.RestartMode is not None
         assert opendnp3.RestartType is not None
         assert opendnp3.SecurityStatIndex is not None
+        assert opendnp3.ServerAcceptMode is not None
         assert opendnp3.StaticAnalogOutputStatusVariation is not None
         assert opendnp3.StaticAnalogVariation is not None
         assert opendnp3.StaticBinaryOutputStatusVariation is not None
@@ -95,6 +98,7 @@ class TestEnumClasses():
         assert opendnp3.StaticDoubleBinaryVariation is not None
         assert opendnp3.StaticFrozenCounterVariation is not None
         assert opendnp3.StaticSecurityStatVariation is not None
+        assert opendnp3.StaticOctetStringVariation is not None
         assert opendnp3.StaticTimeAndIntervalVariation is not None
         assert opendnp3.StaticTypeBitmask is not None
         assert opendnp3.StopBits is not None

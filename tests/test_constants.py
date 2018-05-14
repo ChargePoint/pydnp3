@@ -38,6 +38,5 @@ class TestConstants():
     def test_const(self):
         assert opendnp3.DEFAULT_MAX_APDU_SIZE == 2048
         assert opendnp3.DEFAULT_APP_TIMEOUT is not None
-        assert opendnp3.NUM_OUTSTATION_EVENT_TYPES == 8
         assert openpal.MAX_LOG_ENTRY_SIZE == 120
         assert openpal.MAX_HEX_PER_LINE == 20

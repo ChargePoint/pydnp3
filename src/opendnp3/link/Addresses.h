@@ -31,47 +31,47 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <opendnp3/outstation/ApplicationIIN.h>
+#include <opendnp3/link/Addresses.h>
 
 namespace py = pybind11;
 using namespace std;
 
-void bind_ApplicationIIN(py::module &m)
+void bind_Addresses(py::module &m)
 {
-    // ----- class: opendnp3::ApplicationIIN -----
-    py::class_<opendnp3::ApplicationIIN>(m, "ApplicationIIN",
-        "Some IIN bits are necessarily controlled by the outstation application, not the underlying protocol stack. \n"
-        "This structure describes the state of the bits controllable by the application.")
+    // ----- class: opendnp3::Addresses -----
+    py::class_<opendnp3::Addresses>(m, "Addresses")
 
         .def(py::init<>())
 
-        .def_readwrite(
-            "needTime",
-            &opendnp3::ApplicationIIN::needTime
-        )
-
-        .def_readwrite(
-            "localControl",
-            &opendnp3::ApplicationIIN::localControl
-        )
-
-        .def_readwrite(
-            "deviceTrouble",
-            &opendnp3::ApplicationIIN::deviceTrouble
-        )
-
-        .def_readwrite(
-            "configCorrupt",
-            &opendnp3::ApplicationIIN::configCorrupt
-        )
-
-        .def_readwrite(
-            "eventBufferOverflow",
-            &opendnp3::ApplicationIIN::eventBufferOverflow
+        .def(
+            py::init<uint16_t, uint16_t>(),
+            py::arg("source"), py::arg("destination"),
+            ":type source: unsigned short \n"
+            ":type destination: unsigned short"
         )
 
         .def(
-            "ToIIN",
-            &opendnp3::ApplicationIIN::ToIIN
+            "Reverse",
+            &opendnp3::Addresses::Reverse
+        )
+
+        .def(
+            "__eq__",
+            &opendnp3::Addresses::operator==
+        )
+
+        .def(
+            "__ne__",
+            &opendnp3::Addresses::operator!=
+        )
+
+        .def_readwrite(
+            "source",
+            &opendnp3::Addresses::source
+        )
+
+        .def_readwrite(
+            "destination",
+            &opendnp3::Addresses::destination
         );
 }

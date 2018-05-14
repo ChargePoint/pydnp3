@@ -31,47 +31,14 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <opendnp3/outstation/ApplicationIIN.h>
+#include <opendnp3/gen/EventOctetStringVariation.h>
 
 namespace py = pybind11;
 using namespace std;
 
-void bind_ApplicationIIN(py::module &m)
+void bind_EventOctetStringVariation(py::module &m)
 {
-    // ----- class: opendnp3::ApplicationIIN -----
-    py::class_<opendnp3::ApplicationIIN>(m, "ApplicationIIN",
-        "Some IIN bits are necessarily controlled by the outstation application, not the underlying protocol stack. \n"
-        "This structure describes the state of the bits controllable by the application.")
-
-        .def(py::init<>())
-
-        .def_readwrite(
-            "needTime",
-            &opendnp3::ApplicationIIN::needTime
-        )
-
-        .def_readwrite(
-            "localControl",
-            &opendnp3::ApplicationIIN::localControl
-        )
-
-        .def_readwrite(
-            "deviceTrouble",
-            &opendnp3::ApplicationIIN::deviceTrouble
-        )
-
-        .def_readwrite(
-            "configCorrupt",
-            &opendnp3::ApplicationIIN::configCorrupt
-        )
-
-        .def_readwrite(
-            "eventBufferOverflow",
-            &opendnp3::ApplicationIIN::eventBufferOverflow
-        )
-
-        .def(
-            "ToIIN",
-            &opendnp3::ApplicationIIN::ToIIN
-        );
+    // ----- enum class: opendnp3::EventSecurityStatVariation -----
+    py::enum_<opendnp3::EventOctetStringVariation>(m, "EventOctetStringVariation")
+        .value("Group111Var0", opendnp3::EventOctetStringVariation::Group111Var0);
 }

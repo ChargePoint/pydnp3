@@ -37,6 +37,8 @@ HOST = "127.0.0.1"
 LOCAL = "0.0.0.0"
 PORT = 20000
 
+manager = None
+
 
 class MasterApplication(opendnp3.IMasterApplication):
     """
@@ -160,7 +162,7 @@ def run_outstation():
     # Connect via a TCPServer socket to a server
     channel = manager.AddTCPServer("server",
                                    FILTERS,
-                                   asiopal.ChannelRetry().Default(),
+                                   opendnp3.ServerAcceptMode.CloseExisting,
                                    LOCAL,
                                    PORT,
                                    asiodnp3.PrintingChannelListener().Create())
@@ -184,7 +186,7 @@ def run_outstation():
 
 class TestMaster:
 
-    def run_master(self, cmd=None):
+    def config_master(self):
         # Callback interface for log messages
         self.handler = LogHandler()
 
@@ -193,13 +195,13 @@ class TestMaster:
 
         # Connect via a TCPClient socket to an outstation
         self.channel_listener = ChannelListener()
-        channel = self.manager.AddTCPClient("tcpclient",
-                                            FILTERS,
-                                            asiopal.ChannelRetry(),
-                                            HOST,
-                                            LOCAL,
-                                            PORT,
-                                            self.channel_listener)
+        self.channel = self.manager.AddTCPClient("tcpclient",
+                                                 FILTERS,
+                                                 asiopal.ChannelRetry(),
+                                                 HOST,
+                                                 LOCAL,
+                                                 PORT,
+                                                 self.channel_listener)
 
         # Master config object for a master
         stack_config = asiodnp3.MasterStackConfig()
@@ -208,51 +210,61 @@ class TestMaster:
 
         # Add a master to a communication channel
         self.master_application = MasterApplication()
-        master = channel.AddMaster("master",
-                                   asiodnp3.PrintingSOEHandler().Create(),
-                                   self.master_application,
-                                   stack_config)
+        self.master = self.channel.AddMaster("master",
+                                             asiodnp3.PrintingSOEHandler().Create(),
+                                             self.master_application,
+                                             stack_config)
 
         # Do an integrity poll (Class 3/2/1/0) once per minute
-        integrity_scan = master.AddClassScan(opendnp3.ClassField().AllClasses(),
-                                             openpal.TimeDuration().Minutes(1))
+        self.integrity_scan = self.master.AddClassScan(opendnp3.ClassField().AllClasses(),
+                                                       openpal.TimeDuration().Minutes(1))
 
         # Do a Class 1 exception poll every 5 seconds
-        exception_scan = master.AddClassScan(opendnp3.ClassField(opendnp3.ClassField.CLASS_1),
-                                             openpal.TimeDuration().Seconds(2))
+        self.exception_scan = self.master.AddClassScan(opendnp3.ClassField(opendnp3.ClassField.CLASS_1),
+                                                       openpal.TimeDuration().Seconds(2))
 
         # Enable the master. This will start communications.
-        master.Enable()
+        self.master.Enable()
+
+    def shutdown(self):
+        del self.exception_scan
+        del self.integrity_scan
+        del self.master
+        del self.channel
+        self.manager.Shutdown()
+
+    def run_master(self, cmd=None):
+        self.config_master()
 
         # reset the logger id tcpclient to False before sending the cmd, if the cmd is sent successful,
         # the log handler should catch the logger id "tcpclient"
         self.handler.tcp_client = False
 
         if cmd == "a":
-            master.ScanRange(opendnp3.GroupVariationID(1, 2), 0, 3)
+            self.master.ScanRange(opendnp3.GroupVariationID(1, 2), 0, 3)
         if cmd == "i":
-            integrity_scan.Demand()
+            self.integrity_scan.Demand()
         if cmd == "e":
-            exception_scan.Demand()
+            self.exception_scan.Demand()
         if cmd == "c1":
             crob = opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON)
-            master.SelectAndOperate(crob, 0, command_callback)
+            self.master.SelectAndOperate(crob, 0, command_callback)
         if cmd == "c2":
             crob = opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON)
             commands = opendnp3.CommandSet([opendnp3.WithIndex(crob, 0),
                                             opendnp3.WithIndex(crob, 1)])
-            master.SelectAndOperate(commands, command_callback)
+            self.master.SelectAndOperate(commands, command_callback)
         if cmd == "d1":
-            master.DirectOperate(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON),
+            self.master.DirectOperate(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON),
                                  4,
                                  command_callback)
         if cmd == "d2":
             crob = opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON)
             commands = opendnp3.CommandSet([opendnp3.WithIndex(crob, 0),
                                             opendnp3.WithIndex(crob, 1)])
-            master.DirectOperate(commands, command_callback)
+            self.master.DirectOperate(commands, command_callback)
         if cmd == "r":
-            master.Restart(opendnp3.RestartType.COLD, restart_callback)
+            self.master.Restart(opendnp3.RestartType.COLD, restart_callback)
 
         # If the message sent successful, the log handler should catch loggerid "tcpclient"
         time.sleep(1)
@@ -274,7 +286,7 @@ class TestMaster:
         )
 
         time.sleep(1)
-        self.manager.Shutdown()
+        self.shutdown()
 
     def test_start(self, run_outstation):
         """Test start the master without sending command."""

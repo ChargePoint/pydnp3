@@ -50,6 +50,16 @@ void bind_OctetData(py::module &m)
         )
 
         .def(
+            "Size",
+            &opendnp3::OctetData::Size
+        )
+
+        .def(
+            "Set",
+            &opendnp3::OctetData::Set
+        )
+
+        .def(
             "ToRSlice",
             &opendnp3::OctetData::ToRSlice
         )

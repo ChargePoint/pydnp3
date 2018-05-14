@@ -57,5 +57,11 @@ void bind_EventMode(py::module &m) {
             "Suppress",
             opendnp3::EventMode::Suppress,
             "Never produce an event regardless of changes."
+        )
+
+        .value(
+            "EventOnly",
+            opendnp3::EventMode::EventOnly,
+            "Send an event directly to the event buffer, bypassing the static value completely."
         );
 }

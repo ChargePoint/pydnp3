@@ -45,7 +45,7 @@ void bind_OutstationParams(py::module &m)
         .def(
             py::init<opendnp3::IndexMode, uint8_t, openpal::TimeDuration, openpal::TimeDuration, openpal::TimeDuration,
                      openpal::TimeDuration, uint32_t, uint32_t, bool, opendnp3::StaticTypeBitField,
-                     opendnp3::ClassField>(),
+                     opendnp3::ClassField, bool>(),
             ":type maxControlsPerRequest: unsigned char \n"
             ":type maxTxFragSize: unsigned int \n"
             ":type maxRxFragSize: unsigned int",
@@ -59,7 +59,8 @@ void bind_OutstationParams(py::module &m)
             py::arg("maxRxFragSize") = opendnp3::DEFAULT_MAX_APDU_SIZE,
             py::arg("allowUnsolicited") = false,
             py::arg("typesAllowedInClass0") = opendnp3::StaticTypeBitField::AllTypes(),
-            py::arg("unsolClassMask") = opendnp3::ClassField::None()
+            py::arg("unsolClassMask") = opendnp3::ClassField::None(),
+            py::arg("respondToAnyMaster") = false
         )
 
         .def_readwrite(
@@ -129,5 +130,12 @@ void bind_OutstationParams(py::module &m)
             "unsolClassMask",
             &opendnp3::OutstationParams::unsolClassMask,
             "Class mask for unsolicted, default to 0 as unsolicited has to be enabled."
+        )
+
+        .def_readwrite(
+            "respondToAnyMaster",
+            &opendnp3::OutstationParams::respondToAnyMaster,
+            "If true, the outstation processes responds to any request/confirmation as if it came from the expected "
+            "master address."
         );
 }

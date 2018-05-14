@@ -47,5 +47,6 @@ void bind_StaticTypeBitmask(py::module &m)
         .value("AnalogInput", opendnp3::StaticTypeBitmask::AnalogInput)
         .value("BinaryOutputStatus", opendnp3::StaticTypeBitmask::BinaryOutputStatus)
         .value("AnalogOutputStatus", opendnp3::StaticTypeBitmask::AnalogOutputStatus)
-        .value("TimeAndInterval", opendnp3::StaticTypeBitmask::TimeAndInterval);
+        .value("TimeAndInterval", opendnp3::StaticTypeBitmask::TimeAndInterval)
+        .value("OctetString", opendnp3::StaticTypeBitmask::OctetString);
 }

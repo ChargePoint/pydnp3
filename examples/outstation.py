@@ -59,12 +59,11 @@ class OutstationApplication(opendnp3.IOutstationApplication):
         self.manager = asiodnp3.DNP3Manager(threads_to_allocate, self.log_handler)
 
         _log.debug('Creating the DNP3 channel, a TCP server.')
-        self.retry_parameters = asiopal.ChannelRetry().Default()
         self.listener = AppChannelListener()
         # self.listener = asiodnp3.PrintingChannelListener().Create()       # (or use this during regression testing)
         self.channel = self.manager.AddTCPServer("server",
                                                  LOG_LEVELS,
-                                                 self.retry_parameters,
+                                                 opendnp3.ServerAcceptMode.CloseExisting,
                                                  LOCAL_IP,
                                                  PORT,
                                                  self.listener)
@@ -118,16 +117,6 @@ class OutstationApplication(opendnp3.IOutstationApplication):
 
             The debug messages may be helpful if errors occur during shutdown.
         """
-        # _log.debug('Exiting application...')
-        # _log.debug('Shutting down outstation...')
-        # OutstationApplication.set_outstation(None)
-        # _log.debug('Shutting down stack config...')
-        # self.stack_config = None
-        # _log.debug('Shutting down channel...')
-        # self.channel = None
-        # _log.debug('Shutting down DNP3Manager...')
-        # self.manager = None
-
         self.manager.Shutdown()
 
     @classmethod

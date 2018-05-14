@@ -31,66 +31,14 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <openpal/container/Queue.h>
+#include <opendnp3/gen/StaticOctetStringVariation.h>
 
-template <class ValueType, class IndexType>
-void declareQueue(py::module &m, string const &type)
+namespace py = pybind11;
+using namespace std;
+
+void bind_StaticOctetStringVariation(py::module &m)
 {
-    // ----- class: openpal::Queue<ValueType, IndexType> -----
-    py::class_<openpal::Queue<ValueType, IndexType>>(m, ("Queue" + type).c_str())
-
-        .def(
-            py::init<IndexType>(),
-            py::arg("size")
-        )
-
-        .def(
-            "Size",
-            openpal::Queue<ValueType, IndexType>::Size
-        )
-
-        .def(
-            "Capacity",
-            openpal::Queue<ValueType, IndexType>::Capacity
-        )
-
-        .def(
-            "IsEmpty",
-            openpal::Queue<ValueType, IndexType>::IsEmpty
-        )
-
-        .def(
-            "IsNotEmpty",
-            openpal::Queue<ValueType, IndexType>::IsNotEmpty
-        )
-
-        .def(
-            "IsFull",
-            openpal::Queue<ValueType, IndexType>::IsFull
-        )
-
-        .def(
-            "Clear",
-            openpal::Queue<ValueType, IndexType>::Clear
-        )
-
-        .def(
-            "Peek",
-            openpal::Queue<ValueType, IndexType>::Peek
-        )
-
-        .def(
-            "Pop",
-            openpal::Queue<ValueType, IndexType>::Pop
-        )
-
-        .def(
-            "Enqueue",
-            openpal::Queue<ValueType, IndexType>::Enqueue,
-            py::arg("value")
-        );
-}
-
-void bind_Queue(py::module &m)
-{
+    // ----- enum class: opendnp3::StaticOctetStringVariation -----
+    py::enum_<opendnp3::StaticOctetStringVariation>(m, "StaticOctetStringVariation")
+        .value("Group110Var0", opendnp3::StaticOctetStringVariation::Group110Var0);
 }

@@ -50,6 +50,11 @@ void bind_LinkHeaderFields(py::module &m)
             py::arg("func"), py::arg("isFromMaster"), py::arg("fcb"), py::arg("fcvdfc"), py::arg("dest"), py::arg("src")
         )
 
+        .def(
+            "ToAddresses",
+            &opendnp3::LinkHeaderFields::ToAddresses
+        )
+
         .def_readwrite(
             "func",
             &opendnp3::LinkHeaderFields::func

@@ -104,6 +104,14 @@ namespace opendnp3
                 meas, index, mode
             );
         }
+        bool Update(const OctetString& meas, uint16_t index, EventMode mode = EventMode::Detect) override {
+            PYBIND11_OVERLOAD_PURE(
+                bool,
+                IUpdateHandler,
+                Update,
+                meas, index, mode
+            );
+        }
         bool Update(const TimeAndInterval& meas, uint16_t index) override {
             PYBIND11_OVERLOAD_PURE(
                 bool,
@@ -213,6 +221,19 @@ void bind_IUpdateHandler(py::module &m)
             (bool (opendnp3::IUpdateHandler::*)(const opendnp3::AnalogOutputStatus&, uint16_t, opendnp3::EventMode))
             &opendnp3::IUpdateHandler::Update,
              "   Update a AnalogOutputStatus measurement. \n"
+            ":param meas: measurement to be processed \n"
+            ":param index: index of the measurement \n"
+            ":param mode Describes how event generation is handled for this method \n"
+            ":type index: unsigned short \n"
+            ":return: true if the value exists and it was updated",
+            py::arg("measurement"), py::arg("index"), py::arg("mode") = opendnp3::EventMode::Detect
+        )
+
+        .def(
+            "Update",
+            (bool (opendnp3::IUpdateHandler::*)(const opendnp3::OctetString&, uint16_t, opendnp3::EventMode))
+            &opendnp3::IUpdateHandler::Update,
+             "   Update an octet string value. \n"
             ":param meas: measurement to be processed \n"
             ":param index: index of the measurement \n"
             ":param mode Describes how event generation is handled for this method \n"

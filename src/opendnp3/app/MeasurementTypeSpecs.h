@@ -110,6 +110,15 @@ void bind_MeasurementTypeSpecs(py::module &m)
             py::arg("oldValue"), py::arg("newValue"), py::arg("deadband")
         );
 
+    // ----- class: opendnp3::OctetStringSpec -----
+    py::class_<opendnp3::OctetStringSpec, opendnp3::OctetStringInfo>(m, "OctetStringSpec")
+
+        .def_static(
+            "IsEvent",
+            &opendnp3::OctetStringSpec::IsEvent,
+            py::arg("oldValue"), py::arg("newValue")
+        );
+
     // ----- class: opendnp3::TimeAndIntervalSpec -----
     py::class_<opendnp3::TimeAndIntervalSpec, opendnp3::TimeAndIntervalInfo>(m, "TimeAndIntervalSpec");
 

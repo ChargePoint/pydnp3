@@ -131,7 +131,7 @@ class TestOutstation:
         self.channel_listener = ChannelListener()
         channel = self.manager.AddTCPServer("server",
                                             FILTERS,
-                                            asiopal.ChannelRetry().Default(),
+                                            opendnp3.ServerAcceptMode.CloseExisting,
                                             LOCAL,
                                             PORT,
                                             self.channel_listener)
@@ -188,3 +188,5 @@ class TestOutstation:
     def test_send_double_bit_binary(self, run_master):
         self.run_outstation(value=opendnp3.DoubleBitBinary(opendnp3.DoubleBit.DETERMINED_ON))
 
+    def test_send_octet_string(self, run_master):
+        self.run_outstation(value=opendnp3.OctetString(openpal.RSlice(1, 1)))

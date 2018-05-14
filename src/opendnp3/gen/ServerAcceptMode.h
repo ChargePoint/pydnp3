@@ -31,59 +31,24 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <openpal/container/RingBuffer.h>
+#include <opendnp3/gen/ServerAcceptMode.h>
 
-template <uint8_t N>
-void declareRingBuffer(py::module &m, string const &type)
+namespace py = pybind11;
+using namespace std;
+
+void bind_ServerAcceptMode(py::module &m)
 {
-    // ----- class: openpal::RingBuffer<N> -----
-    py::class_<openpal::RingBuffer<N>>(m, ("RingBuffer" + type).c_str(),
-        "A byte-oriented ring buffer. \n"
-        "Interrupt-safe (w/o disabling interrupts) for a single producer and single consumer, "
-        "one reading and one writing. \n"
-        "N must be a power of 2, and is enforced via static assert.")
+    // ----- enum class: opendnp3::ServerAcceptMode -----
+    py::enum_<opendnp3::ServerAcceptMode>(m, "ServerAcceptMode",
+        "Describes how TCP/TLS server channels handle new connections when an existing connection is already active.")
 
-        .def(py::init<>())
-
-        .def(
-            "Put",
-            &openpal::RingBuffer<N>::Put,
-            ":type byteIn: unsigned short",
-            py::arg("byteIn")
+        .value(
+            "CloseNew",
+            opendnp3::ServerAcceptMode::CloseNew
         )
 
-        .def(
-            "Get",
-            &openpal::RingBuffer<N>::Get,
-            ":type byteOut: unsigned short",
-            py::arg("byteOut")
-        )
-
-        .def(
-            "GetMany",
-            &openpal::RingBuffer<N>::GetMany,
-            py::arg("output")
-        )
-
-        .def(
-            "PutMany",
-            &openpal::RingBuffer<N>::PutMany,
-            py::arg("input")
-        )
-
-        .def(
-            "Full",
-            &openpal::RingBuffer<N>::Full
-        )
-
-        .def(
-            "Empty",
-            &openpal::RingBuffer<N>::Empty
+		.value(
+            "CloseExisting",
+            opendnp3::ServerAcceptMode::CloseExisting
         );
-}
-
-void bind_RingBuffer(py::module &m)
-{
-    // Example
-    declareRingBuffer<16>(m, "16");
 }

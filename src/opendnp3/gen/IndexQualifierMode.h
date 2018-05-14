@@ -31,47 +31,26 @@
 #include <pybind11/pybind11.h>
 #include <python2.7/Python.h>
 
-#include <opendnp3/outstation/ApplicationIIN.h>
+#include <opendnp3/gen/IndexQualifierMode.h>
 
 namespace py = pybind11;
 using namespace std;
 
-void bind_ApplicationIIN(py::module &m)
+void bind_IndexQualifierMode(py::module &m)
 {
-    // ----- class: opendnp3::ApplicationIIN -----
-    py::class_<opendnp3::ApplicationIIN>(m, "ApplicationIIN",
-        "Some IIN bits are necessarily controlled by the outstation application, not the underlying protocol stack. \n"
-        "This structure describes the state of the bits controllable by the application.")
+    // ----- enum class: opendnp3::IndexQualifierMode -----
+    py::enum_<opendnp3::IndexQualifierMode>(m, "IndexQualifierMode",
+        "Specifies whether opendnp3 optimizes for 1-byte indexes when making requests.")
 
-        .def(py::init<>())
-
-        .def_readwrite(
-            "needTime",
-            &opendnp3::ApplicationIIN::needTime
+        .value(
+            "allow_one_byte",
+            opendnp3::IndexQualifierMode::allow_one_byte,
+            "Use a one byte qualifier if possible."
         )
 
-        .def_readwrite(
-            "localControl",
-            &opendnp3::ApplicationIIN::localControl
-        )
-
-        .def_readwrite(
-            "deviceTrouble",
-            &opendnp3::ApplicationIIN::deviceTrouble
-        )
-
-        .def_readwrite(
-            "configCorrupt",
-            &opendnp3::ApplicationIIN::configCorrupt
-        )
-
-        .def_readwrite(
-            "eventBufferOverflow",
-            &opendnp3::ApplicationIIN::eventBufferOverflow
-        )
-
-        .def(
-            "ToIIN",
-            &opendnp3::ApplicationIIN::ToIIN
-        );
+		.value(
+		    "always_two_bytes",
+		    opendnp3::IndexQualifierMode::always_two_bytes,
+		    "Always use two byte qualifiers even if the index is <= 255."
+		);
 }

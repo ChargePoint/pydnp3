@@ -126,5 +126,12 @@ void bind_MasterParams(py::module &m)
             &opendnp3::MasterParams::maxRxFragSize,
             "   Maximum APDU rx size in bytes. \n"
             ":type maxRxFragSize: unsigned int"
+        )
+
+        .def_readwrite(
+            "controlQualifierMode",
+            &opendnp3::MasterParams::controlQualifierMode,
+            "Control how the master chooses what qualifier to send when making requests. \n"
+            "The default behavior is to always use two bytes, but the one byte optimization can be enabled."
         );
 }

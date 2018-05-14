@@ -75,10 +75,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_RSlice(openpal);
     bind_WSlice(openpal);
     bind_Buffer(openpal);
-    bind_LinkedList(openpal);
     bind_Pair(openpal);
-    bind_Queue(openpal);
-    bind_RingBuffer(openpal);
     bind_SecureBuffer(openpal);
     bind_Settable(openpal);
     bind_StaticBuffer(openpal);
@@ -113,6 +110,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
 
     bind_OpendnpLogLevels(opendnp3);
     bind_StackStatistics(opendnp3);
+    bind_Addresses(opendnp3);
     bind_AnalogOutputStatusQuality(opendnp3);
     bind_AnalogQuality(opendnp3);
     bind_AssignClassType(opendnp3);
@@ -139,6 +137,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_EventDoubleBinaryVariation(opendnp3);
     bind_EventFrozenCounterVariation(opendnp3);
     bind_EventMode(opendnp3);
+    bind_EventOctetStringVariation(opendnp3);
     bind_EventSecurityStatVariation(opendnp3);
     bind_FlagsType(opendnp3);
     bind_FlowControl(opendnp3);
@@ -146,6 +145,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_FunctionCode(opendnp3);
     bind_HMACType(opendnp3);
     bind_IndexMode(opendnp3);
+    bind_IndexQualifierMode(opendnp3);
     bind_IntervalUnits(opendnp3);
     bind_KeyChangeMethod(opendnp3);
     bind_KeyStatus(opendnp3);
@@ -160,6 +160,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_RestartMode(opendnp3);
     bind_RestartType(opendnp3);
     bind_SecurityStatIndex(opendnp3);
+    bind_ServerAcceptMode(opendnp3);
     bind_StaticAnalogOutputStatusVariation(opendnp3);
     bind_StaticAnalogVariation(opendnp3);
     bind_StaticBinaryOutputStatusVariation(opendnp3);
@@ -167,6 +168,7 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_StaticCounterVariation(opendnp3);
     bind_StaticDoubleBinaryVariation(opendnp3);
     bind_StaticFrozenCounterVariation(opendnp3);
+    bind_StaticOctetStringVariation(opendnp3);
     bind_StaticSecurityStatVariation(opendnp3);
     bind_StaticTimeAndIntervalVariation(opendnp3);
     bind_StaticTypeBitmask(opendnp3);

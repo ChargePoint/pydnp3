@@ -1,11 +1,11 @@
 import cmd
-from datetime import datetime
 import logging
 import sys
 
+from datetime import datetime
 from pydnp3 import opendnp3, openpal
-
-from master import MasterApplication
+from master import MyMaster, MyLogger, AppChannelListener, SOEHandler, MasterApplication
+from master import command_callback, restart_callback
 
 stdout_stream = logging.StreamHandler(sys.stdout)
 stdout_stream.setFormatter(logging.Formatter('%(asctime)s\t%(name)s\t%(levelname)s\t%(message)s'))
@@ -13,13 +13,6 @@ stdout_stream.setFormatter(logging.Formatter('%(asctime)s\t%(name)s\t%(levelname
 _log = logging.getLogger(__name__)
 _log.addHandler(stdout_stream)
 _log.setLevel(logging.DEBUG)
-
-
-def restart_callback(result=opendnp3.RestartOperationResult()):
-    if result.summary == opendnp3.TaskCompletion.SUCCESS:
-        print("Restart success | Restart Time: {}".format(result.restartTime.GetMilliseconds()))
-    else:
-        print("Restart fail | Failure: {}".format(opendnp3.TaskCompletionToString(result.summary)))
 
 
 class MasterCmd(cmd.Cmd):
@@ -33,11 +26,10 @@ class MasterCmd(cmd.Cmd):
     def __init__(self):
         cmd.Cmd.__init__(self)
         self.prompt = 'master> '   # Used by the Cmd framework, displayed when issuing a command-line prompt.
-        self.application = MasterApplication()
-
-    @staticmethod
-    def master():
-        return MasterApplication.get_master()
+        self.application = MyMaster(log_handler=MyLogger(),
+                                    listener=AppChannelListener(),
+                                    soe_handler=SOEHandler(),
+                                    master_application=MasterApplication())
 
     def startup(self):
         """Display the command-line interface's menu and issue a prompt."""
@@ -83,60 +75,73 @@ class MasterCmd(cmd.Cmd):
         headers = [opendnp3.Header().AllObjects(60, 2),
                    opendnp3.Header().AllObjects(60, 3),
                    opendnp3.Header().AllObjects(60, 4)]
-        self.master().PerformFunction("disable unsolicited",
-                                      opendnp3.FunctionCode.DISABLE_UNSOLICITED,
-                                      headers,
-                                      opendnp3.TaskConfig().Default())
+        self.application.master.PerformFunction("disable unsolicited",
+                                                opendnp3.FunctionCode.DISABLE_UNSOLICITED,
+                                                headers,
+                                                opendnp3.TaskConfig().Default())
 
     def do_mast_log_all(self, line):
         """Set the master log level to ALL_COMMS. Command syntax is: mast_log_all"""
-        self.master().SetLogFilters(openpal.LogFilters(opendnp3.levels.ALL_COMMS))
+        self.application.master.SetLogFilters(openpal.LogFilters(opendnp3.levels.ALL_COMMS))
         _log.debug('Master log filtering level is now: {0}'.format(opendnp3.levels.ALL_COMMS))
 
     def do_mast_log_normal(self, line):
         """Set the master log level to NORMAL. Command syntax is: mast_log_normal"""
-        self.master().SetLogFilters(openpal.LogFilters(opendnp3.levels.NORMAL))
+        self.application.master.SetLogFilters(openpal.LogFilters(opendnp3.levels.NORMAL))
         _log.debug('Master log filtering level is now: {0}'.format(opendnp3.levels.NORMAL))
 
     def do_o1(self, line):
         """Send a DirectOperate BinaryOutput (group 12) index 5 LATCH_ON to the Outstation. Command syntax is: o1"""
-        self.application.send_direct_operate_command(5, opendnp3.ControlCode.LATCH_ON)
+        self.application.send_direct_operate_command(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON),
+                                                     5,
+                                                     command_callback)
 
     def do_o2(self, line):
         """Send a DirectOperate AnalogOutput (group 41) index 10 value 7 to the Outstation. Command syntax is: o2"""
-        self.application.write_integer_value(10, 7)
+        self.application.send_direct_operate_command(opendnp3.AnalogOutputInt32(7),
+                                                     10,
+                                                     command_callback)
 
     def do_o3(self, line):
         """Send a DirectOperate BinaryOutput (group 12) CommandSet to the Outstation. Command syntax is: o3"""
-        self.application.send_direct_operate_command_set(opendnp3.CommandSet([
-            opendnp3.WithIndex(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON), 0),
-            opendnp3.WithIndex(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_OFF), 1)
-        ]))
+        self.application.send_direct_operate_command_set(opendnp3.CommandSet(
+            [
+                opendnp3.WithIndex(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON), 0),
+                opendnp3.WithIndex(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_OFF), 1)
+            ]),
+            command_callback
+        )
+
         # This could also have been in multiple steps, as follows:
         # command_set = opendnp3.CommandSet()
         # command_set.Add([
         #     opendnp3.WithIndex(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON), 0),
         #     opendnp3.WithIndex(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_OFF), 1)
         # ])
-        # self.application.send_direct_operate_command_set(command_set)
+        # self.application.send_direct_operate_command_set(command_set, command_callback)
 
     def do_restart(self, line):
         """Request that the Outstation perform a cold restart. Command syntax is: restart"""
-        self.master().Restart(opendnp3.RestartType.COLD, restart_callback)
+        self.application.master.Restart(opendnp3.RestartType.COLD, restart_callback)
 
     def do_s1(self, line):
         """Send a SelectAndOperate BinaryOutput (group 12) index 8 LATCH_ON to the Outstation. Command syntax is: s1"""
-        self.application.send_select_and_operate_command(8, opendnp3.ControlCode.LATCH_ON)
+        self.application.send_select_and_operate_command(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON),
+                                                         8,
+                                                         command_callback)
 
     def do_s2(self, line):
         """Send a SelectAndOperate BinaryOutput (group 12) CommandSet to the Outstation. Command syntax is: s2"""
-        self.application.send_select_and_operate_command_set(opendnp3.CommandSet([
-            opendnp3.WithIndex(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON), 0)
-        ]))
+        self.application.send_select_and_operate_command_set(opendnp3.CommandSet(
+            [
+                opendnp3.WithIndex(opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON), 0)
+            ]),
+            command_callback
+        )
 
     def do_scan_all(self, line):
         """Call ScanAllObjects. Command syntax is: scan_all"""
-        self.master().ScanAllObjects(opendnp3.GroupVariationID(2, 1), opendnp3.TaskConfig().Default())
+        self.application.master.ScanAllObjects(opendnp3.GroupVariationID(2, 1), opendnp3.TaskConfig().Default())
 
     def do_scan_fast(self, line):
         """Demand an immediate fast scan. Command syntax is: scan_fast"""
@@ -144,7 +149,7 @@ class MasterCmd(cmd.Cmd):
 
     def do_scan_range(self, line):
         """Do an ad-hoc scan of a range of points (group 1, variation 2, indexes 0-3). Command syntax is: scan_range"""
-        self.master().ScanRange(opendnp3.GroupVariationID(1, 2), 0, 3, opendnp3.TaskConfig().Default())
+        self.application.master.ScanRange(opendnp3.GroupVariationID(1, 2), 0, 3, opendnp3.TaskConfig().Default())
 
     def do_scan_slow(self, line):
         """Demand an immediate slow scan. Command syntax is: scan_slow"""
@@ -153,11 +158,11 @@ class MasterCmd(cmd.Cmd):
     def do_write_time(self, line):
         """Write a TimeAndInterval to the Outstation. Command syntax is: write_time"""
         millis_since_epoch = int((datetime.now() - datetime.utcfromtimestamp(0)).total_seconds() * 1000.0)
-        self.master().Write(opendnp3.TimeAndInterval(opendnp3.DNPTime(millis_since_epoch),
-                                                     100,
-                                                     opendnp3.IntervalUnits.Seconds),
-                            0,                            # index
-                            opendnp3.TaskConfig().Default())
+        self.application.master.Write(opendnp3.TimeAndInterval(opendnp3.DNPTime(millis_since_epoch),
+                                                               100,
+                                                               opendnp3.IntervalUnits.Seconds),
+                                      0,                            # index
+                                      opendnp3.TaskConfig().Default())
 
     def do_quit(self, line):
         """Quit the command-line interface. Command syntax is: quit"""

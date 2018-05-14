@@ -56,6 +56,22 @@ namespace opendnp3
                 value
             );
         }
+        void OnUnknownDestinationAddress(uint16_t destination) override {
+            PYBIND11_OVERLOAD(
+                void,
+                ILinkListener,
+                OnUnknownDestinationAddress,
+                destination
+            );
+        }
+        void OnUnknownSourceAddress(uint16_t source) override {
+            PYBIND11_OVERLOAD(
+                void,
+                ILinkListener,
+                OnUnknownSourceAddress,
+                source
+            );
+        }
         void OnKeepAliveInitiated() override {
             PYBIND11_OVERLOAD(
                 void,
@@ -95,6 +111,20 @@ void bind_ILinkListener(py::module &m)
             &opendnp3::ILinkListener::OnStateChange,
             "Called when a the reset/unreset status of the link layer changes.",
             py::arg("value")
+        )
+
+        .def(
+            "OnUnknownDestinationAddress",
+            &opendnp3::ILinkListener::OnUnknownDestinationAddress,
+            "Called when a link-layer frame is received from an unknown destination address.",
+            py::arg("destination")
+        )
+
+        .def(
+            "OnUnknownSourceAddress",
+            &opendnp3::ILinkListener::OnUnknownSourceAddress,
+            "Called when a link-layer frame is received from an unknown source address.",
+            py::arg("source")
         )
 
         .def(

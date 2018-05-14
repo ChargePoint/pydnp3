@@ -49,6 +49,7 @@ class TestConstructors():
         assert asiopal.ResourceManager() is not None
         assert asiopal.SerialSettings() is not None
         assert asiopal.steady_clock_t() is not None
+        assert opendnp3.Addresses() is not None
         assert opendnp3.AnalogCommandEvent() is not None
         assert opendnp3.AnalogOutputInt16() is not None
         assert opendnp3.AnalogOutputInt32() is not None
@@ -128,7 +129,6 @@ class TestConstructors():
         assert openpal.ArrayViewTimeAndIntervalConfig() is not None
         assert openpal.ArrayViewBuffer() is not None
         assert openpal.Buffer() is not None
-        assert openpal.RingBuffer16() is not None
         assert openpal.RSlice() is not None
         assert openpal.SecureBuffer() is not None
         assert openpal.SettableRSlice() is not None
@@ -180,6 +180,7 @@ class TestConstructors():
                                  "adapter") is not None
         assert asiopal.ThreadPool(openpal.Logger(), asiopal.IO(), 1) is not None
         assert asiopal.TLSConfig("~/files/peerCert", "~/files/localCert", "~/files/privateKey") is not None
+        assert opendnp3.Addresses(1, 10) is not None
         assert opendnp3.AnalogOutputInt16(1, opendnp3.CommandStatus.TIMEOUT) is not None
         assert opendnp3.AnalogOutputInt32(1, opendnp3.CommandStatus.FORMAT_ERROR) is not None
         assert opendnp3.AnalogOutputFloat32(1, opendnp3.CommandStatus.ALREADY_ACTIVE) is not None
@@ -240,7 +241,7 @@ class TestConstructors():
         assert opendnp3.HeaderInfo(opendnp3.GroupVariation.Group10Var0, opendnp3.QualifierCode.UINT8_CNT,
                                    opendnp3.TimestampMode.SYNCHRONIZED, 100) is not None
         assert opendnp3.RestartOperationResult(opendnp3.TaskCompletion.SUCCESS, openpal.TimeDuration()) is not None
-        assert opendnp3.DatabaseSizes(0, 1, 2, 3, 4, 5, 6, 7) is not None
+        assert opendnp3.DatabaseSizes(0, 1, 2, 3, 4, 5, 6, 7, 8) is not None
         assert opendnp3.EventBufferConfig(0, 1, 2, 3, 4, 5, 6, 7) is not None
         assert opendnp3.OutstationConfig(opendnp3.OutstationParams(), opendnp3.EventBufferConfig()) is not None
         assert opendnp3.OutstationParams(opendnp3.IndexMode.Contiguous, 0x3, openpal.TimeDuration(),
@@ -260,7 +261,6 @@ class TestConstructors():
         assert openpal.ArrayBuffer(10) is not None
         assert openpal.Buffer(27) is not None
         assert openpal.Buffer(openpal.RSlice()) is not None
-        assert openpal.LinkedListInt(5) is not None
         assert openpal.PairInt(5, 10) is not None
         assert openpal.RSlice(0xFF, 100) is not None
         assert openpal.SecureBuffer(10) is not None

@@ -66,7 +66,7 @@ void bind_EventBufferConfig(py::module &m)
             py::arg("maxFrozenCounterEvents") = 0,
             py::arg("maxBinaryOutputStatusEvents") = 0,
             py::arg("maxAnalogOutputStatusEvents") = 0,
-            py::arg("maxSecurityStatisticEvents") = 0
+            py::arg("maxOctetStringEvents") = 0
         )
 
         .def_readwrite(
@@ -119,10 +119,10 @@ void bind_EventBufferConfig(py::module &m)
         )
 
         .def_readwrite(
-            "maxSecurityStatisticEvents",
-            &opendnp3::EventBufferConfig::maxSecurityStatisticEvents,
-            "   The number of security statistic events the outstation will buffer before overflowing. \n"
-            ":type maxSecurityStatisticEvents: unsigned short"
+            "maxOctetStringEvents",
+            &opendnp3::EventBufferConfig::maxOctetStringEvents,
+            "   The number of analog output status events the outstation will buffer before overflowing. \n"
+            ":type maxOctetStringEvents: unsigned short"
         )
 
         .def_static(
@@ -132,13 +132,6 @@ void bind_EventBufferConfig(py::module &m)
             "   You probably don't want to use this method unless your implementation actually reports every type. \n"
             ":type sizes: unsigned short",
             py::arg("sizes")
-        )
-
-        .def(
-            "GetMaxEventsForType",
-            &opendnp3::EventBufferConfig::GetMaxEventsForType,
-            "Retrieve the number of events using a type enumeration.",
-            py::arg("type")
         )
 
         .def(

@@ -122,6 +122,17 @@ void bind_UpdateBuilder(py::module &m)
         .def(
             "Update",
             [](asiodnp3::UpdateBuilder &self,
+               const opendnp3::OctetString& meas,
+               uint16_t index,
+               opendnp3::EventMode mode) -> asiodnp3::UpdateBuilder & {return self.Update(meas, index, mode);},
+            ":param mode: defaults to opendnp3.EventMode.Detect \n"
+            ":type index: unsigned short",
+            py::arg("measurement"), py::arg("index"), py::arg("mode") = opendnp3::EventMode::Detect
+        )
+
+        .def(
+            "Update",
+            [](asiodnp3::UpdateBuilder &self,
                const opendnp3::TimeAndInterval& meas,
                uint16_t index) -> asiodnp3::UpdateBuilder & {return self.Update(meas, index);},
             ":type index: unsigned short",

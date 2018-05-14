@@ -180,6 +180,14 @@ void bind_MeasurementConfig(py::module &m)
 
         .def(py::init<>());
 
+    // ----- class: OctetStringConfig -----
+    declareEventConfig<opendnp3::OctetStringInfo>(m, "OctetStringInfo");
+
+    py::class_<opendnp3::OctetStringConfig,
+               opendnp3::EventConfig<opendnp3::OctetStringInfo>>(m, "OctetStringConfig")
+
+        .def(py::init<>());
+
     // ----- class: TimeAndIntervalConfig -----
     declareStaticConfig<opendnp3::TimeAndIntervalInfo>(m, "TimeAndIntervalInfo");
 

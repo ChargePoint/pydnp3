@@ -56,6 +56,11 @@ void bind_LinkConfig(py::module &m)
             py::arg("IsMaster"), py::arg("UseConfirms")
         )
 
+        .def(
+            "GetAddresses",
+            &opendnp3::LinkConfig::GetAddresses
+        )
+
         .def_readwrite(
             "IsMaster",
             &opendnp3::LinkConfig::IsMaster,

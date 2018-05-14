@@ -57,6 +57,11 @@ void bind_ClassField(py::module &m)
     );
 
     cls.def(
+        py::init<opendnp3::EventClass>(),
+        py::arg("ec")
+    );
+
+    cls.def(
         py::init<uint8_t>(),
         py::arg("mask")
     );

@@ -44,8 +44,12 @@ class TestOperators():
         assert opendnp3.BinaryCommandEvent() == opendnp3.BinaryCommandEvent(opendnp3.Flags(0))
         assert opendnp3.ControlRelayOutputBlock() == opendnp3.ControlRelayOutputBlock(opendnp3.ControlCode.LATCH_ON)
         assert opendnp3.IINField() == opendnp3.IINField(0x0, 0x0)
+        assert opendnp3.Addresses() == opendnp3.Addresses()
         assert openpal.__eq__(openpal.TimeDuration(), openpal.TimeDuration())
         assert openpal.__eq__(openpal.MonotonicTimestamp(), openpal.MonotonicTimestamp(0))
+
+    def test_ne(self):
+        assert opendnp3.Addresses(1, 2) != opendnp3.Addresses(3, 4)
 
     def test_greater_than(self):
         assert openpal.__gt__(openpal.MonotonicTimestamp(120), openpal.MonotonicTimestamp(60))

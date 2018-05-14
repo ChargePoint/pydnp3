@@ -102,13 +102,13 @@ void bind_DNP3Manager(py::module &m)
             "   Add a persistent TCP server channel. Only accepts a single connection at a time. \n"
             ":param id: Alias that will be used for logging purposes with this channel \n"
             ":param levels: Bitfield that describes the logging level for this channel and associated sessions \n"
-            ":param retry: Retry parameters for failed channels \n"
+            ":param mode: Describes how new connections are treated when another session already exists \n"
             ":param endpoint: Network adapter to listen on, i.e. 127.0.0.1 or 0.0.0.0 \n"
             ":param port: Port to listen on \n"
             ":param listener: optional callback interface (can be nullptr) for info about the running channel \n"
             ":return: shared_ptr to a channel interface",
             py::call_guard<py::gil_scoped_release>(),
-            py::arg("id"), py::arg("levels"), py::arg("retry"), py::arg("endpoint"), py::arg("port"), py::arg("listener"),
+            py::arg("id"), py::arg("levels"), py::arg("mode"), py::arg("endpoint"), py::arg("port"), py::arg("listener"),
             py::return_value_policy::reference
         )
 
@@ -141,7 +141,8 @@ void bind_DNP3Manager(py::module &m)
             ":param listener: optional callback interface (can be nullptr) for info about the running channel \n"
             ":param ec: An error code. If set, a nullptr will be returned \n"
             ":return: shared_ptr to a channel interface",
-            py::arg("id"), py::arg("levels"), py::arg("retry"), py::arg("host"), py::arg("local"), py::arg("port"), py::arg("config"), py::arg("listener"), py::arg("ec"),
+            py::arg("id"), py::arg("levels"), py::arg("retry"), py::arg("host"), py::arg("local"), py::arg("port"),
+            py::arg("config"), py::arg("listener"), py::arg("ec"),
             py::return_value_policy::reference
         )
 
@@ -152,14 +153,15 @@ void bind_DNP3Manager(py::module &m)
             ":throw std::system_error Throws underlying ASIO exception of TLS configuration is invalid \n"
             ":param id: Alias that will be used for logging purposes with this channel \n"
             ":param levels: Bitfield that describes the logging level for this channel and associated sessions \n"
-            ":param retry: Retry parameters for failed channels \n"
+            ":param mode: Describes how new connections are treated when another session already exists \n"
             ":param endpoint: Network adapter to listen on, i.e. 127.0.0.1 or 0.0.0.0 \n"
             ":param port: Port to listen on \n"
             ":param config: TLS configuration information \n"
             ":param listener: optional callback interface (can be nullptr) for info about the running channel \n"
             ":param ec: An error code. If set, a nullptr will be returned \n"
             ":return: shared_ptr to a channel interface",
-            py::arg("id"), py::arg("levels"), py::arg("retry"), py::arg("endpoint"), py::arg("port"), py::arg("config"), py::arg("listener"), py::arg("ec"),
+            py::arg("id"), py::arg("levels"), py::arg("mode"), py::arg("endpoint"), py::arg("port"), py::arg("config"),
+            py::arg("listener"), py::arg("ec"),
             py::return_value_policy::reference
         )
 

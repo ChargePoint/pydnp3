@@ -199,6 +199,29 @@ void bind_MeasurementInfo(py::module &m)
             [](py::object) { return opendnp3::AnalogOutputStatusInfo::DefaultStaticVariation; }
         );
 
+    // ----- class: opendnp3::OctetStringInfo -----
+    py::class_<opendnp3::OctetStringInfo>(m, "OctetStringInfo")
+
+        .def_property_readonly_static(
+            "EventTypeEnum",
+            [](py::object) { return opendnp3::OctetStringInfo::EventTypeEnum; }
+        )
+
+        .def_property_readonly_static(
+            "StaticTypeEnum",
+            [](py::object) { return opendnp3::OctetStringInfo::StaticTypeEnum; }
+        )
+
+        .def_property_readonly_static(
+            "DefaultEventVariation",
+            [](py::object) { return opendnp3::OctetStringInfo::DefaultEventVariation; }
+        )
+
+        .def_property_readonly_static(
+            "DefaultStaticVariation",
+            [](py::object) { return opendnp3::OctetStringInfo::DefaultStaticVariation; }
+        );
+
     // ----- class: opendnp3::TimeAndIntervalInfo -----
     py::class_<opendnp3::TimeAndIntervalInfo>(m, "TimeAndIntervalInfo")
 
@@ -214,11 +237,6 @@ void bind_MeasurementInfo(py::module &m)
 
     // ----- class: opendnp3::SecurityStatInfo -----
     py::class_<opendnp3::SecurityStatInfo>(m, "SecurityStatInfo")
-
-        .def_property_readonly_static(
-            "EventTypeEnum",
-            [](py::object) { return opendnp3::SecurityStatInfo::EventTypeEnum; }
-        )
 
         .def_property_readonly_static(
             "DefaultEventVariation",
