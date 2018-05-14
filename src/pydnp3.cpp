@@ -76,7 +76,6 @@ PYBIND11_MODULE(pydnp3, root_module) {
     bind_WSlice(openpal);
     bind_Buffer(openpal);
     bind_Pair(openpal);
-    bind_SecureBuffer(openpal);
     bind_Settable(openpal);
     bind_StaticBuffer(openpal);
     //bind_IPhysicalLayer(openpal);             //@todo: can't include "ChannelStatistics.h"

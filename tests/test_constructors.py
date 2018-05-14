@@ -130,7 +130,6 @@ class TestConstructors():
         assert openpal.ArrayViewBuffer() is not None
         assert openpal.Buffer() is not None
         assert openpal.RSlice() is not None
-        assert openpal.SecureBuffer() is not None
         assert openpal.SettableRSlice() is not None
         assert openpal.SettableWSlice() is not None
         assert openpal.StaticBuffer4() is not None
@@ -263,8 +262,6 @@ class TestConstructors():
         assert openpal.Buffer(openpal.RSlice()) is not None
         assert openpal.PairInt(5, 10) is not None
         assert openpal.RSlice(0xFF, 100) is not None
-        assert openpal.SecureBuffer(10) is not None
-        assert openpal.SecureBuffer(openpal.RSlice()) is not None
         assert openpal.WSlice(0x30, 20) is not None
         assert openpal.MonotonicTimestamp(100) is not None
         assert openpal.UTCTimestamp(900) is not None

@@ -219,7 +219,6 @@
 #include "openpal/container/HasSize.h"
 #include "openpal/container/Pair.h"
 #include "openpal/container/RSlice.h"
-#include "openpal/container/SecureBuffer.h"
 #include "openpal/container/Settable.h"
 #include "openpal/container/StaticBuffer.h"
 #include "openpal/container/WSlice.h"
