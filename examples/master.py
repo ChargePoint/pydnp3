@@ -60,7 +60,8 @@ class MyMaster:
                                         self.listener)
 
         _log.debug('Configuring the DNP3 stack.')
-        if not stack_config:
+        self.stack_config = stack_config
+        if not self.stack_config:
             self.stack_config = asiodnp3.MasterStackConfig()
             self.stack_config.master.responseTimeout = openpal.TimeDuration().Seconds(2)
             self.stack_config.link.RemoteAddr = 10
