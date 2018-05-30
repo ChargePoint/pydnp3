@@ -144,6 +144,7 @@ class MyMaster:
         del self.channel
         self.manager.Shutdown()
 
+
 class MyLogger(openpal.ILogHandler):
     """
         Override ILogHandler in this manner to implement application-specific logging behavior.
@@ -159,6 +160,7 @@ class MyLogger(openpal.ILogHandler):
         message = entry.message
         _log.debug('LOG\t\t{:<10}\tfilters={:<5}\tlocation={:<25}\tentry={}'.format(flag, filters, location, message))
 
+
 class AppChannelListener(asiodnp3.IChannelListener):
     """
         Override IChannelListener in this manner to implement application-specific channel behavior.
@@ -168,7 +170,8 @@ class AppChannelListener(asiodnp3.IChannelListener):
         super(AppChannelListener, self).__init__()
 
     def OnStateChange(self, state):
-        _log.debug('In AppChannelListener.OnStateChange: state={}'.format(state))
+        _log.debug('In AppChannelListener.OnStateChange: state={}'.format(opendnp3.ChannelStateToString(state)))
+
 
 class SOEHandler(opendnp3.ISOEHandler):
     """
