@@ -3,12 +3,12 @@ import os
 import subprocess
 import re
 import platform
+import io
 
-import setuptools
 from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
 from distutils.version import LooseVersion
-__version__ = '0.0.1'
+__version__ = '0.0.80'
 
 
 class CMakeExtension(Extension):
@@ -59,6 +59,9 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', ext.sourcedir] + cmake_args, cwd=self.build_temp, env=env)
         subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
 
+here = os.path.abspath(os.path.dirname(__file__))
+README = io.open(os.path.join(here, 'README.md'), encoding='utf8').read()
+
 setup(
     name='pydnp3',
     version=__version__,
@@ -66,7 +69,18 @@ setup(
     author_email='anh@kisensum.com',
     url='http://github.com/Kisensum/pydnp3',
     description='pydnp3 -- python binding for opendnp3',
-    long_description='',
+    long_description=README,
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6"
+    ],
+    license='apache',
+    platforms=['macosx', 'linux'],
     install_requires=['pybind11>=2.2'],
     ext_modules=[CMakeExtension('pydnp3')],
     cmdclass=dict(build_ext=CMakeBuild),
