@@ -7,7 +7,7 @@ include setup.py
 
 global-include CMakeLists.txt *.cmake
 
-recursive-include deps/dnp3/*
+recursive-include deps/dnp3 *
 recursive-include deps/pybind11/include *.h
 recursive-include examples *
 recursive-include src *

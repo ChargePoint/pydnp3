@@ -8,7 +8,7 @@ import io
 from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
 from distutils.version import LooseVersion
-__version__ = '0.0.80'
+__version__ = '0.0.82'
 
 
 class CMakeExtension(Extension):
@@ -70,8 +70,10 @@ setup(
     url='http://github.com/Kisensum/pydnp3',
     description='pydnp3 -- python binding for opendnp3',
     long_description=README,
+    long_description_content_type='text/markdown',
     classifiers=[
         "Development Status :: 5 - Production/Stable",
+        "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 2.7",
