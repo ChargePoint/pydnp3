@@ -41,12 +41,14 @@ Run outstation from examples/outstation_cmd.py
 >$ python examples/outstation_cmd.py
 
 Run master from tests/master.py (in a different terminal)
->$ cd tests
->$ python -c 'from master import *; run_master_1_hang()'
->$ python -c 'from master import *; run_master_2_no_hang()'
->$ python -c 'from master import *; run_master_3_no_hang()'
->$ python -c 'from master import *; run_master_4_hang()'
->$ python -c 'from master import *; run_master_5_no_hang()'
+```
+  $ cd tests
+  $ python -c 'from master import *; run_master_1_hang()'
+  $ python -c 'from master import *; run_master_2_no_hang()'
+  $ python -c 'from master import *; run_master_3_no_hang()'
+  $ python -c 'from master import *; run_master_4_hang()'
+  $ python -c 'from master import *; run_master_5_no_hang()'
+```
 
 If the hang on shutdown occurs, make sure to kill process to shutdown master:
 > $ pkill -9 -f master
