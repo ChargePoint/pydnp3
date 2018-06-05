@@ -31,7 +31,7 @@ At the moment, this library must be built from source:
 ## Documentation
 
 pydnp3 is a thin wrapper around most all of the opendnp3 classes.  Documentation for the opendnp3
-classes is available at [automatak](www.automatak.com/opendnp3/#documentation).
+classes is available at [automatak](https://www.automatak.com/opendnp3/#documentation).
 
 Use python's help to discover the available wrapper classes and functions.  For example,
 

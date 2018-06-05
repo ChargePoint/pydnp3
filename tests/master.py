@@ -54,6 +54,7 @@ def get_manager_2():
     time.sleep(5)
     return manager2 # <--- Return the manager2 so that we can get the manager2 outside the stack
 
+
 def run_master_2_no_hang():
     manager2 = get_manager_2() # <--- Get the manager2 by calling get_manager_2() function
     manager2.Shutdown()        # <--- The hang issue does not happen either with or without calling Shutdown()
@@ -112,7 +113,7 @@ def run_master_5_no_hang():
     manager3.Shutdown() # <--- The hang issue does not happen either with or without calling Shutdown()
 
 
-# run_master_1_hang()
+run_master_1_hang()
 # run_master_2_no_hang()
 # run_master_3_no_hang()
 # run_master_4_hang()
