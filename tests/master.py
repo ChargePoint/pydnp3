@@ -113,7 +113,7 @@ def run_master_5_no_hang():
     manager3.Shutdown() # <--- The hang issue does not happen either with or without calling Shutdown()
 
 
-run_master_1_hang()
+# run_master_1_hang()
 # run_master_2_no_hang()
 # run_master_3_no_hang()
 # run_master_4_hang()
