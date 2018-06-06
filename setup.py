@@ -8,7 +8,7 @@ import io
 from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
 from distutils.version import LooseVersion
-__version__ = '0.0.82'
+__version__ = '0.0.86'
 
 
 class CMakeExtension(Extension):
@@ -81,7 +81,7 @@ setup(
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6"
     ],
-    license='apache',
+    license='Apache 2.0',
     platforms=['macosx', 'linux'],
     install_requires=['pybind11>=2.2'],
     ext_modules=[CMakeExtension('pydnp3')],

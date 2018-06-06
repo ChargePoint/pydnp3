@@ -67,11 +67,20 @@ void bind_DNP3Manager(py::module &m)
         )
 
         .def(
+            "__del__",
+            [](asiodnp3::DNP3Manager &self)
+            {
+                self.~DNP3Manager();
+            },
+            "Destructor with gil_scoped_release.",
+            py::call_guard<py::gil_scoped_release>()
+        )
+
+        .def(
             "Shutdown",
             [](asiodnp3::DNP3Manager &self)
             {
                 self.Shutdown();
-                self.~DNP3Manager();
             },
             "Permanently shutdown the manager and all sub-objects that have been created. Stop the thread pool.",
             py::call_guard<py::gil_scoped_release>()

@@ -229,7 +229,7 @@ class TestMaster:
         del self.integrity_scan
         del self.master
         del self.channel
-        self.manager.Shutdown()
+        self.manager.__del__()
 
     def run_master(self, cmd=None):
         self.config_master()

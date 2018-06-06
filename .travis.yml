@@ -24,6 +24,18 @@ matrix:
             - cmake
       env:
          - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+         - PYTHON=3.5
+      sudo: required
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+            - cmake
+      env:
+         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
          - PYTHON=3.6
       sudo: required
 
