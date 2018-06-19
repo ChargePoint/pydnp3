@@ -142,7 +142,7 @@ class MyMaster:
         del self.fast_scan
         del self.master
         del self.channel
-        self.manager.__del__()
+        self.manager.Shutdown()
 
 
 class MyLogger(openpal.ILogHandler):

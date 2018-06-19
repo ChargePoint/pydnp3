@@ -81,6 +81,7 @@ void bind_DNP3Manager(py::module &m)
             [](asiodnp3::DNP3Manager &self)
             {
                 self.Shutdown();
+                self.~DNP3Manager();
             },
             "Permanently shutdown the manager and all sub-objects that have been created. Stop the thread pool.",
             py::call_guard<py::gil_scoped_release>()
