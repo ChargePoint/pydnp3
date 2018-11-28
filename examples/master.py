@@ -218,30 +218,30 @@ class MasterApplication(opendnp3.IMasterApplication):
     def __init__(self):
         super(MasterApplication, self).__init__()
 
-        # Overridden method
-        def AssignClassDuringStartup(self):
-            _log.debug('In MasterApplication.AssignClassDuringStartup')
-            return False
+    # Overridden method
+    def AssignClassDuringStartup(self):
+        _log.debug('In MasterApplication.AssignClassDuringStartup')
+        return False
 
-        # Overridden method
-        def OnClose(self):
-            _log.debug('In MasterApplication.OnClose')
+    # Overridden method
+    def OnClose(self):
+        _log.debug('In MasterApplication.OnClose')
 
-        # Overridden method
-        def OnOpen(self):
-            _log.debug('In MasterApplication.OnOpen')
+    # Overridden method
+    def OnOpen(self):
+        _log.debug('In MasterApplication.OnOpen')
 
-        # Overridden method
-        def OnReceiveIIN(self, iin):
-            _log.debug('In MasterApplication.OnReceiveIIN')
+    # Overridden method
+    def OnReceiveIIN(self, iin):
+        _log.debug('In MasterApplication.OnReceiveIIN')
 
-        # Overridden method
-        def OnTaskComplete(self, info):
-            _log.debug('In MasterApplication.OnTaskComplete')
+    # Overridden method
+    def OnTaskComplete(self, info):
+        _log.debug('In MasterApplication.OnTaskComplete')
 
-        # Overridden method
-        def OnTaskStart(self, type, id):
-            _log.debug('In MasterApplication.OnTaskStart')
+    # Overridden method
+    def OnTaskStart(self, type, id):
+        _log.debug('In MasterApplication.OnTaskStart')
 
 
 def collection_callback(result=None):
