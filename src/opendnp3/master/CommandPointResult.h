@@ -29,7 +29,7 @@
  */
 
 #include <pybind11/pybind11.h>
-#include <python2.7/Python.h>
+#include <Python.h>
 
 #include <opendnp3/master/CommandPointResult.h>
 

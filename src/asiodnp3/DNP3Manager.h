@@ -29,7 +29,7 @@
  */
 
 #include <pybind11/pybind11.h>
-#include <python2.7/Python.h>
+#include <Python.h>
 
 #include <asiodnp3/DNP3Manager.h>
 
@@ -64,6 +64,16 @@ void bind_DNP3Manager(py::module &m)
             ":param onThreadStart Action to run when a thread pool thread starts \n"
             ":param onThreadExit Action to run just before a thread pool thread exits",
             py::arg("concurrencyHint"), py::arg("handler"), py::arg("onThreadStart"), py::arg("onThreadExit")
+        )
+
+        .def(
+            "__del__",
+            [](asiodnp3::DNP3Manager &self)
+            {
+                self.~DNP3Manager();
+            },
+            "Destructor with gil_scoped_release.",
+            py::call_guard<py::gil_scoped_release>()
         )
 
         .def(

@@ -29,7 +29,7 @@
  */
 
 #include <pybind11/pybind11.h>
-#include <python2.7/Python.h>
+#include <Python.h>
 
 #include <asiodnp3/DatabaseConfig.h>
 
@@ -95,6 +95,12 @@ void bind_DatabaseConfig(py::module &m)
         .def_property_readonly(
             "timeAndInterval",
             [](const asiodnp3::DatabaseConfig &self) { return &self.timeAndInterval;},
+            py::return_value_policy::reference
+        )
+
+         .def_property_readonly(
+            "octetString",
+            [](const asiodnp3::DatabaseConfig &self) { return &self.octetString;},
             py::return_value_policy::reference
         );
 }

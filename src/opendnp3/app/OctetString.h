@@ -29,7 +29,7 @@
  */
 
 #include <pybind11/pybind11.h>
-#include <python2.7/Python.h>
+#include <Python.h>
 
 #include <opendnp3/app/OctetString.h>
 
@@ -42,15 +42,31 @@ void bind_OctetString(py::module &m)
     py::class_<opendnp3::OctetString, opendnp3::OctetData, std::shared_ptr<opendnp3::OctetString>>(m, "OctetString",
         "Respresents group 110/111 objects.")
 
-        .def(py::init<>())
+        .def(
+            py::init<>(),
+            "Construct with a default value of [0x00] (length == 1)."
+        )
 
         .def(
             py::init<const opendnp3::OctetString&>(),
+            "Copy construct from another OctetString.",
             py::arg("data")
         )
 
         .def(
+            py::init<const char *>(),
+            "Construct from a c-style string, strlen() is used internally to determine the length. \n"
+            "If the length is 0, the default value of [0x00] is assigned \n"
+            "If the length is > 255, only the first 255 bytes are copied. \n"
+            "The null terminator is NOT copied as part of buffer.",
+            py::arg("input")
+        )
+
+        .def(
             py::init<const openpal::RSlice&>(),
+            "Construct from read-only buffer slice. \n"
+            "If the length is 0, the default value of [0x00] is assigned \n"
+            "If the length is > 255, only the first 255 bytes are copied.",
             py::arg("buffer")
         );
 }

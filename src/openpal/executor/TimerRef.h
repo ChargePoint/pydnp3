@@ -29,7 +29,7 @@
  */
 
 #include <pybind11/pybind11.h>
-#include <python2.7/Python.h>
+#include <Python.h>
 
 #include <openpal/executor/TimerRef.h>
 
@@ -68,4 +68,3 @@ void bind_TimerRef(py::module &m)
             ":return: true if the timer was active, false otherwise"
         );
 }
-

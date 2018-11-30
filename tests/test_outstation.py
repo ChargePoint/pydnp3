@@ -164,7 +164,7 @@ class TestOutstation:
             outstation.Apply(builder.Build())
 
             # If the message sent successful, the log handler should catch loggerid "server"
-            time.sleep(2)
+            time.sleep(3)
             assert self.handler.server == True
 
             # Test outstation application tracking info

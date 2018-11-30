@@ -29,7 +29,7 @@
  */
 
 #include <pybind11/pybind11.h>
-#include <python2.7/Python.h>
+#include <Python.h>
 
 #include <opendnp3/app/OctetData.h>
 
@@ -42,10 +42,26 @@ void bind_OctetData(py::module &m)
     py::class_<opendnp3::OctetData, std::shared_ptr<opendnp3::OctetData>>(m, "OctetData",
         "A base-class for bitstrings containing up to 255 bytes")
 
-        .def(py::init<>())
+        .def(
+            py::init<>(),
+            "Construct with a default value of [0x00] (length == 1)."
+        )
+
+        .def(
+            py::init<const char *>(),
+            "Construct from a c-style string, strlen() is used internally to determine the length. \n"
+            "If the length is 0, the default value of [0x00] is assigned \n"
+            "If the length is > 255, only the first 255 bytes are copied. \n"
+            "The null terminator is NOT copied as part of buffer.",
+            py::arg("input")
+        )
 
         .def(
             py::init<const openpal::RSlice&>(),
+            "Construct from read-only buffer slice. \n"
+            "If the length is 0, the default value of [0x00] is assigned \n"
+            "If the length is > 255, only the first 255 bytes are copied. \n"
+            "The null terminator is NOT copied as part of buffer.",
             py::arg("input")
         )
 
@@ -56,12 +72,32 @@ void bind_OctetData(py::module &m)
 
         .def(
             "Set",
-            &opendnp3::OctetData::Set
+            (bool (opendnp3::OctetData::*)(const openpal::RSlice&))
+            &opendnp3::OctetData::Set,
+            "Set the octet data to the input buffer. \n"
+            "If the length is 0, the default value of [0x00] is assigned \n"
+            "If the length is > 255, only the first 255 bytes are copied. \n"
+            "Return true if the input meets the length requirements, false otherwise. \n"
+            ":param input: input the input data to copy into this object",
+            py::arg("input")
+        )
+
+        .def(
+            "Set",
+            (bool (opendnp3::OctetData::*)(const char *))
+            &opendnp3::OctetData::Set,
+            "Set the buffer equal to the supplied c-string. \n"
+            "If the length is 0, the default value of [0x00] is assigned \n"
+            "If the length is > 255, only the first 255 bytes are copied. \n"
+            "Return true if the input meets the length requirements, false otherwise. \n"
+            ":param input: c-style string to copy into this object",
+            py::arg("input")
         )
 
         .def(
             "ToRSlice",
-            &opendnp3::OctetData::ToRSlice
+            &opendnp3::OctetData::ToRSlice,
+            "Return a view of the current data as a read-only slice."
         )
 
         .def_property_readonly_static(
