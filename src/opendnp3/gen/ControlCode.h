@@ -77,7 +77,7 @@ void bind_ControlCode(py::module &m)
 
             .value(
                 "PULSE_OFF_CANCEL",
-                opendnp3::ControlCode::PULSE_ON_CANCEL,
+                opendnp3::ControlCode::PULSE_OFF_CANCEL,
                 "Non-interoperable code. Do not use for new applications. Cancel in-progress and pending commands, "
                 "process remainder of fields as if the control code were PULSE_OFF."
             )
