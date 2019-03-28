@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_TLSCONFIG_H
+#define PYDNP3_ASIOPAL_TLSCONFIG_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/TLSConfig.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -118,3 +123,6 @@ void bind_TLSConfig(py::module &m)
             "Openssl format cipher list"
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

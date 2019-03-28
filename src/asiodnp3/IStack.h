@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_ISTACK_H
+#define PYDNP3_ASIODNP3_ISTACK_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/IStack.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -110,3 +115,6 @@ void bind_IStack(py::module &m)
             ":return: stack statistics counters."
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

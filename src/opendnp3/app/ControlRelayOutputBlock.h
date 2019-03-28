@@ -28,10 +28,16 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_CONTROLRELAYOUTPUTBLOCK_H
+#define PYDNP3_OPENDNP3_APP_CONTROLRELAYOUTPUTBLOCK_H
+
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/ControlRelayOutputBlock.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -121,3 +127,6 @@ void bind_ControlRelayOutputBlock(py::module &m)
             "Equality comparision."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

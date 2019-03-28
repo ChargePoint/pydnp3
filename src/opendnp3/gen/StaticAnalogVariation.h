@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_STATICANALOGVARIATION_H
+#define PYDNP3_OPENDNP3_GEN_STATICANALOGVARIATION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/StaticAnalogVariation.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -47,3 +52,6 @@ void bind_StaticAnalogVariation(py::module &m)
         .value("Group30Var5", opendnp3::StaticAnalogVariation::Group30Var5)
         .value("Group30Var6", opendnp3::StaticAnalogVariation::Group30Var6);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

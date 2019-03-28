@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_OUTSTATION_OUTSTATIONCONFIG_H
+#define PYDNP3_OPENDNP3_OUTSTATION_OUTSTATIONCONFIG_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/outstation/OutstationConfig.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -65,3 +70,6 @@ void bind_OutstationConfig(py::module &m)
             "Describes the sizes in the event buffer."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

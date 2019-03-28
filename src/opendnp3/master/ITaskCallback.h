@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_ITASKCALLBACK_H
+#define PYDNP3_OPENDNP3_MASTER_ITASKCALLBACK_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/ITaskCallback.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -98,3 +103,6 @@ void bind_ITaskCallback(py::module &m)
             "Called when the task no longer exists and no more calls will be made to OnStart/OnComplete."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

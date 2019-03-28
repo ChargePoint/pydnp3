@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_TIMER_H
+#define PYDNP3_ASIOPAL_TIMER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/Timer.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -57,3 +62,6 @@ void bind_Timer(py::module &m)
             &asiopal::Timer::ExpiresAt
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

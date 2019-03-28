@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_EVENTTYPE_H
+#define PYDNP3_OPENDNP3_APP_EVENTTYPE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/EventType.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -58,3 +63,6 @@ void bind_EventType(py::module &m)
         .value("EC2", opendnp3::EventClass::EC2)
         .value("EC3", opendnp3::EventClass::EC3);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

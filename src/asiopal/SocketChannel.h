@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_SOCKETCHANNEL_H
+#define PYDNP3_ASIOPAL_SOCKETCHANNEL_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/SocketChannel.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -43,3 +48,6 @@ void bind_SocketChannel(py::module &m)
                asiopal::IAsyncChannel,
                std::shared_ptr<asiopal::SocketChannel>>(m, "SocketChannel");
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

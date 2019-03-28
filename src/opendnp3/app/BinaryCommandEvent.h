@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_BINARYCOMMANDEVENT_H
+#define PYDNP3_OPENDNP3_APP_BINARYCOMMANDEVENT_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/BinaryCommandEvent.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -90,3 +95,6 @@ void bind_BinaryCommandEvent(py::module &m)
             "Equality comparision."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

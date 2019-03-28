@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_IMASTERSCAN_H
+#define PYDNP3_ASIODNP3_IMASTERSCAN_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/IMasterScan.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -70,3 +75,6 @@ void bind_IMasterScan(py::module &m)
             "Request that the scan be performed as soon as possible."
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

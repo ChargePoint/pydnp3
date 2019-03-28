@@ -28,13 +28,26 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_INDEXED_H
+#define PYDNP3_OPENDNP3_APP_INDEXED_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/Indexed.h>
 
+#ifdef PYDNP3_OPENDNP3
+
 namespace py = pybind11;
 using namespace std;
+
+namespace opendnp3 {
+    class AnalogOutputFloat32;
+    class AnalogOutputDouble64;
+    class AnalogOutputInt16;
+    class AnalogOutputInt32;
+    class ControlRelayOutputBlock;
+}
 
 template <class T>
 void declareIndexed(py::module &m, string const & type)
@@ -86,3 +99,6 @@ void bind_Indexed(py::module &m)
     declareIndexed<opendnp3::AnalogOutputFloat32>(m, "AnalogOutputFloat32");
     declareIndexed<opendnp3::AnalogOutputDouble64>(m, "AnalogOutputDouble64");
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

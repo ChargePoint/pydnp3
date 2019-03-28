@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_EVENTCOUNTERVARIATION_H
+#define PYDNP3_OPENDNP3_GEN_EVENTCOUNTERVARIATION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/EventCounterVariation.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -45,3 +50,6 @@ void bind_EventCounterVariation(py::module &m)
         .value("Group22Var5", opendnp3::EventCounterVariation::Group22Var5)
         .value("Group22Var6", opendnp3::EventCounterVariation::Group22Var6);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

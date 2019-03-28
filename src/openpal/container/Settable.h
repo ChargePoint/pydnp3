@@ -28,15 +28,20 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_SETTABLE_H
+#define PYDNP3_OPENPAL_CONTAINER_SETTABLE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/Settable.h>
 
+#ifdef PYDNP3_OPENPAL
+
 namespace py = pybind11;
 
 template <class T>
-void declareSettable(py::module &m, string const &type)
+void declareSettable(py::module &m, std::string const &type)
 {
     // ----- class: openpal::Settable<T> -----
     py::class_<openpal::Settable<T>>(m, ("Settable" + type).c_str(),
@@ -82,3 +87,6 @@ void bind_Settable(py::module &m)
     declareSettable<openpal::RSlice>(m, "RSlice");
     declareSettable<openpal::WSlice>(m, "WSlice");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

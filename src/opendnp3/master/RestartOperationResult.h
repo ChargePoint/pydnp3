@@ -28,11 +28,16 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_RESTARTOPERATIONRESULT_H
+#define PYDNP3_OPENDNP3_MASTER_RESTARTOPERATIONRESULT_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 #include <iostream>
 
 #include <opendnp3/master/RestartOperationResult.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -64,3 +69,6 @@ void bind_RestartOperationResult(py::module &m)
     // ----- class: opendnp3::RestartOperationCallbackT -----
     py::class_<opendnp3::RestartOperationCallbackT>(m, "RestartOperationCallbackT");
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

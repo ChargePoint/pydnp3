@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_EXECUTOR_IMONOTONICTIMESOURCE_H
+#define PYDNP3_OPENPAL_EXECUTOR_IMONOTONICTIMESOURCE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/executor/IMonotonicTimeSource.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -72,3 +77,6 @@ void bind_IMonotonicTimeSource(py::module &m) {
             ":return: a non-absolute timestamp for the monotonic time source"
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

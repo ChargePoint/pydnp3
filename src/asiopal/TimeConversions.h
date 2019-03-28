@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_TIMECONVERSIONS_H
+#define PYDNP3_ASIOPAL_TIMECONVERSIONS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/TimeConversions.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -55,3 +60,6 @@ void bind_TimeConversions(py::module &m)
             }
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

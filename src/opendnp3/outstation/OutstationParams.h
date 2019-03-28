@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_OUTSTATION_OUTSTATIONPARAMS_H
+#define PYDNP3_OPENDNP3_OUTSTATION_OUTSTATIONPARAMS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/outstation/OutstationParams.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -131,3 +136,6 @@ void bind_OutstationParams(py::module &m)
             "Class mask for unsolicted, default to 0 as unsolicited has to be enabled."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

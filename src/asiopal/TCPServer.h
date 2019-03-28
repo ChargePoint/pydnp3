@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_TCPSERVER_H
+#define PYDNP3_ASIOPAL_TCPSERVER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/TCPServer.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -92,3 +97,6 @@ void bind_TCPServer(py::module &m)
             "Implement IListener."
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_EXECUTOR_TIMERREF_H
+#define PYDNP3_OPENPAL_EXECUTOR_TIMERREF_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/executor/TimerRef.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -69,3 +74,5 @@ void bind_TimerRef(py::module &m)
         );
 }
 
+#endif // PYDNP3_OPENPAL
+#endif

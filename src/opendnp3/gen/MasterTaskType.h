@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_MASTERTASKTYPE_H
+#define PYDNP3_OPENDNP3_GEN_MASTERTASKTYPE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/MasterTaskType.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -57,3 +62,6 @@ void bind_MasterTaskType(py::module &m)
 	    &opendnp3::MasterTaskTypeToString
 	);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_UTIL_SEQUENCENUM_H
+#define PYDNP3_OPENPAL_UTIL_SEQUENCENUM_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/util/SequenceNum.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -81,3 +86,6 @@ void bind_SequenceNum(py::module &m)
 {
     declareSequenceNum<uint8_t, 2>(m, "Uint8");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

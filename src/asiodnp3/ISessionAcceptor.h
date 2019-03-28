@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_ISESSIONACCEPTOR_H
+#define PYDNP3_ASIODNP3_ISESSIONACCEPTOR_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/ISessionAcceptor.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -76,3 +81,6 @@ void bind_ISessionAcceptor(py::module &m)
             py::arg("sessionid"), py::arg("SOEHandler"), py::arg("application"), py::arg("config")
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

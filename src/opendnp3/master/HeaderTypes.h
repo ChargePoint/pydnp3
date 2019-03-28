@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_HEADERTYPES_H
+#define PYDNP3_OPENDNP3_MASTER_HEADERTYPES_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/HeaderTypes.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -211,3 +216,6 @@ void bind_HeaderTypes(py::module &m)
             py::arg("group"), py::arg("variation"), py::arg("count")
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

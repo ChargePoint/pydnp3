@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_UTIL_FINALLY_H
+#define PYDNP3_OPENPAL_UTIL_FINALLY_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/util/Finally.h>
+
+#ifdef PYDNP3_OPENPAL
 
 template <class Cleanup>
 void declareFinally(py::module &m, string const &type)
@@ -50,3 +55,6 @@ void declareFinally(py::module &m, string const &type)
 void bind_Finally(py::module &m)
 {
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

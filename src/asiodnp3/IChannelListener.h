@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_ICHANNELLISTENER_H
+#define PYDNP3_ASIODNP3_ICHANNELLISTENER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/IChannelListener.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -75,3 +80,6 @@ void bind_IChannelListener(py::module &m)
             py::arg("state")
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

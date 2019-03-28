@@ -28,16 +28,41 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_PARSING_ICOLLECTION_H
+#define PYDNP3_OPENDNP3_APP_PARSING_ICOLLECTION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
+#include <opendnp3/app/Indexed.h>
 #include <opendnp3/app/parsing/ICollection.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
 
+namespace openpal {
+    class UInt48Type;
+}
+
 namespace opendnp3
 {
+    class Analog;
+    class AnalogCommandEvent;
+    class AnalogOutputStatus;
+    class Binary;
+    class BinaryCommandEvent;
+    class BinaryOutputStatus;
+    class CommandPointResult;
+    class Counter;
+    class DoubleBitBinary;
+    class FrozenCounter;
+    class OctetString;
+    class TimeAndInterval;
+    class SecurityStat;
+    typedef openpal::UInt48Type DNPTime;
+
 /**
 * Overriding virtual functions from interface class IVisitor<T>.
 */
@@ -181,3 +206,6 @@ void bind_ICollection(py::module &m)
     declareICollection<opendnp3::DNPTime>(m, "DNPTime");
     declareICollection<opendnp3::CommandPointResult>(m, "CommandPointResult");
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

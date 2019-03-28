@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_CLASSFIELD_H
+#define PYDNP3_OPENDNP3_APP_CLASSFIELD_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/ClassField.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -169,3 +174,6 @@ void bind_ClassField(py::module &m)
         &opendnp3::ClassField::AllEventClasses
     );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

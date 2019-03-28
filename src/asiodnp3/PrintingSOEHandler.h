@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_PRINTINGSOEHANDLER_H
+#define PYDNP3_ASIODNP3_PRINTINGSOEHANDLER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/PrintingSOEHandler.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -155,3 +160,6 @@ void bind_PrintingSOEHandler(py::module &m)
             py::arg("info"), py::arg("values")
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

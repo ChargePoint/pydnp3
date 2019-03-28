@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_LINK_ILINKLISTENER_H
+#define PYDNP3_OPENDNP3_LINK_ILINKLISTENER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/link/ILinkListener.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -116,3 +121,6 @@ void bind_ILinkListener(py::module &m)
             "Called when a keep alive message receives a valid response."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

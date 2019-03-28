@@ -28,13 +28,18 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_QUEUE_H
+#define PYDNP3_OPENPAL_CONTAINER_QUEUE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/Queue.h>
 
+#ifdef PYDNP3_OPENPAL
+
 template <class ValueType, class IndexType>
-void declareQueue(py::module &m, string const &type)
+void declareQueue(py::module &m, std::string const &type)
 {
     // ----- class: openpal::Queue<ValueType, IndexType> -----
     py::class_<openpal::Queue<ValueType, IndexType>>(m, ("Queue" + type).c_str())
@@ -94,3 +99,6 @@ void declareQueue(py::module &m, string const &type)
 void bind_Queue(py::module &m)
 {
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

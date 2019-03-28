@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_SECUREBUFFER_H
+#define PYDNP3_OPENPAL_CONTAINER_SECUREBUFFER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/SecureBuffer.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -54,3 +59,6 @@ void bind_SecureBuffer(py::module &m)
             py::arg("input")
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

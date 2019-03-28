@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_MASTERPARAMS_H
+#define PYDNP3_OPENDNP3_MASTER_MASTERPARAMS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/MasterParams.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -128,3 +133,6 @@ void bind_MasterParams(py::module &m)
             ":type maxRxFragSize: unsigned int"
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_DNP3MANAGER_H
+#define PYDNP3_ASIODNP3_DNP3MANAGER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/DNP3Manager.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -198,3 +203,6 @@ void bind_DNP3Manager(py::module &m)
              py::arg("loggerid"), py::arg("loglevel"), py::arg("endpoint"), py::arg("config"), py::arg("callbacks"), py::arg("ec")
         );
 }
+
+#endif  // PYDNP3_ASIODNP3
+#endif

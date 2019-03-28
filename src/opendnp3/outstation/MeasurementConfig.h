@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_OUTSTATION_MEASUREMENTCONFIG_H
+#define PYDNP3_OPENDNP3_OUTSTATION_MEASUREMENTCONFIG_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/outstation/MeasurementConfig.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -193,3 +198,6 @@ void bind_MeasurementConfig(py::module &m)
 
         .def(py::init<>());
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

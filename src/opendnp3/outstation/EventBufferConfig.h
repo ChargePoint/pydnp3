@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_OUTSTATION_EVENTBUFFERCONFIG_H
+#define PYDNP3_OPENDNP3_OUTSTATION_EVENTBUFFERCONFIG_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/outstation/EventBufferConfig.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -147,3 +152,6 @@ void bind_EventBufferConfig(py::module &m)
             ":return: the sum of all event count maximums (number of elements in preallocated buffer)"
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

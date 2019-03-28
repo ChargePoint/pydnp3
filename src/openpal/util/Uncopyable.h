@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_UTIL_UNCOPYABLE_H
+#define PYDNP3_OPENPAL_UTIL_UNCOPYABLE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/util/Uncopyable.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -44,3 +49,6 @@ void bind_Uncopyable(py::module &m)
 	// ----- class: openpal::StaticOnly -----
     py::class_<openpal::StaticOnly>(m, "StaticOnly");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

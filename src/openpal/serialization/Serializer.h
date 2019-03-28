@@ -28,13 +28,20 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_SERIALIZATION_SERIALIZER_H
+#define PYDNP3_OPENPAL_SERIALIZATION_SERIALIZER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
+#include <opendnp3/app/AnalogOutput.h>
+#include <opendnp3/app/MeasurementTypes.h>
 #include <openpal/serialization/Serializer.h>
 
+#ifdef PYDNP3_OPENPAL
+
 template <class T>
-void declareSerializer(py::module &m, string const &type)
+void declareSerializer(py::module &m, std::string const &type)
 {
     typedef bool (*ReadFunc)(openpal::RSlice& buffer, T& output);
     typedef bool (*WriteFunc)(const T& value, openpal::WSlice& buffer);
@@ -85,3 +92,6 @@ void bind_Serializer(py::module &m)
     declareSerializer<opendnp3::AnalogOutputFloat32>(m, "AnalogOutputFloat32");
     declareSerializer<opendnp3::AnalogOutputDouble64>(m, "AnalogOutputDouble64");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

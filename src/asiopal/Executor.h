@@ -28,13 +28,24 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_EXECUTOR_H
+#define PYDNP3_ASIOPAL_EXECUTOR_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
+#include <opendnp3/StackStatistics.h>
+#include <opendnp3/link/LinkStatistics.h>
 #include <asiopal/Executor.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
+
+namespace openpal {
+    class LogFilters;
+}
 
 void bind_Executor(py::module &m)
 {
@@ -127,3 +138,6 @@ void bind_Executor(py::module &m)
             &asiopal::Executor::strand
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

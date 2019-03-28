@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_UTIL_COMPARISONS_H
+#define PYDNP3_OPENPAL_UTIL_COMPARISONS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/util/Comparisons.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -76,3 +81,6 @@ void bind_Comparisons(py::module &m)
     declareComparisions<uint16_t>(m);
     declareComparisions<uint32_t>(m);
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

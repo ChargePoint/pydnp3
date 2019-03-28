@@ -28,6 +28,9 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_ANALOGOUTPUT_H
+#define PYDNP3_OPENDNP3_APP_ANALOGOUTPUT_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
@@ -35,6 +38,8 @@
 
 namespace py = pybind11;
 using namespace std;
+
+#ifdef PYDNP3_OPENDNP3
 
 template <typename T>
 void declareAnalogOutput(py::module &m, string const & type)
@@ -165,3 +170,6 @@ void bind_AnalogOutput(py::module &m)
             "Equality comparision."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

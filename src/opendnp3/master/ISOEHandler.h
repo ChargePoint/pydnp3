@@ -28,12 +28,17 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_ISOEHANDLER_H
+#define PYDNP3_OPENDNP3_MASTER_ISOEHANDLER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/ISOEHandler.h>
 
 #include "opendnp3/app/ITransactable.h"
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -290,3 +295,6 @@ void bind_ISOEHandler(py::module &m)
             py::arg("info"), py::arg("values")
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

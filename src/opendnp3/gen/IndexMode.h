@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_INDEXMODE_H
+#define PYDNP3_OPENDNP3_GEN_INDEXMODE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/IndexMode.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -54,3 +59,6 @@ void bind_IndexMode(py::module &m)
 		    "Indices are dis-contiguous. Resorts to binary search to find raw index."
 		);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

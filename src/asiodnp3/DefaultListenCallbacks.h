@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_DEFAULTLISTENCALLBACKS_H
+#define PYDNP3_ASIODNP3_DEFAULTLISTENCALLBACKS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/DefaultListenCallbacks.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -100,3 +105,6 @@ void bind_DefaultListenCallbacks(py::module &m)
             py::arg("sessionid"), py::arg("info"), py::arg("error")
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

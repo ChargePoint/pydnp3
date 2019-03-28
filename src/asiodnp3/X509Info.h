@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_X509INFO_H
+#define PYDNP3_ASIODNP3_X509INFO_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/X509Info.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -64,3 +69,6 @@ void bind_X509Info(py::module &m)
             "The extracted subject name."
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

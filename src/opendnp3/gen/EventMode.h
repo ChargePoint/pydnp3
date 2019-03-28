@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_EVENTMODE_H
+#define PYDNP3_OPENDNP3_GEN_EVENTMODE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/EventMode.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -59,3 +64,6 @@ void bind_EventMode(py::module &m) {
             "Never produce an event regardless of changes."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

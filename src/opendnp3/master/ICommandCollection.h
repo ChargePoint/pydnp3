@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_ICOMMANDCOLLECTION_H
+#define PYDNP3_OPENDNP3_MASTER_ICOMMANDCOLLECTION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/ICommandCollection.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -82,3 +87,6 @@ void bind_ICommandCollection(py::module &m)
     declareICommandCollection<opendnp3::AnalogOutputFloat32>(m, "AnalogOutputFloat32");
     declareICommandCollection<opendnp3::AnalogOutputDouble64>(m, "AnalogOutputDouble64");
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

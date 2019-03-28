@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_THREADPOOL_H
+#define PYDNP3_ASIOPAL_THREADPOOL_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/ThreadPool.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -76,3 +81,6 @@ void bind_ThreadPool(py::module &m)
             &asiopal::ThreadPool::Shutdown
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

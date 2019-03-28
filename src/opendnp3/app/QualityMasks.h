@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_QUALITYMASKS_H
+#define PYDNP3_OPENDNP3_APP_QUALITYMASKS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/QualityMasks.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -56,3 +61,6 @@ void bind_QualityMasks(py::module &m)
     declareToUnderlying<opendnp3::AnalogOutputStatusQuality>(m);
     declareToUnderlying<opendnp3::BinaryOutputStatusQuality>(m);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

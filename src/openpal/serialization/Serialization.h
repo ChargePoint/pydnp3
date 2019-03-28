@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_SERIALIZATION_SERIALIZATION_H
+#define PYDNP3_OPENPAL_SERIALIZATION_SERIALIZATION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/serialization/Serialization.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -310,3 +315,6 @@ void bind_Serialization(py::module &m)
             [](py::object) { return openpal::UInt8::Min; }
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

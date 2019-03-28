@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_SERIALIZATION_PARSE_H
+#define PYDNP3_OPENPAL_SERIALIZATION_PARSE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/serialization/Parse.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -158,3 +163,6 @@ void bind_Parse(py::module &m)
             &openpal::Parse::Many<opendnp3::DNPTime, int, int>
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

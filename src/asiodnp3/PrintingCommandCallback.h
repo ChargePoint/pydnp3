@@ -28,11 +28,16 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_PRINTINGCOMMANDCALLBACK_H
+#define PYDNP3_ASIODNP3_PRINTINGCOMMANDCALLBACK_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 #include <pybind11/functional.h>
 
 #include <asiodnp3/PrintingCommandCallback.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -46,3 +51,6 @@ void bind_PrintingCommandCallback(py::module &m)
             &asiodnp3::PrintingCommandCallback::Get
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

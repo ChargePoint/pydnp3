@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_RESTARTMODE_H
+#define PYDNP3_OPENDNP3_GEN_RESTARTMODE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/RestartMode.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -60,3 +65,6 @@ void bind_RestartMode(py::module &m)
             "Supports restart, and time returned is a coarse time delay."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

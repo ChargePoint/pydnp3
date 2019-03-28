@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_RSLICE_H
+#define PYDNP3_OPENPAL_CONTAINER_RSLICE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/RSlice.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -94,3 +99,6 @@ void bind_RSlice(py::module &m)
             py::arg("count")
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

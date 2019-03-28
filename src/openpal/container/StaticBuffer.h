@@ -28,15 +28,20 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_STATICBUFFER_H
+#define PYDNP3_OPENPAL_CONTAINER_STATICBUFFER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/StaticBuffer.h>
 
+#ifdef PYDNP3_OPENPAL
+
 namespace py = pybind11;
 
 template <uint32_t SIZE>
-void declareStaticBuffer(py::module &m, string const &type)
+void declareStaticBuffer(py::module &m, std::string const &type)
 {
     // ----- class: openpal::StaticBuffer<SIZE> -----
     py::class_<openpal::StaticBuffer<SIZE>>(m, ("StaticBuffer" + type).c_str())
@@ -84,3 +89,6 @@ void bind_StaticBuffer(py::module &m)
     declareStaticBuffer<292>(m, "292");
     declareStaticBuffer<4>(m, "4");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

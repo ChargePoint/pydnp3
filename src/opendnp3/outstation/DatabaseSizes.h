@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_OUTSTATION_DATABASESIZES_H
+#define PYDNP3_OPENDNP3_OUTSTATION_DATABASESIZES_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/outstation/DatabaseSizes.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -175,3 +180,6 @@ void bind_DatabaseSizes(py::module &m)
             "Empty", &opendnp3::DatabaseSizes::Empty
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

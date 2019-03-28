@@ -28,13 +28,18 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_RINGBUFFER_H
+#define PYDNP3_OPENPAL_CONTAINER_RINGBUFFER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/RingBuffer.h>
 
+#ifdef PYDNP3_OPENPAL
+
 template <uint8_t N>
-void declareRingBuffer(py::module &m, string const &type)
+void declareRingBuffer(py::module &m, std::string const &type)
 {
     // ----- class: openpal::RingBuffer<N> -----
     py::class_<openpal::RingBuffer<N>>(m, ("RingBuffer" + type).c_str(),
@@ -87,3 +92,6 @@ void bind_RingBuffer(py::module &m)
     // Example
     declareRingBuffer<16>(m, "16");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

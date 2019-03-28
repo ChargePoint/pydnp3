@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_LOGGING_LOGGER_H
+#define PYDNP3_OPENPAL_LOGGING_LOGGER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/logging/Logger.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -125,3 +130,6 @@ void bind_Logger(py::module &m)
             py::arg("id")
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

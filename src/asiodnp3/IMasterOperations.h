@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_IMASTEROPERATIONS_H
+#define PYDNP3_ASIODNP3_IMASTEROPERATIONS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/IMasterOperations.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -325,3 +330,6 @@ void bind_IMasterOperations(py::module &m)
             py::arg("name"), py::arg("func"), py::arg("headers"), py::arg("config") = opendnp3::TaskConfig::Default()
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif
