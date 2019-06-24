@@ -28,7 +28,10 @@ option(PROFILE "Builds the libraries with profiling support (gcc only)" OFF)
 set(CMAKE_REQUIRED_FLAGS ${CMAKE_CXX_FLAGS})
 
 set(STATICLIBS ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
+
+if(NOT CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
+endif()
 
 add_subdirectory(deps/pybind11)
 add_subdirectory(deps/dnp3)
