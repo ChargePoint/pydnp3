@@ -1,0 +1,12 @@
+diff --git a/cpp/libs/include/asiodnp3/IMasterOperations.h b/cpp/libs/include/asiodnp3/IMasterOperations.h
+index f056323e4..75cad0273 100644
+--- a/cpp/libs/include/asiodnp3/IMasterOperations.h
++++ b/cpp/libs/include/asiodnp3/IMasterOperations.h
+@@ -40,6 +40,7 @@
+ 
+ #include <vector>
+ #include <memory>
++#include <string>
+ 
+ namespace asiodnp3
+ {

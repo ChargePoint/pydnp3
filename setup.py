@@ -55,6 +55,14 @@ class CMakeBuild(build_ext):
                                                               self.distribution.get_version())
         if not os.path.exists(self.build_temp):
             os.makedirs(self.build_temp)
+
+        setup_path = os.path.dirname(os.path.abspath(__file__))
+        if not "<string>" in open(os.path.join(setup_path, 'deps', 'dnp3', 'cpp', 'libs', 'include', 'asiodnp3', 'IMasterOperations.h')).read():
+            dnp3_path = os.path.join(setup_path, 'deps', 'dnp3')
+            patch_path = os.path.join(setup_path, 'imasteroperations.patch')
+
+            subprocess.check_call(['git', 'apply', patch_path], cwd=dnp3_path)
+
         subprocess.check_call(['cmake', ext.sourcedir] + cmake_args, cwd=self.build_temp, env=env)
         subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
 
