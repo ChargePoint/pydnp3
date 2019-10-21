@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_SERIALIZATION_FLOATBYTEORDER_H
+#define PYDNP3_OPENPAL_SERIALIZATION_FLOATBYTEORDER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/serialization/FloatByteOrder.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -51,3 +56,6 @@ void bind_FloatByteOrder(py::module &m)
             [](py::object) { return openpal::FloatByteOrder::ORDER; }
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

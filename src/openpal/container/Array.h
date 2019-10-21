@@ -28,16 +28,32 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_ARRAY_H
+#define PYDNP3_OPENPAL_CONTAINER_ARRAY_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/Array.h>
 #include <pybind11/operators.h>
 
+#ifdef PYDNP3_OPENPAL
+
 namespace py = pybind11;
 
+namespace opendnp3 {
+    class BinaryConfig;
+    class DoubleBitBinaryConfig;
+    class AnalogConfig;
+    class CounterConfig;
+    class FrozenCounterConfig;
+    class BOStatusConfig;
+    class AOStatusConfig;
+    class TimeAndIntervalConfig;
+}
+
 template <class ValueType, class IndexType>
-void declareArray(py::module &m, string const &valueType, string const &indexType)
+void declareArray(py::module &m, std::string const &valueType, std::string const &indexType)
 {
     // ----- class: openpal::Array<ValueType, IndexType> -----
     py::class_<openpal::Array<ValueType, IndexType>, openpal::HasSize<IndexType>>(m, ("Array" + valueType).c_str(),
@@ -97,3 +113,6 @@ void bind_Array(py::module &m)
     declareArray<opendnp3::TimeAndIntervalConfig, uint16_t>(m, "TimeAndIntervalConfig", "unsigned short");
     declareArray<uint8_t, uint32_t>(m, "Buffer", "unsigned int");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

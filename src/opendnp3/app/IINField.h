@@ -28,8 +28,13 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_IINFIELD_H
+#define PYDNP3_OPENDNP3_APP_IINFIELD_H
+
 #include <pybind11/operators.h>
 #include <opendnp3/app/IINField.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -161,3 +166,6 @@ void bind_IINField(py::module &m)
             ":type LSB: unsigned char"
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

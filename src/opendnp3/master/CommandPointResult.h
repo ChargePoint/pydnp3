@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_COMMANDPOINTRESULT_H
+#define PYDNP3_OPENDNP3_MASTER_COMMANDPOINTRESULT_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/CommandPointResult.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -82,3 +87,6 @@ void bind_CommandPointResult(py::module &m)
             "The response value. This is only valid if state == SUCCESS or state == SELECT_FAIL."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

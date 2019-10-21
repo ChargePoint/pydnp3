@@ -28,11 +28,16 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_BASEMEASUREMENTTYPES_H
+#define PYDNP3_OPENDNP3_APP_BASEMEASUREMENTTYPES_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/BaseMeasurementTypes.h>
 #include <opendnp3/gen/DoubleBit.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -73,3 +78,6 @@ void bind_BaseMeasurementTypes(py::module &m)
     declareTypedMeasurement<double>(m, "Double");
     declareTypedMeasurement<uint32_t>(m, "Uint32");
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

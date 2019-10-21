@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_LINK_LINKSTATISTICS_H
+#define PYDNP3_OPENDNP3_LINK_LINKSTATISTICS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/link/LinkStatistics.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -179,3 +184,6 @@ void bind_LinkStatistics(py::module &m)
             "Statistics for the link parser."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

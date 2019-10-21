@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_EXECUTOR_IUTCTIMESOURCE_H
+#define PYDNP3_OPENPAL_EXECUTOR_IUTCTIMESOURCE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/executor/IUTCTimeSource.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -95,3 +100,6 @@ void bind_IUTCTimeSource(py::module &m)
             ":type time: long"
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

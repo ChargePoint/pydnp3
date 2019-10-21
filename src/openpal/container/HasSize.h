@@ -28,15 +28,20 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_HASSIZE_H
+#define PYDNP3_OPENPAL_CONTAINER_HASSIZE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/HasSize.h>
 
+#ifdef PYDNP3_OPENPAL
+
 namespace py = pybind11;
 
 template <class SizeType>
-void declareHasSize(py::module &m, string const &type, string const &sizeType) {
+void declareHasSize(py::module &m, std::string const &type, std::string const &sizeType) {
     // ----- class: openpal::HasSize<SizeType> -----
     py::class_<openpal::HasSize<SizeType>>(m, ("HasSize" + type).c_str())
 
@@ -74,3 +79,6 @@ void bind_HasSize(py::module &m)
     declareHasSize<uint16_t>(m, "Uint16", "unsigned short");
     declareHasSize<uint32_t>(m, "Uint32", "unsigned int");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

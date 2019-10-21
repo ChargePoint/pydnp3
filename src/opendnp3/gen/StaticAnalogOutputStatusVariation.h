@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_STATICANALOGOUTPUTSTATUSVARIATION_H
+#define PYDNP3_OPENDNP3_GEN_STATICANALOGOUTPUTSTATUSVARIATION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/StaticAnalogOutputStatusVariation.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -45,3 +50,6 @@ void bind_StaticAnalogOutputStatusVariation(py::module &m)
         .value("Group40Var3", opendnp3::StaticAnalogOutputStatusVariation::Group40Var3)
         .value("Group40Var4", opendnp3::StaticAnalogOutputStatusVariation::Group40Var4);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

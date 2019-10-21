@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_KEYWRAPALGORITHM_H
+#define PYDNP3_OPENDNP3_GEN_KEYWRAPALGORITHM_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/KeyWrapAlgorithm.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -79,3 +84,6 @@ void bind_KeyWrapAlgorithm(py::module &m)
         &opendnp3::KeyWrapAlgorithmToString
     );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

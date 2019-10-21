@@ -28,11 +28,16 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_EVENTCELLS_H
+#define PYDNP3_OPENDNP3_APP_EVENTCELLS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/EventCells.h>
 #include <opendnp3/app/MeasurementTypeSpecs.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -102,3 +107,6 @@ void bind_EventCells(py::module &m)
 //    declareDeadbandEventCell<opendnp3::FrozenCounterSpec>(m, "FrozenCounterSpec");
 //    declareDeadbandEventCell<opendnp3::AnalogOutputStatusSpec>(m, "AnalogOutputStatusSpec");
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

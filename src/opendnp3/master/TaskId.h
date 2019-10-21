@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_TASKID_H
+#define PYDNP3_OPENDNP3_MASTER_TASKID_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/TaskId.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -62,3 +67,6 @@ void bind_TaskId(py::module &m)
             &opendnp3::TaskId::IsDefined
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

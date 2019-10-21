@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_SOCKETHELPERS_H
+#define PYDNP3_ASIOPAL_SOCKETHELPERS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/SocketHelpers.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -47,3 +52,6 @@ void bind_SocketHelpers(py::module &m)
             &asiopal::SocketHelpers::BindToLocalAddress<asio::ip::tcp::socket>
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

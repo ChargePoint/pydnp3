@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_LINK_LINKCONFIG_H
+#define PYDNP3_OPENDNP3_LINK_LINKCONFIG_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/link/LinkConfig.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -102,3 +107,6 @@ void bind_LinkConfig(py::module &m)
             "If set to TimeDuration::Max(), the keep-alive is disabled."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

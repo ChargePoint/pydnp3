@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_TASKINFO_H
+#define PYDNP3_OPENDNP3_MASTER_TASKINFO_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/TaskInfo.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -61,3 +66,6 @@ void bind_TaskInfo(py::module &m)
 		    &opendnp3::TaskInfo::id
 		);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

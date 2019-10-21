@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_SERIALIZATION_SERIALIZATIONTEMPLATESLE_H
+#define PYDNP3_OPENPAL_SERIALIZATION_SERIALIZATIONTEMPLATESLE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/serialization/SerializationTemplatesLE.h>
+
+#ifdef PYDNP3_OPENPAL
 
 template <class T>
 void declareBit16LE(py::module &m, string const &type)
@@ -132,3 +137,6 @@ void declareBit32LE(py::module &m, string const &type)
 void bind_SerializationTemplatesLE(py::module &m)
 {
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_DOUBLEBITBINARYQUALITY_H
+#define PYDNP3_OPENDNP3_GEN_DOUBLEBITBINARYQUALITY_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/DoubleBitBinaryQuality.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -90,3 +95,6 @@ void bind_DoubleBitBinaryQuality(py::module &m)
 		    "State bit 2."
 		);
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

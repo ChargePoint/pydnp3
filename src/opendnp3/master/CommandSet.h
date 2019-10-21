@@ -28,12 +28,17 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_COMMANDSET_H
+#define PYDNP3_OPENDNP3_MASTER_COMMANDSET_H
+
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 #include <pybind11/functional.h>
 #include <Python.h>
 
 #include <opendnp3/master/CommandSet.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -174,3 +179,6 @@ void bind_CommandSet(py::module &m)
             "Begin a header of the parameterized type."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_KEYCHANGEMETHOD_H
+#define PYDNP3_OPENDNP3_GEN_KEYCHANGEMETHOD_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/KeyChangeMethod.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -72,3 +77,6 @@ void bind_KeyChangeMethod(py::module &m)
         &opendnp3::KeyChangeMethodToString
     );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

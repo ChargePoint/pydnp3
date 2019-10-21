@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_ANALOGCOMMANDEVENT_H
+#define PYDNP3_OPENDNP3_APP_ANALOGCOMMANDEVENT_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/AnalogCommandEvent.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -78,3 +83,6 @@ void bind_AnalogCommandEvent(py::module &m)
             "Equality comparision."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

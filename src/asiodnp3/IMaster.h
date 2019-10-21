@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_IMASTER_H
+#define PYDNP3_ASIODNP3_IMASTER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/IMaster.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -258,3 +263,6 @@ void bind_IMaster(py::module &m)
 
         .def(py::init<>());
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

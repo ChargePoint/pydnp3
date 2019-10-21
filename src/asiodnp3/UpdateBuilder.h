@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_UPDATEBUILDER_H
+#define PYDNP3_ASIODNP3_UPDATEBUILDER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/UpdateBuilder.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -142,3 +147,6 @@ void bind_UpdateBuilder(py::module &m)
             &asiodnp3::UpdateBuilder::Build
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_EXECUTOR_UTCTIMESTAMP_H
+#define PYDNP3_OPENPAL_EXECUTOR_UTCTIMESTAMP_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/executor/UTCTimestamp.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -55,3 +60,6 @@ void bind_UTCTimestamp(py::module &m) {
             ":type msSinceEpoch: unsigned long"
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

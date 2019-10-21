@@ -28,10 +28,16 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_RESOURCEMANAGER_H
+#define PYDNP3_ASIOPAL_RESOURCEMANAGER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
+#include <asiodnp3/IChannel.h>
 #include <asiopal/ResourceManager.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -76,3 +82,6 @@ void bind_ResourceManager(py::module &m)
             }
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

@@ -28,15 +28,20 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_LINKEDLIST_H
+#define PYDNP3_OPENPAL_CONTAINER_LINKEDLIST_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/container/LinkedList.h>
 
+#ifdef PYDNP3_OPENPAL
+
 namespace py = pybind11;
 
 template <class ValueType, class IndexType>
-void declareLinkedList(py::module &m, string const &type, string const &indexType)
+void declareLinkedList(py::module &m, std::string const &type, std::string const &indexType)
 {
     // ----- class: openpal::ListNode<ValueType> -----
     py::class_<openpal::ListNode<ValueType>>(m, ("ListNode" + type).c_str())
@@ -141,3 +146,6 @@ void bind_LinkedList(py::module &m)
 {
     declareLinkedList<int, uint16_t>(m, "Int", "unsigned short");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

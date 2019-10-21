@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_KEYSTATUS_H
+#define PYDNP3_OPENDNP3_GEN_KEYSTATUS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/KeyStatus.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -93,3 +98,6 @@ void bind_KeyStatus(py::module &m)
         py::arg("status")
     );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_MEASUREMENTINFO_H
+#define PYDNP3_OPENDNP3_APP_MEASUREMENTINFO_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/MeasurementInfo.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -230,3 +235,6 @@ void bind_MeasurementInfo(py::module &m)
             [](py::object) { return opendnp3::SecurityStatInfo::DefaultStaticVariation; }
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

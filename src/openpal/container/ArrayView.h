@@ -28,15 +28,21 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CONTAINER_ARRAYVIEW_H
+#define PYDNP3_OPENPAL_CONTAINER_ARRAYVIEW_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
+#include <opendnp3/outstation/MeasurementConfig.h>
 #include <openpal/container/ArrayView.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
 template <class ValueType, class IndexType>
-void declareArrayView(py::module &m, string const &valueType, string const &indexType)
+void declareArrayView(py::module &m, std::string const &valueType, std::string const &indexType)
 {
     // ----- class: openpal::ArrayView<ValueType, IndexType> -----
     py::class_<openpal::ArrayView<ValueType, IndexType>,
@@ -111,3 +117,6 @@ void bind_ArrayView(py::module &m)
     declareArrayView<opendnp3::TimeAndIntervalConfig, uint16_t>(m, "TimeAndIntervalConfig", "unsigned short");
     declareArrayView<uint8_t, uint32_t>(m, "Buffer", "unsigned int");
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_LOGGING_LOGFILTERS_H
+#define PYDNP3_OPENPAL_LOGGING_LOGFILTERS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/logging/LogFilters.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -59,3 +64,6 @@ void bind_LogFilters(py::module &m)
             &openpal::LogFilters::GetBitfield
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

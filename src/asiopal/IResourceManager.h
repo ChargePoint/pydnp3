@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_IRESOURCEMANAGER_H
+#define PYDNP3_ASIOPAL_IRESOURCEMANAGER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/IResourceManager.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -105,3 +110,6 @@ void bind_IResourceManager(py::module &m)
             "Notify the handler that the resource is shutting down, and it doesn't have to track it anymore."
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

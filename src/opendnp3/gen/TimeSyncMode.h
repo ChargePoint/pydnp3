@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_TIMESYNCMODE_H
+#define PYDNP3_OPENDNP3_GEN_TIMESYNCMODE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/TimeSyncMode.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -60,3 +65,6 @@ void bind_TimeSyncMode(py::module &m)
             "Don't perform a time-sync."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_SERIALIZATION_DOUBLEFLOAT_H
+#define PYDNP3_OPENPAL_SERIALIZATION_DOUBLEFLOAT_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/serialization/DoubleFloat.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -83,3 +88,6 @@ void bind_DoubleFloat(py::module &m)
             [](py::object) { return openpal::DoubleFloat::Min; }
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

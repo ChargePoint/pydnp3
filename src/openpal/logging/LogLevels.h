@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_LOGGING_LOGLEVELS_H
+#define PYDNP3_OPENPAL_LOGGING_LOGLEVELS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/logging/LogLevels.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -44,3 +49,6 @@ void bind_OpenpalLogLevels(py::module &m)
 	m.def_submodule("logflags").attr("INFO") = &openpal::logflags::INFO;
 	m.def_submodule("logflags").attr("DBG") = &openpal::logflags::DBG;
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

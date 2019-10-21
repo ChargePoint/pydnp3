@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_FLAGSTYPE_H
+#define PYDNP3_OPENDNP3_GEN_FLAGSTYPE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/FlagsType.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -72,3 +77,6 @@ void bind_FlagsType(py::module &m)
         py::arg("flagsType")
     );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

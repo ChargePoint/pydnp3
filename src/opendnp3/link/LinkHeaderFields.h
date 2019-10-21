@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_LINK_LINKHEADERFIELDS_H
+#define PYDNP3_OPENDNP3_LINK_LINKHEADERFIELDS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/link/LinkHeaderFields.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -82,3 +87,6 @@ void bind_LinkHeaderFields(py::module &m)
             ":type src: unsigned short"
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_LOGGING_STRINGFORMATTING_H
+#define PYDNP3_OPENPAL_LOGGING_STRINGFORMATTING_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/logging/StringFormatting.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -60,3 +65,6 @@ void bind_StringFormatting(py::module &m)
 	    py::arg("alias")
 	);
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

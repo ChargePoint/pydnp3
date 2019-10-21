@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_DOUBLEBIT_H
+#define PYDNP3_OPENDNP3_GEN_DOUBLEBIT_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/DoubleBit.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -88,3 +93,6 @@ void bind_DoubleBit(py::module &m)
         py::arg("db")
     );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_ERRORCODES_H
+#define PYDNP3_ASIODNP3_ERRORCODES_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/ErrorCodes.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -73,3 +78,6 @@ void bind_ErrorCodes(py::module &m)
     // ----- class: asiodnp3::is_error_code_enum -----
     py::class_<std::is_error_code_enum<asiodnp3::Error>>(m, "is_error_code_enum");
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

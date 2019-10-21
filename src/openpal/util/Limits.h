@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_UTIL_LIMITS_H
+#define PYDNP3_OPENPAL_UTIL_LIMITS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/util/Limits.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -62,3 +67,6 @@ void bind_Limits(py::module &m)
     declareLimits<int32_t>(m);
     declareLimits<int64_t>(m);
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

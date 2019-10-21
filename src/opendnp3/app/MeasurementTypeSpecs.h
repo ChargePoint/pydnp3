@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_MEASUREMENTTYPESPECS_H
+#define PYDNP3_OPENDNP3_APP_MEASUREMENTTYPESPECS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/MeasurementTypeSpecs.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -123,3 +128,6 @@ void bind_MeasurementTypeSpecs(py::module &m)
             py::arg("oldValue"), py::arg("newValue"), py::arg("deadband")
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

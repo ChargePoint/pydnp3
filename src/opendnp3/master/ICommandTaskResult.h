@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_ICOMMANDTASKRESULT_H
+#define PYDNP3_OPENDNP3_MASTER_ICOMMANDTASKRESULT_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/ICommandTaskResult.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -87,3 +92,6 @@ void bind_ICommandTaskResult(py::module &m)
             "A summary result for the entire task."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

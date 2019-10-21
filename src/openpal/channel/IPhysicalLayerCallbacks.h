@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CHANNEL_IPHYSICALLAYERCALLBACKS_H
+#define PYDNP3_OPENPAL_CHANNEL_IPHYSICALLAYERCALLBACKS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/channel/IPhysicalLayerCallbacks.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -129,3 +134,6 @@ void bind_IPhysicalLayerCallbacks(py::module &m)
             py::arg("isSuccess")
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

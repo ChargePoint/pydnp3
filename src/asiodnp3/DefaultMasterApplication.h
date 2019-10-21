@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_DEFAULTMASTERAPPLICATION_H
+#define PYDNP3_ASIODNP3_DEFAULTMASTERAPPLICATION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/DefaultMasterApplication.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -98,3 +103,6 @@ void bind_DefaultMasterApplication(py::module &m)
             py::arg("value")
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

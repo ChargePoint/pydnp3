@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_SERIALTYPES_H
+#define PYDNP3_ASIOPAL_SERIALTYPES_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/SerialTypes.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -89,3 +94,6 @@ void bind_SerialTypes(py::module &m)
             "Some physical layers need time to settle so that the first tx isn't lost."
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

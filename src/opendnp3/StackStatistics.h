@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_STACKSTATISTICS_H
+#define PYDNP3_OPENDNP3_STACKSTATISTICS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/StackStatistics.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -190,3 +195,6 @@ void bind_StackStatistics(py::module &m)
 	        &opendnp3::StackStatistics::transport
 	    );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

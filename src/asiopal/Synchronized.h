@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_SYNCHRONIZED_H
+#define PYDNP3_ASIOPAL_SYNCHRONIZED_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/Synchronized.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -60,3 +65,6 @@ void declareSynchronized(py::module &m, string const & type)
 void bind_Synchronized(py::module &m)
 {
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

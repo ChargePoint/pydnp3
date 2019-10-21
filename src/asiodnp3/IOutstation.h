@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_IOUTSTATION_H
+#define PYDNP3_ASIODNP3_IOUTSTATION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/IOutstation.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -137,3 +142,6 @@ void bind_IOutstation(py::module &m)
             py::arg("updates")
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_IASYNCCHANNEL_H
+#define PYDNP3_ASIOPAL_IASYNCCHANNEL_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/IAsyncChannel.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -119,3 +124,6 @@ void bind_IAsyncChannel(py::module &m)
             &asiopal::IAsyncChannel::CanWrite
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

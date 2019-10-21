@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_FUNCTIONCODE_H
+#define PYDNP3_OPENDNP3_GEN_FUNCTIONCODE_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/FunctionCode.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -296,3 +301,6 @@ void bind_FunctionCode(py::module &m)
         py::arg("code")
     );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_MEASUREMENTTYPES_H
+#define PYDNP3_OPENDNP3_APP_MEASUREMENTTYPES_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/MeasurementTypes.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -279,3 +284,6 @@ void bind_MeasurementTypes(py::module &m)
                 &opendnp3::TimeAndInterval::GetUnitsEnum
             );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

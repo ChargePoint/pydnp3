@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIOPAL_SERIALCHANNEL_H
+#define PYDNP3_ASIOPAL_SERIALCHANNEL_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiopal/SerialChannel.h>
+
+#ifdef PYDNP3_ASIOPAL
 
 namespace py = pybind11;
 using namespace std;
@@ -60,3 +65,6 @@ void bind_SerialChannel(py::module &m)
             py::arg("settings"), py::arg("ec")
         );
 }
+
+#endif // PYDNP3_ASIOPAL
+#endif

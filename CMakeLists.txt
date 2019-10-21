@@ -28,7 +28,10 @@ option(PROFILE "Builds the libraries with profiling support (gcc only)" OFF)
 set(CMAKE_REQUIRED_FLAGS ${CMAKE_CXX_FLAGS})
 
 set(STATICLIBS ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
+
+if(NOT CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
+endif()
 
 add_subdirectory(deps/pybind11)
 add_subdirectory(deps/dnp3)
@@ -41,7 +44,7 @@ include_directories(deps/dnp3/cpp/libs/src)
 include_directories(deps/dnp3/deps/asio/asio/include)
 add_definitions(-DASIO_STANDALONE)
 
-pybind11_add_module(pydnp3 MODULE src/pydnp3.cpp)
+pybind11_add_module(pydnp3 MODULE src/pydnp3.cpp src/pydnp3asiodnp3.cpp src/pydnp3asiopal.cpp src/pydnp3opendnp3.cpp src/pydnp3openpal.cpp)
 target_link_libraries(pydnp3 PRIVATE asiopal asiodnp3 openpal opendnp3)
 
 

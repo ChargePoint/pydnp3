@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_CHANNEL_IPHYSICALLAYER_H
+#define PYDNP3_OPENPAL_CHANNEL_IPHYSICALLAYER_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/channel/IPhysicalLayer.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -362,3 +367,6 @@ void bind_IPhysicalLayer(py::module &m)
             py::arg("apHandler")
         );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

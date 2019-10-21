@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_ICHANNEL_H
+#define PYDNP3_ASIODNP3_ICHANNEL_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/IChannel.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -159,3 +164,6 @@ void bind_IChannel(py::module &m)
             py::arg("id"), py::arg("commandHandler"), py::arg("application"), py::arg("config")
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif

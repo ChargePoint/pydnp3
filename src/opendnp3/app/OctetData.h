@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_APP_OCTETDATA_H
+#define PYDNP3_OPENDNP3_APP_OCTETDATA_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/app/OctetData.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -59,3 +64,6 @@ void bind_OctetData(py::module &m)
             [](py::object) { return opendnp3::OctetData::MAX_SIZE; }
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

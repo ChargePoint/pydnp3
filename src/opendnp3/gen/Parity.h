@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_PARITY_H
+#define PYDNP3_OPENDNP3_GEN_PARITY_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/Parity.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -68,3 +73,6 @@ void bind_Parity(py::module &m)
         py::arg("parity")
     );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

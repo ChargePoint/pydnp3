@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_BINARYQUALITY_H
+#define PYDNP3_OPENDNP3_GEN_BINARYQUALITY_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/BinaryQuality.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -89,3 +94,6 @@ void bind_BinaryQuality(py::module &m) {
             "State bit."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENPAL_EXECUTOR_TIMEDURATION_H
+#define PYDNP3_OPENPAL_EXECUTOR_TIMEDURATION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <openpal/executor/TimeDuration.h>
+
+#ifdef PYDNP3_OPENPAL
 
 namespace py = pybind11;
 
@@ -128,3 +133,6 @@ void bind_TimeDuration(py::module &m)
         "TimeDuration equality comparision."
     );
 }
+
+#endif // PYDNP3_OPENPAL
+#endif

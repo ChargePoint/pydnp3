@@ -101,3 +101,7 @@ ENV/
 # mypy
 .mypy_cache/
 *.pytest_cache/
+
+# VisualStudio and VisualStudio Code project settings
+.vscode/
+.vs/

@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_MASTER_HEADERINFO_H
+#define PYDNP3_OPENDNP3_MASTER_HEADERINFO_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/master/HeaderInfo.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -86,3 +91,6 @@ void bind_HeaderInfo(py::module &m)
             ":type headerIndex: unsigned int"
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

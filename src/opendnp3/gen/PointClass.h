@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_GEN_POINTCLASS_H
+#define PYDNP3_OPENDNP3_GEN_POINTCLASS_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/gen/PointClass.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 using namespace std;
@@ -66,3 +71,6 @@ void bind_PointClass(py::module &m)
             "Assigned to event class 3."
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

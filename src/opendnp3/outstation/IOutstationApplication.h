@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_OPENDNP3_OUTSTATION_IOUTSTATIONAPPLICATION_H
+#define PYDNP3_OPENDNP3_OUTSTATION_IOUTSTATIONAPPLICATION_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <opendnp3/outstation/IOutstationApplication.h>
+
+#ifdef PYDNP3_OPENDNP3
 
 namespace py = pybind11;
 
@@ -279,3 +284,6 @@ void bind_IOutstationApplication(py::module &m)
             ":return: shared_ptr to opendnp3.IOutstationApplication"
         );
 }
+
+#endif // PYDNP3_OPENDNP3
+#endif

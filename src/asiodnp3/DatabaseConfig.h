@@ -28,10 +28,15 @@
  * }}}
  */
 
+#ifndef PYDNP3_ASIODNP3_DATABASECONFIG_H
+#define PYDNP3_ASIODNP3_DATABASECONFIG_H
+
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
 #include <asiodnp3/DatabaseConfig.h>
+
+#ifdef PYDNP3_ASIODNP3
 
 namespace py = pybind11;
 
@@ -98,3 +103,6 @@ void bind_DatabaseConfig(py::module &m)
             py::return_value_policy::reference
         );
 }
+
+#endif // PYDNP3_ASIODNP3
+#endif
