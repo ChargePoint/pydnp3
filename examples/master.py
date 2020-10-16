@@ -143,6 +143,7 @@ class MyMaster:
         del self.master
         del self.channel
         self.manager.Shutdown()
+        del self.manager
 
 
 class MyLogger(openpal.ILogHandler):
