@@ -40,10 +40,22 @@
 
 namespace py = pybind11;
 
+template <typename T> void destroy_without_gil(T *ptr) {
+    pybind11::gil_scoped_release nogil;
+    delete ptr;
+}
+
+template <typename T> struct unique_ptr_nogil_deleter {
+    void operator()(T *ptr) { destroy_without_gil(ptr); }
+};
+
 void bind_DNP3Manager(py::module &m)
 {
     // ----- class: asiodnp3::DNP3Manager -----
-    py::class_<asiodnp3::DNP3Manager, std::shared_ptr<asiodnp3::DNP3Manager>>(m, "DNP3Manager",
+    py::class_<asiodnp3::DNP3Manager,
+               std::unique_ptr<asiodnp3::DNP3Manager,
+                               unique_ptr_nogil_deleter<
+                                   asiodnp3::DNP3Manager>>>(m, "DNP3Manager",
         "Root DNP3 object used to create channels and sessions.")
 
         .def(
@@ -72,21 +84,10 @@ void bind_DNP3Manager(py::module &m)
         )
 
         .def(
-            "__del__",
-            [](asiodnp3::DNP3Manager &self)
-            {
-                self.~DNP3Manager();
-            },
-            "Destructor with gil_scoped_release.",
-            py::call_guard<py::gil_scoped_release>()
-        )
-
-        .def(
             "Shutdown",
             [](asiodnp3::DNP3Manager &self)
             {
                 self.Shutdown();
-                self.~DNP3Manager();
             },
             "Permanently shutdown the manager and all sub-objects that have been created. Stop the thread pool.",
             py::call_guard<py::gil_scoped_release>()
