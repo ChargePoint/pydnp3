@@ -2,6 +2,6 @@ attrs==17.4.0
 cmake==0.9.0
 funcsigs==1.0.2
 pluggy==0.6.0
-py==1.5.2
+py==1.10.0
 pytest==3.4.0
 six==1.11.0
