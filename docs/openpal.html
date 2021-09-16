@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pydnp3.openpal &mdash; PyDNP3  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pydnp3.opendnp3" href="opendnp3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyDNP3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="asiodnp3.html">pydnp3.asiodnp3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asiopal.html">pydnp3.asiopal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html">pydnp3.opendnp3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#module-pydnp3.opendnp3.measurements">pydnp3.opendnp3.measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#pydnp3-opendnp3-flags">pydnp3.opendnp3.flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#pydnp3-opendnp3-levels">pydnp3.opendnp3.levels</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pydnp3.openpal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#pydnp3-openpal-logflags">pydnp3.openpal.logflags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#pydnp3-openpal-sizes">pydnp3.openpal.sizes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyDNP3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>pydnp3.openpal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/openpal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pydnp3.openpal">
+<span id="pydnp3-openpal"></span><h1>pydnp3.openpal<a class="headerlink" href="#module-pydnp3.openpal" title="Permalink to this headline"></a></h1>
+<p>Bindings for openpal namespace</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.AllocateCopy">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">AllocateCopy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pydnp3.openpal.AllocateCopy" title="Permalink to this definition"></a></dt>
+<dd><p>Portable allocation of a copy of a cstring.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayAOStatusConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayAOStatusConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayAOStatusConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayAOStatusConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayAOStatusConfig" title="pydnp3.openpal.ArrayAOStatusConfig"><span class="pre">pydnp3.openpal.ArrayAOStatusConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayAOStatusConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayAOStatusConfig.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayAOStatusConfig" title="pydnp3.openpal.ArrayAOStatusConfig"><span class="pre">pydnp3.openpal.ArrayAOStatusConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewAOStatusConfig" title="pydnp3.openpal.ArrayViewAOStatusConfig"><span class="pre">pydnp3.openpal.ArrayViewAOStatusConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayAOStatusConfig.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayAOStatusConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayAOStatusConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayAOStatusConfig) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayAOStatusConfig, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayAOStatusConfig, copy: pydnp3.openpal.ArrayAOStatusConfig) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayAnalogConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayAnalogConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayAnalogConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayAnalogConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayAnalogConfig" title="pydnp3.openpal.ArrayAnalogConfig"><span class="pre">pydnp3.openpal.ArrayAnalogConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayAnalogConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayAnalogConfig.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayAnalogConfig" title="pydnp3.openpal.ArrayAnalogConfig"><span class="pre">pydnp3.openpal.ArrayAnalogConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewAnalogConfig" title="pydnp3.openpal.ArrayViewAnalogConfig"><span class="pre">pydnp3.openpal.ArrayViewAnalogConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayAnalogConfig.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayAnalogConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayAnalogConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayAnalogConfig) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayAnalogConfig, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayAnalogConfig, copy: pydnp3.openpal.ArrayAnalogConfig) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBOStatusConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayBOStatusConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBOStatusConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBOStatusConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayBOStatusConfig" title="pydnp3.openpal.ArrayBOStatusConfig"><span class="pre">pydnp3.openpal.ArrayBOStatusConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBOStatusConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBOStatusConfig.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayBOStatusConfig" title="pydnp3.openpal.ArrayBOStatusConfig"><span class="pre">pydnp3.openpal.ArrayBOStatusConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewBOStatusConfig" title="pydnp3.openpal.ArrayViewBOStatusConfig"><span class="pre">pydnp3.openpal.ArrayViewBOStatusConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBOStatusConfig.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBOStatusConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayBOStatusConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayBOStatusConfig) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayBOStatusConfig, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayBOStatusConfig, copy: pydnp3.openpal.ArrayBOStatusConfig) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBinaryConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayBinaryConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBinaryConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBinaryConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayBinaryConfig" title="pydnp3.openpal.ArrayBinaryConfig"><span class="pre">pydnp3.openpal.ArrayBinaryConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBinaryConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBinaryConfig.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayBinaryConfig" title="pydnp3.openpal.ArrayBinaryConfig"><span class="pre">pydnp3.openpal.ArrayBinaryConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewBinaryConfig" title="pydnp3.openpal.ArrayViewBinaryConfig"><span class="pre">pydnp3.openpal.ArrayViewBinaryConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBinaryConfig.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBinaryConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayBinaryConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayBinaryConfig) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayBinaryConfig, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayBinaryConfig, copy: pydnp3.openpal.ArrayBinaryConfig) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBuffer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayBuffer</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBuffer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint32</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBuffer.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayBuffer" title="pydnp3.openpal.ArrayBuffer"><span class="pre">pydnp3.openpal.ArrayBuffer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBuffer.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBuffer.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayBuffer" title="pydnp3.openpal.ArrayBuffer"><span class="pre">pydnp3.openpal.ArrayBuffer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewBuffer" title="pydnp3.openpal.ArrayViewBuffer"><span class="pre">pydnp3.openpal.ArrayViewBuffer</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayBuffer.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayBuffer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayBuffer.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayBuffer) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayBuffer, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayBuffer, copy: pydnp3.openpal.ArrayBuffer) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayCounterConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayCounterConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayCounterConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayCounterConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayCounterConfig" title="pydnp3.openpal.ArrayCounterConfig"><span class="pre">pydnp3.openpal.ArrayCounterConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayCounterConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayCounterConfig.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayCounterConfig" title="pydnp3.openpal.ArrayCounterConfig"><span class="pre">pydnp3.openpal.ArrayCounterConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewCounterConfig" title="pydnp3.openpal.ArrayViewCounterConfig"><span class="pre">pydnp3.openpal.ArrayViewCounterConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayCounterConfig.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayCounterConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayCounterConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayCounterConfig) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayCounterConfig, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayCounterConfig, copy: pydnp3.openpal.ArrayCounterConfig) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayDoubleBitBinaryConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayDoubleBitBinaryConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayDoubleBitBinaryConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayDoubleBitBinaryConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayDoubleBitBinaryConfig" title="pydnp3.openpal.ArrayDoubleBitBinaryConfig"><span class="pre">pydnp3.openpal.ArrayDoubleBitBinaryConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayDoubleBitBinaryConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayDoubleBitBinaryConfig.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayDoubleBitBinaryConfig" title="pydnp3.openpal.ArrayDoubleBitBinaryConfig"><span class="pre">pydnp3.openpal.ArrayDoubleBitBinaryConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewDoubleBitBinaryConfig" title="pydnp3.openpal.ArrayViewDoubleBitBinaryConfig"><span class="pre">pydnp3.openpal.ArrayViewDoubleBitBinaryConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayDoubleBitBinaryConfig.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayDoubleBitBinaryConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayDoubleBitBinaryConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayDoubleBitBinaryConfig) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayDoubleBitBinaryConfig, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayDoubleBitBinaryConfig, copy: pydnp3.openpal.ArrayDoubleBitBinaryConfig) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayFrozenCounterConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayFrozenCounterConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayFrozenCounterConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayFrozenCounterConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayFrozenCounterConfig" title="pydnp3.openpal.ArrayFrozenCounterConfig"><span class="pre">pydnp3.openpal.ArrayFrozenCounterConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayFrozenCounterConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayFrozenCounterConfig.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayFrozenCounterConfig" title="pydnp3.openpal.ArrayFrozenCounterConfig"><span class="pre">pydnp3.openpal.ArrayFrozenCounterConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewFrozenCounterConfig" title="pydnp3.openpal.ArrayViewFrozenCounterConfig"><span class="pre">pydnp3.openpal.ArrayViewFrozenCounterConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayFrozenCounterConfig.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayFrozenCounterConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayFrozenCounterConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayFrozenCounterConfig) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayFrozenCounterConfig, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayFrozenCounterConfig, copy: pydnp3.openpal.ArrayFrozenCounterConfig) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayTimeAndIntervalConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayTimeAndIntervalConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayTimeAndIntervalConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Template type for a dynamically allocated array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayTimeAndIntervalConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayTimeAndIntervalConfig" title="pydnp3.openpal.ArrayTimeAndIntervalConfig"><span class="pre">pydnp3.openpal.ArrayTimeAndIntervalConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayTimeAndIntervalConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayTimeAndIntervalConfig.ToView">
+<span class="sig-name descname"><span class="pre">ToView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ArrayTimeAndIntervalConfig" title="pydnp3.openpal.ArrayTimeAndIntervalConfig"><span class="pre">pydnp3.openpal.ArrayTimeAndIntervalConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewTimeAndIntervalConfig" title="pydnp3.openpal.ArrayViewTimeAndIntervalConfig"><span class="pre">pydnp3.openpal.ArrayViewTimeAndIntervalConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayTimeAndIntervalConfig.ToView" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayTimeAndIntervalConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayTimeAndIntervalConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayTimeAndIntervalConfig) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.ArrayTimeAndIntervalConfig, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.ArrayTimeAndIntervalConfig, copy: pydnp3.openpal.ArrayTimeAndIntervalConfig) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayView">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayView" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>ArrayView(arg0: opendnp3::BinaryConfig, arg1: int) -&gt; pydnp3.openpal.ArrayViewBinaryConfig</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+<ol class="arabic simple" start="2">
+<li><p>ArrayView(arg0: opendnp3::DoubleBitBinaryConfig, arg1: int) -&gt; pydnp3.openpal.ArrayViewDoubleBitBinaryConfig</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+<ol class="arabic simple" start="3">
+<li><p>ArrayView(arg0: opendnp3::AnalogConfig, arg1: int) -&gt; pydnp3.openpal.ArrayViewAnalogConfig</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+<ol class="arabic simple" start="4">
+<li><p>ArrayView(arg0: opendnp3::CounterConfig, arg1: int) -&gt; pydnp3.openpal.ArrayViewCounterConfig</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+<ol class="arabic simple" start="5">
+<li><p>ArrayView(arg0: opendnp3::FrozenCounterConfig, arg1: int) -&gt; pydnp3.openpal.ArrayViewFrozenCounterConfig</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+<ol class="arabic simple" start="6">
+<li><p>ArrayView(arg0: opendnp3::BOStatusConfig, arg1: int) -&gt; pydnp3.openpal.ArrayViewBOStatusConfig</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+<ol class="arabic simple" start="7">
+<li><p>ArrayView(arg0: opendnp3::AOStatusConfig, arg1: int) -&gt; pydnp3.openpal.ArrayViewAOStatusConfig</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+<ol class="arabic simple" start="8">
+<li><p>ArrayView(arg0: opendnp3::TimeAndIntervalConfig, arg1: int) -&gt; pydnp3.openpal.ArrayViewTimeAndIntervalConfig</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+<ol class="arabic simple" start="9">
+<li><p>ArrayView(arg0: int, arg1: int) -&gt; pydnp3.openpal.ArrayViewBuffer</p></li>
+</ol>
+<p>Return instance of class ArrayView&lt;ValueType, IndexType&gt;</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewAOStatusConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewAOStatusConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewAOStatusConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewAOStatusConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewAOStatusConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewAOStatusConfig, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewAOStatusConfig, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewAOStatusConfig.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewAOStatusConfig" title="pydnp3.openpal.ArrayViewAOStatusConfig"><span class="pre">pydnp3.openpal.ArrayViewAOStatusConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewAOStatusConfig.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewAOStatusConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewAOStatusConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewAOStatusConfig) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewAOStatusConfig, start: opendnp3::AOStatusConfig, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewAnalogConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewAnalogConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewAnalogConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewAnalogConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewAnalogConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewAnalogConfig, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewAnalogConfig, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewAnalogConfig.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewAnalogConfig" title="pydnp3.openpal.ArrayViewAnalogConfig"><span class="pre">pydnp3.openpal.ArrayViewAnalogConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewAnalogConfig.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewAnalogConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewAnalogConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewAnalogConfig) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewAnalogConfig, start: opendnp3::AnalogConfig, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBOStatusConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewBOStatusConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBOStatusConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBOStatusConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBOStatusConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewBOStatusConfig, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewBOStatusConfig, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBOStatusConfig.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewBOStatusConfig" title="pydnp3.openpal.ArrayViewBOStatusConfig"><span class="pre">pydnp3.openpal.ArrayViewBOStatusConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBOStatusConfig.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBOStatusConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBOStatusConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewBOStatusConfig) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewBOStatusConfig, start: opendnp3::BOStatusConfig, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBinaryConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewBinaryConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBinaryConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBinaryConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBinaryConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewBinaryConfig, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewBinaryConfig, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBinaryConfig.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewBinaryConfig" title="pydnp3.openpal.ArrayViewBinaryConfig"><span class="pre">pydnp3.openpal.ArrayViewBinaryConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBinaryConfig.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBinaryConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBinaryConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewBinaryConfig) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewBinaryConfig, start: opendnp3::BinaryConfig, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBuffer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewBuffer</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBuffer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint32</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBuffer.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBuffer.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewBuffer, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewBuffer, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBuffer.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewBuffer" title="pydnp3.openpal.ArrayViewBuffer"><span class="pre">pydnp3.openpal.ArrayViewBuffer</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBuffer.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewBuffer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewBuffer.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewBuffer) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewBuffer, start: int, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewCounterConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewCounterConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewCounterConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewCounterConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewCounterConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewCounterConfig, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewCounterConfig, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewCounterConfig.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewCounterConfig" title="pydnp3.openpal.ArrayViewCounterConfig"><span class="pre">pydnp3.openpal.ArrayViewCounterConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewCounterConfig.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewCounterConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewCounterConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewCounterConfig) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewCounterConfig, start: opendnp3::CounterConfig, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewDoubleBitBinaryConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewDoubleBitBinaryConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewDoubleBitBinaryConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewDoubleBitBinaryConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewDoubleBitBinaryConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewDoubleBitBinaryConfig, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewDoubleBitBinaryConfig, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewDoubleBitBinaryConfig.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewDoubleBitBinaryConfig" title="pydnp3.openpal.ArrayViewDoubleBitBinaryConfig"><span class="pre">pydnp3.openpal.ArrayViewDoubleBitBinaryConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewDoubleBitBinaryConfig.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewDoubleBitBinaryConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewDoubleBitBinaryConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewDoubleBitBinaryConfig) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewDoubleBitBinaryConfig, start: opendnp3::DoubleBitBinaryConfig, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewFrozenCounterConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewFrozenCounterConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewFrozenCounterConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewFrozenCounterConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewFrozenCounterConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewFrozenCounterConfig, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewFrozenCounterConfig, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewFrozenCounterConfig.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewFrozenCounterConfig" title="pydnp3.openpal.ArrayViewFrozenCounterConfig"><span class="pre">pydnp3.openpal.ArrayViewFrozenCounterConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewFrozenCounterConfig.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewFrozenCounterConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewFrozenCounterConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewFrozenCounterConfig) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewFrozenCounterConfig, start: opendnp3::FrozenCounterConfig, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewTimeAndIntervalConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ArrayViewTimeAndIntervalConfig</span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewTimeAndIntervalConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>Acts as a safe facade around an underlying array.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewTimeAndIntervalConfig.Contains">
+<span class="sig-name descname"><span class="pre">Contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewTimeAndIntervalConfig.Contains" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewTimeAndIntervalConfig, index: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Contains(self: pydnp3.openpal.ArrayViewTimeAndIntervalConfig, start: int, stop: int) -&gt; bool</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewTimeAndIntervalConfig.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.ArrayViewTimeAndIntervalConfig" title="pydnp3.openpal.ArrayViewTimeAndIntervalConfig"><span class="pre">pydnp3.openpal.ArrayViewTimeAndIntervalConfig</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ArrayViewTimeAndIntervalConfig.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ArrayViewTimeAndIntervalConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.ArrayViewTimeAndIntervalConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewTimeAndIntervalConfig) -&gt; None</p></li>
+</ol>
+<p>Constructor: ArrayView(nullptr, 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.ArrayViewTimeAndIntervalConfig, start: opendnp3::TimeAndIntervalConfig, aSize: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.Bounded">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">Bounded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.Bounded" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Bounded(value: int, min: int, max: int) -&gt; int</p></li>
+<li><p>Bounded(value: int, min: int, max: int) -&gt; int</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.Buffer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">Buffer</span></span><a class="headerlink" href="#pydnp3.openpal.Buffer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.openpal.ArrayBuffer" title="pydnp3.openpal.ArrayBuffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.ArrayBuffer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Buffer.GetWSlice">
+<span class="sig-name descname"><span class="pre">GetWSlice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.Buffer.GetWSlice" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>GetWSlice(self: pydnp3.openpal.Buffer) -&gt; pydnp3.openpal.WSlice</p></li>
+<li><p>GetWSlice(self: pydnp3.openpal.Buffer, maxSize: int) -&gt; pydnp3.openpal.WSlice</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Buffer.ToRSlice">
+<span class="sig-name descname"><span class="pre">ToRSlice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.Buffer" title="pydnp3.openpal.Buffer"><span class="pre">pydnp3.openpal.Buffer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.Buffer.ToRSlice" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Buffer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.Buffer.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.Buffer) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.Buffer, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.Buffer, arg0: pydnp3.openpal.RSlice) -&gt; None</p></li>
+</ol>
+<p>Initialize with the exact size and contents of the view.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.FixedUTCTimeSource">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">FixedUTCTimeSource</span></span><a class="headerlink" href="#pydnp3.openpal.FixedUTCTimeSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.openpal.IUTCTimeSource" title="pydnp3.openpal.IUTCTimeSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.IUTCTimeSource</span></code></a></p>
+<p>Mock usable for testing.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.FixedUTCTimeSource.Now">
+<span class="sig-name descname"><span class="pre">Now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.FixedUTCTimeSource" title="pydnp3.openpal.FixedUTCTimeSource"><span class="pre">pydnp3.openpal.FixedUTCTimeSource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.UTCTimestamp" title="pydnp3.openpal.UTCTimestamp"><span class="pre">pydnp3.openpal.UTCTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.FixedUTCTimeSource.Now" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.FixedUTCTimeSource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.FixedUTCTimeSource" title="pydnp3.openpal.FixedUTCTimeSource"><span class="pre">pydnp3.openpal.FixedUTCTimeSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.FixedUTCTimeSource.__init__" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.openpal.FixedUTCTimeSource.time">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#pydnp3.openpal.FixedUTCTimeSource.time" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.FloatByteOrderValue">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">FloatByteOrderValue</span></span><a class="headerlink" href="#pydnp3.openpal.FloatByteOrderValue" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Members:</p>
+<p>NORMAL</p>
+<p>REVERSE</p>
+<p>UNSUPPORTED</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.FloatByteOrderValue.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.FloatByteOrderValue" title="pydnp3.openpal.FloatByteOrderValue"><span class="pre">pydnp3.openpal.FloatByteOrderValue</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.FloatByteOrderValue.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.FloatEqual">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">FloatEqual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.FloatEqual" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>FloatEqual(arg0: int, arg1: int, arg2: int) -&gt; bool</p></li>
+<li><p>FloatEqual(arg0: int, arg1: int, arg2: int) -&gt; bool</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.HasSize">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">HasSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.HasSize" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>HasSize(arg0: int) -&gt; pydnp3.openpal.HasSizeUint16</p></li>
+</ol>
+<p>Return instance of class HasSize&lt;SizeType&gt;</p>
+<ol class="arabic simple" start="2">
+<li><p>HasSize(arg0: int) -&gt; pydnp3.openpal.HasSizeUint32</p></li>
+</ol>
+<p>Return instance of class HasSize&lt;SizeType&gt;</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.IExecutor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">IExecutor</span></span><a class="headerlink" href="#pydnp3.openpal.IExecutor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.IMonotonicTimeSource</span></code></p>
+<p>Interface for posting events to a queue. 
+Events can be posted for immediate consumption or some time in the future. 
+Events are processed in the order they are received.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.IExecutor.Post">
+<span class="sig-name descname"><span class="pre">Post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.IExecutor" title="pydnp3.openpal.IExecutor"><span class="pre">pydnp3.openpal.IExecutor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.IExecutor.Post" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>thread-safe way to post an event to be handled asynchronously</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.IExecutor.Start">
+<span class="sig-name descname"><span class="pre">Start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.IExecutor.Start" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Start(self: pydnp3.openpal.IExecutor, duration: pydnp3.openpal.TimeDuration, action: Callable[[], None]) -&gt; pydnp3.openpal.ITimer</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a new timer based on a relative time duration</p>
+</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li><p>Start(self: pydnp3.openpal.IExecutor, expiration: pydnp3.openpal.MonotonicTimestamp, action: Callable[[], None]) -&gt; pydnp3.openpal.ITimer</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a new timer based on an absolute timestamp of the monotonic clock</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.IExecutor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.IExecutor" title="pydnp3.openpal.IExecutor"><span class="pre">pydnp3.openpal.IExecutor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.IExecutor.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ILogHandler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ILogHandler</span></span><a class="headerlink" href="#pydnp3.openpal.ILogHandler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Callback interface for log messages.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ILogHandler.Log">
+<span class="sig-name descname"><span class="pre">Log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ILogHandler" title="pydnp3.openpal.ILogHandler"><span class="pre">pydnp3.openpal.ILogHandler</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogEntry" title="pydnp3.openpal.LogEntry"><span class="pre">pydnp3.openpal.LogEntry</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.ILogHandler.Log" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Callback method for log messages.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry</strong> – the log message to handle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ILogHandler.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ILogHandler" title="pydnp3.openpal.ILogHandler"><span class="pre">pydnp3.openpal.ILogHandler</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.ILogHandler.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.ITimer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ITimer</span></span><a class="headerlink" href="#pydnp3.openpal.ITimer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Timer are used to defer events for a later time on an executor.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ITimer.Cancel">
+<span class="sig-name descname"><span class="pre">Cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ITimer" title="pydnp3.openpal.ITimer"><span class="pre">pydnp3.openpal.ITimer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.ITimer.Cancel" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ITimer.ExpiresAt">
+<span class="sig-name descname"><span class="pre">ExpiresAt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ITimer" title="pydnp3.openpal.ITimer"><span class="pre">pydnp3.openpal.ITimer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.ITimer.ExpiresAt" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.ITimer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.ITimer" title="pydnp3.openpal.ITimer"><span class="pre">pydnp3.openpal.ITimer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.ITimer.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.IUTCTimeSource">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">IUTCTimeSource</span></span><a class="headerlink" href="#pydnp3.openpal.IUTCTimeSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Interface that defines a method to get UTC timestamps.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.IUTCTimeSource.Now">
+<span class="sig-name descname"><span class="pre">Now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.IUTCTimeSource" title="pydnp3.openpal.IUTCTimeSource"><span class="pre">pydnp3.openpal.IUTCTimeSource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.UTCTimestamp" title="pydnp3.openpal.UTCTimestamp"><span class="pre">pydnp3.openpal.UTCTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.IUTCTimeSource.Now" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.IUTCTimeSource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.IUTCTimeSource" title="pydnp3.openpal.IUTCTimeSource"><span class="pre">pydnp3.openpal.IUTCTimeSource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.IUTCTimeSource.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">LinkedListInt</span></span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint16</span></code></p>
+<p>A container adapter for a -linked list.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt.Add">
+<span class="sig-name descname"><span class="pre">Add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LinkedListInt" title="pydnp3.openpal.LinkedListInt"><span class="pre">pydnp3.openpal.LinkedListInt</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pydnp3.openpal.ListNodeInt</span></span></span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt.Add" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt.Capacity">
+<span class="sig-name descname"><span class="pre">Capacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LinkedListInt" title="pydnp3.openpal.LinkedListInt"><span class="pre">pydnp3.openpal.LinkedListInt</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt.Capacity" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt.Clear">
+<span class="sig-name descname"><span class="pre">Clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LinkedListInt" title="pydnp3.openpal.LinkedListInt"><span class="pre">pydnp3.openpal.LinkedListInt</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt.Clear" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt.Head">
+<span class="sig-name descname"><span class="pre">Head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LinkedListInt" title="pydnp3.openpal.LinkedListInt"><span class="pre">pydnp3.openpal.LinkedListInt</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pydnp3.openpal.ListNodeInt</span></span></span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt.Head" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt.IsFull">
+<span class="sig-name descname"><span class="pre">IsFull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LinkedListInt" title="pydnp3.openpal.LinkedListInt"><span class="pre">pydnp3.openpal.LinkedListInt</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt.IsFull" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt.Iterate">
+<span class="sig-name descname"><span class="pre">Iterate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LinkedListInt" title="pydnp3.openpal.LinkedListInt"><span class="pre">pydnp3.openpal.LinkedListInt</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pydnp3.openpal.LinkedListIteratorInt</span></span></span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt.Iterate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt.Remove">
+<span class="sig-name descname"><span class="pre">Remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt.Remove" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Remove(self: pydnp3.openpal.LinkedListInt, value: int) -&gt; bool</p></li>
+<li><p>Remove(self: pydnp3.openpal.LinkedListInt, apNode: pydnp3.openpal.ListNodeInt) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LinkedListInt.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LinkedListInt" title="pydnp3.openpal.LinkedListInt"><span class="pre">pydnp3.openpal.LinkedListInt</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxSize</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.LinkedListInt.__init__" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.LogEntry">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">LogEntry</span></span><a class="headerlink" href="#pydnp3.openpal.LogEntry" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>An event recorded by the logging framework.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LogEntry.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogEntry" title="pydnp3.openpal.LogEntry"><span class="pre">pydnp3.openpal.LogEntry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggerid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.LogEntry.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.LogFilters">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">LogFilters</span></span><a class="headerlink" href="#pydnp3.openpal.LogFilters" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Strongly typed wrapper for flags bitfield.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LogFilters.GetBitfield">
+<span class="sig-name descname"><span class="pre">GetBitfield</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.LogFilters.GetBitfield" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LogFilters.IsSet">
+<span class="sig-name descname"><span class="pre">IsSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.LogFilters.IsSet" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.LogFilters.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.LogFilters.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.LogFilters) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.LogFilters, filters: int) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.LogHex">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">LogHex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.Logger" title="pydnp3.openpal.Logger"><span class="pre">pydnp3.openpal.Logger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">firstRowSize</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otherRowSize</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.LogHex" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">Logger</span></span><a class="headerlink" href="#pydnp3.openpal.Logger" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>A copyable facade over a LogRoot class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger.Detach">
+<span class="sig-name descname"><span class="pre">Detach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.Logger.Detach" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Detach(self: pydnp3.openpal.Logger, id: str) -&gt; pydnp3.openpal.Logger</p></li>
+<li><p>Detach(self: pydnp3.openpal.Logger, id: str, levels: pydnp3.openpal.LogFilters) -&gt; pydnp3.openpal.Logger</p></li>
+<li><p>Detach(self: pydnp3.openpal.Logger, levels: pydnp3.openpal.LogFilters) -&gt; pydnp3.openpal.Logger</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.Logger" title="pydnp3.openpal.Logger"><span class="pre">pydnp3.openpal.Logger</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.Logger.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger.GetFilters">
+<span class="sig-name descname"><span class="pre">GetFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.Logger" title="pydnp3.openpal.Logger"><span class="pre">pydnp3.openpal.Logger</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.Logger.GetFilters" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger.IsEnabled">
+<span class="sig-name descname"><span class="pre">IsEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.Logger" title="pydnp3.openpal.Logger"><span class="pre">pydnp3.openpal.Logger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.Logger.IsEnabled" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger.Log">
+<span class="sig-name descname"><span class="pre">Log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.Logger" title="pydnp3.openpal.Logger"><span class="pre">pydnp3.openpal.Logger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.Logger.Log" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger.Rename">
+<span class="sig-name descname"><span class="pre">Rename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.Logger" title="pydnp3.openpal.Logger"><span class="pre">pydnp3.openpal.Logger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.Logger.Rename" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger.SetFilters">
+<span class="sig-name descname"><span class="pre">SetFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.Logger" title="pydnp3.openpal.Logger"><span class="pre">pydnp3.openpal.Logger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.Logger.SetFilters" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Logger.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.Logger.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.Logger) -&gt; None</p></li>
+</ol>
+<p>Empty constructor: Logger(nullptr, , 0)</p>
+<ol class="arabic simple" start="2">
+<li><p>__init__(self: pydnp3.openpal.Logger, backend: pydnp3.openpal.ILogHandler, id: str, levels: pydnp3.openpal.LogFilters) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.Max">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">Max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.Max" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Max(arg0: int, arg1: int) -&gt; int</p></li>
+<li><p>Max(arg0: int, arg1: int) -&gt; int</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.MaxValue">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">MaxValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.MaxValue" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>MaxValue() -&gt; int</p></li>
+<li><p>MaxValue() -&gt; int</p></li>
+<li><p>MaxValue() -&gt; int</p></li>
+<li><p>MaxValue() -&gt; float</p></li>
+<li><p>MaxValue() -&gt; float</p></li>
+<li><p>MaxValue() -&gt; int</p></li>
+<li><p>MaxValue() -&gt; int</p></li>
+<li><p>MaxValue() -&gt; int</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.Min">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">Min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.Min" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Min(arg0: int, arg1: int) -&gt; int</p></li>
+<li><p>Min(arg0: int, arg1: int) -&gt; int</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.MinValue">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">MinValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.MinValue" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>MinValue() -&gt; int</p></li>
+<li><p>MinValue() -&gt; int</p></li>
+<li><p>MinValue() -&gt; int</p></li>
+<li><p>MinValue() -&gt; float</p></li>
+<li><p>MinValue() -&gt; float</p></li>
+<li><p>MinValue() -&gt; int</p></li>
+<li><p>MinValue() -&gt; int</p></li>
+<li><p>MinValue() -&gt; int</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.MonotonicTimestamp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">MonotonicTimestamp</span></span><a class="headerlink" href="#pydnp3.openpal.MonotonicTimestamp" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Strong typing for millisecond-based monotonic timestamps</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.MonotonicTimestamp.Add">
+<span class="sig-name descname"><span class="pre">Add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.MonotonicTimestamp.Add" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.MonotonicTimestamp.IsMax">
+<span class="sig-name descname"><span class="pre">IsMax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.MonotonicTimestamp.IsMax" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.MonotonicTimestamp.IsMin">
+<span class="sig-name descname"><span class="pre">IsMin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.MonotonicTimestamp.IsMin" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.MonotonicTimestamp.Max">
+<span class="sig-name descname"><span class="pre">Max</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.MonotonicTimestamp.Max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.MonotonicTimestamp.Min">
+<span class="sig-name descname"><span class="pre">Min</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.MonotonicTimestamp.Min" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.MonotonicTimestamp.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.MonotonicTimestamp.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.MonotonicTimestamp) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.MonotonicTimestamp, milliseconds: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.openpal.MonotonicTimestamp.milliseconds">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">milliseconds</span></span><a class="headerlink" href="#pydnp3.openpal.MonotonicTimestamp.milliseconds" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">RSlice</span></span><a class="headerlink" href="#pydnp3.openpal.RSlice" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint32</span></code></p>
+<p>Represents a readonly slice of a buffer located elsewhere. 
+Mediates reading from the buffer to prevent overreads and other errors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice.Advance">
+<span class="sig-name descname"><span class="pre">Advance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.RSlice.Advance" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice.Clear">
+<span class="sig-name descname"><span class="pre">Clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.RSlice.Clear" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice.CopyTo">
+<span class="sig-name descname"><span class="pre">CopyTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.openpal.RSlice</span></em>, <em class="sig-param"><span class="pre">RSlice:</span> <span class="pre">openpal::WSlice</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.RSlice.CopyTo" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.RSlice.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice.Equals">
+<span class="sig-name descname"><span class="pre">Equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">RSlice</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.RSlice.Equals" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice.Skip">
+<span class="sig-name descname"><span class="pre">Skip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.RSlice.Skip" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice.Take">
+<span class="sig-name descname"><span class="pre">Take</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.RSlice.Take" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RSlice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.RSlice.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.RSlice) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.RSlice, pBuffer: int, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.RingBuffer16">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">RingBuffer16</span></span><a class="headerlink" href="#pydnp3.openpal.RingBuffer16" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>A byte-oriented ring buffer. 
+Interrupt-safe (w/o disabling interrupts) for a single producer and single consumer, one reading and one writing. 
+N must be a power of 2, and is enforced via static assert.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RingBuffer16.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RingBuffer16" title="pydnp3.openpal.RingBuffer16"><span class="pre">pydnp3.openpal.RingBuffer16</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.RingBuffer16.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RingBuffer16.Full">
+<span class="sig-name descname"><span class="pre">Full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RingBuffer16" title="pydnp3.openpal.RingBuffer16"><span class="pre">pydnp3.openpal.RingBuffer16</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.RingBuffer16.Full" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RingBuffer16.Get">
+<span class="sig-name descname"><span class="pre">Get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RingBuffer16" title="pydnp3.openpal.RingBuffer16"><span class="pre">pydnp3.openpal.RingBuffer16</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteOut</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.RingBuffer16.Get" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RingBuffer16.GetMany">
+<span class="sig-name descname"><span class="pre">GetMany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RingBuffer16" title="pydnp3.openpal.RingBuffer16"><span class="pre">pydnp3.openpal.RingBuffer16</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.RingBuffer16.GetMany" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RingBuffer16.Put">
+<span class="sig-name descname"><span class="pre">Put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RingBuffer16" title="pydnp3.openpal.RingBuffer16"><span class="pre">pydnp3.openpal.RingBuffer16</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteIn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.RingBuffer16.Put" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RingBuffer16.PutMany">
+<span class="sig-name descname"><span class="pre">PutMany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RingBuffer16" title="pydnp3.openpal.RingBuffer16"><span class="pre">pydnp3.openpal.RingBuffer16</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.RingBuffer16.PutMany" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.RingBuffer16.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RingBuffer16" title="pydnp3.openpal.RingBuffer16"><span class="pre">pydnp3.openpal.RingBuffer16</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.RingBuffer16.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.SecureBuffer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">SecureBuffer</span></span><a class="headerlink" href="#pydnp3.openpal.SecureBuffer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.openpal.Buffer" title="pydnp3.openpal.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.Buffer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SecureBuffer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.SecureBuffer.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.SecureBuffer) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.SecureBuffer, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.openpal.SecureBuffer, input: pydnp3.openpal.RSlice) -&gt; None</p></li>
+</ol>
+<p>Initialize with the exact size and contents of the view.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.SequenceNumUint8">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">SequenceNumUint8</span></span><a class="headerlink" href="#pydnp3.openpal.SequenceNumUint8" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Represents a sequence number.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SequenceNumUint8.Equals">
+<span class="sig-name descname"><span class="pre">Equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SequenceNumUint8" title="pydnp3.openpal.SequenceNumUint8"><span class="pre">pydnp3.openpal.SequenceNumUint8</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.SequenceNumUint8.Equals" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SequenceNumUint8.Get">
+<span class="sig-name descname"><span class="pre">Get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SequenceNumUint8" title="pydnp3.openpal.SequenceNumUint8"><span class="pre">pydnp3.openpal.SequenceNumUint8</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.SequenceNumUint8.Get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SequenceNumUint8.Increment">
+<span class="sig-name descname"><span class="pre">Increment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SequenceNumUint8" title="pydnp3.openpal.SequenceNumUint8"><span class="pre">pydnp3.openpal.SequenceNumUint8</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.SequenceNumUint8.Increment" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SequenceNumUint8.Next">
+<span class="sig-name descname"><span class="pre">Next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SequenceNumUint8" title="pydnp3.openpal.SequenceNumUint8"><span class="pre">pydnp3.openpal.SequenceNumUint8</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.SequenceNumUint8" title="pydnp3.openpal.SequenceNumUint8"><span class="pre">pydnp3.openpal.SequenceNumUint8</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.SequenceNumUint8.Next" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SequenceNumUint8.Reset">
+<span class="sig-name descname"><span class="pre">Reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SequenceNumUint8" title="pydnp3.openpal.SequenceNumUint8"><span class="pre">pydnp3.openpal.SequenceNumUint8</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.SequenceNumUint8.Reset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SequenceNumUint8.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.SequenceNumUint8.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.SequenceNumUint8) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.SequenceNumUint8, sequence: int) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableRSlice">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">SettableRSlice</span></span><a class="headerlink" href="#pydnp3.openpal.SettableRSlice" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Utility class for representing a value that may or may not be set.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableRSlice.Clear">
+<span class="sig-name descname"><span class="pre">Clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableRSlice" title="pydnp3.openpal.SettableRSlice"><span class="pre">pydnp3.openpal.SettableRSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableRSlice.Clear" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableRSlice.Get">
+<span class="sig-name descname"><span class="pre">Get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableRSlice" title="pydnp3.openpal.SettableRSlice"><span class="pre">pydnp3.openpal.SettableRSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.SettableRSlice.Get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableRSlice.IsEmpty">
+<span class="sig-name descname"><span class="pre">IsEmpty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableRSlice" title="pydnp3.openpal.SettableRSlice"><span class="pre">pydnp3.openpal.SettableRSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableRSlice.IsEmpty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableRSlice.IsSet">
+<span class="sig-name descname"><span class="pre">IsSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableRSlice" title="pydnp3.openpal.SettableRSlice"><span class="pre">pydnp3.openpal.SettableRSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableRSlice.IsSet" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableRSlice.Pop">
+<span class="sig-name descname"><span class="pre">Pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableRSlice" title="pydnp3.openpal.SettableRSlice"><span class="pre">pydnp3.openpal.SettableRSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableRSlice.Pop" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableRSlice.Set">
+<span class="sig-name descname"><span class="pre">Set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableRSlice" title="pydnp3.openpal.SettableRSlice"><span class="pre">pydnp3.openpal.SettableRSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableRSlice.Set" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableRSlice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableRSlice" title="pydnp3.openpal.SettableRSlice"><span class="pre">pydnp3.openpal.SettableRSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableRSlice.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableWSlice">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">SettableWSlice</span></span><a class="headerlink" href="#pydnp3.openpal.SettableWSlice" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Utility class for representing a value that may or may not be set.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableWSlice.Clear">
+<span class="sig-name descname"><span class="pre">Clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableWSlice" title="pydnp3.openpal.SettableWSlice"><span class="pre">pydnp3.openpal.SettableWSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableWSlice.Clear" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableWSlice.Get">
+<span class="sig-name descname"><span class="pre">Get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableWSlice" title="pydnp3.openpal.SettableWSlice"><span class="pre">pydnp3.openpal.SettableWSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.SettableWSlice.Get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableWSlice.IsEmpty">
+<span class="sig-name descname"><span class="pre">IsEmpty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableWSlice" title="pydnp3.openpal.SettableWSlice"><span class="pre">pydnp3.openpal.SettableWSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableWSlice.IsEmpty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableWSlice.IsSet">
+<span class="sig-name descname"><span class="pre">IsSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableWSlice" title="pydnp3.openpal.SettableWSlice"><span class="pre">pydnp3.openpal.SettableWSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableWSlice.IsSet" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableWSlice.Pop">
+<span class="sig-name descname"><span class="pre">Pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableWSlice" title="pydnp3.openpal.SettableWSlice"><span class="pre">pydnp3.openpal.SettableWSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableWSlice.Pop" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableWSlice.Set">
+<span class="sig-name descname"><span class="pre">Set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableWSlice" title="pydnp3.openpal.SettableWSlice"><span class="pre">pydnp3.openpal.SettableWSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableWSlice.Set" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.SettableWSlice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.SettableWSlice" title="pydnp3.openpal.SettableWSlice"><span class="pre">pydnp3.openpal.SettableWSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.SettableWSlice.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">TimeDuration</span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.TimeDurationBase</span></code></p>
+<p>Strong typing for millisecond based time durations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.Days">
+<span class="sig-name descname"><span class="pre">Days</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.Days" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.Hours">
+<span class="sig-name descname"><span class="pre">Hours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hours</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.Hours" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.Max">
+<span class="sig-name descname"><span class="pre">Max</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.Max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.Milliseconds">
+<span class="sig-name descname"><span class="pre">Milliseconds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">milliseconds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.Milliseconds" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.Min">
+<span class="sig-name descname"><span class="pre">Min</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.Min" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.Minutes">
+<span class="sig-name descname"><span class="pre">Minutes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minutes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.Minutes" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.MultiplyBy">
+<span class="sig-name descname"><span class="pre">MultiplyBy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.MultiplyBy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.Seconds">
+<span class="sig-name descname"><span class="pre">Seconds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.Seconds" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.Zero">
+<span class="sig-name descname"><span class="pre">Zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.Zero" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimeDuration.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.TimeDuration.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimerRef">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">TimerRef</span></span><a class="headerlink" href="#pydnp3.openpal.TimerRef" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>A management class to make dealing with timer pointers safer a little safer. 
+Holds an optional pointer to an active ITimer pointer. 
+Acts as a safe proxy for dealing with a recurring timer instance.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimerRef.Cancel">
+<span class="sig-name descname"><span class="pre">Cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.TimerRef" title="pydnp3.openpal.TimerRef"><span class="pre">pydnp3.openpal.TimerRef</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.TimerRef.Cancel" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Cancels any existing timer.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>true if the timer was active, false otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimerRef.ExpiresAt">
+<span class="sig-name descname"><span class="pre">ExpiresAt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.TimerRef" title="pydnp3.openpal.TimerRef"><span class="pre">pydnp3.openpal.TimerRef</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.TimerRef.ExpiresAt" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the expiration time, MonotonticTimestamp::Max() if not active</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimerRef.IsActive">
+<span class="sig-name descname"><span class="pre">IsActive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.TimerRef" title="pydnp3.openpal.TimerRef"><span class="pre">pydnp3.openpal.TimerRef</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.openpal.TimerRef.IsActive" title="Permalink to this definition"></a></dt>
+<dd><p>Called to see if the timer is currently active.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.TimerRef.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.TimerRef" title="pydnp3.openpal.TimerRef"><span class="pre">pydnp3.openpal.TimerRef</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">executor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.IExecutor" title="pydnp3.openpal.IExecutor"><span class="pre">pydnp3.openpal.IExecutor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.TimerRef.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.ToHexChar">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">ToHexChar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">char</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pydnp3.openpal.ToHexChar" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.UTCTimestamp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">UTCTimestamp</span></span><a class="headerlink" href="#pydnp3.openpal.UTCTimestamp" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Strong typing for UTCTimestamps</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.UTCTimestamp.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.UTCTimestamp.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.UTCTimestamp) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.UTCTimestamp, msSinceEpoch: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.openpal.UTCTimestamp.msSinceEpoch">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">msSinceEpoch</span></span><a class="headerlink" href="#pydnp3.openpal.UTCTimestamp.msSinceEpoch" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.Uncopyable">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">Uncopyable</span></span><a class="headerlink" href="#pydnp3.openpal.Uncopyable" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Inherited classes will not have default copy/assignment.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.Uncopyable.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.Uncopyable.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.openpal.WSlice">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">WSlice</span></span><a class="headerlink" href="#pydnp3.openpal.WSlice" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.HasSizeUint32</span></code></p>
+<p>Represents a write-able slice of a buffer located elsewhere. 
+Mediates writing to the buffer to prevent overruns and other errors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.WSlice.Advance">
+<span class="sig-name descname"><span class="pre">Advance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pydnp3.openpal.WSlice.Advance" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.WSlice.Clear">
+<span class="sig-name descname"><span class="pre">Clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.WSlice.Clear" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.WSlice.Empty">
+<span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.WSlice.Empty" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.WSlice.SetAllTo">
+<span class="sig-name descname"><span class="pre">SetAllTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.openpal.WSlice.SetAllTo" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.WSlice.Skip">
+<span class="sig-name descname"><span class="pre">Skip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.WSlice.Skip" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.WSlice.ToRSlice">
+<span class="sig-name descname"><span class="pre">ToRSlice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.openpal.WSlice" title="pydnp3.openpal.WSlice"><span class="pre">pydnp3.openpal.WSlice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></span><a class="headerlink" href="#pydnp3.openpal.WSlice.ToRSlice" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.openpal.WSlice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.WSlice.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.openpal.WSlice) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.openpal.WSlice, pBuffer: int, size: int) -&gt; None</p></li>
+</ol>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.openpal.WithinLimits">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.openpal.</span></span><span class="sig-name descname"><span class="pre">WithinLimits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.openpal.WithinLimits" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>WithinLimits(value: int, min: int, max: int) -&gt; bool</p></li>
+<li><p>WithinLimits(value: int, min: int, max: int) -&gt; bool</p></li>
+</ol>
+</dd></dl>
+
+</section>
+<section id="pydnp3-openpal-logflags">
+<h1>pydnp3.openpal.logflags<a class="headerlink" href="#pydnp3-openpal-logflags" title="Permalink to this headline"></a></h1>
+<p>See source or Python <cite>help()</cite> in REPL for values of constants in this module.</p>
+<span class="target" id="module-pydnp3.openpal.logflags"></span></section>
+<section id="pydnp3-openpal-sizes">
+<h1>pydnp3.openpal.sizes<a class="headerlink" href="#pydnp3-openpal-sizes" title="Permalink to this headline"></a></h1>
+<p>See source or Python <cite>help()</cite> in REPL for values of constants in this module.</p>
+<span class="target" id="module-pydnp3.openpal.sizes"></span></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="opendnp3.html" class="btn btn-neutral float-left" title="pydnp3.opendnp3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright TODO.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

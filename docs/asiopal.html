@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pydnp3.asiopal &mdash; PyDNP3  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pydnp3.opendnp3" href="opendnp3.html" />
+    <link rel="prev" title="pydnp3.asiodnp3" href="asiodnp3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyDNP3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="asiodnp3.html">pydnp3.asiodnp3</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pydnp3.asiopal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html">pydnp3.opendnp3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#module-pydnp3.opendnp3.measurements">pydnp3.opendnp3.measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#pydnp3-opendnp3-flags">pydnp3.opendnp3.flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#pydnp3-opendnp3-levels">pydnp3.opendnp3.levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openpal.html">pydnp3.openpal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openpal.html#pydnp3-openpal-logflags">pydnp3.openpal.logflags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openpal.html#pydnp3-openpal-sizes">pydnp3.openpal.sizes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyDNP3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>pydnp3.asiopal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/asiopal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pydnp3.asiopal">
+<span id="pydnp3-asiopal"></span><h1>pydnp3.asiopal<a class="headerlink" href="#module-pydnp3.asiopal" title="Permalink to this headline"></a></h1>
+<p>Bindings for asiopal namespace</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ChannelRetry">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">ChannelRetry</span></span><a class="headerlink" href="#pydnp3.asiopal.ChannelRetry" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Class used to configure how channel failures are retried</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ChannelRetry.Default">
+<span class="sig-name descname"><span class="pre">Default</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiopal.ChannelRetry" title="pydnp3.asiopal.ChannelRetry"><span class="pre">pydnp3.asiopal.ChannelRetry</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.ChannelRetry.Default" title="Permalink to this definition"></a></dt>
+<dd><p>Return the default configuration of exponential backoff from 1 sec to 1 minute.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ChannelRetry.NextDelay">
+<span class="sig-name descname"><span class="pre">NextDelay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.ChannelRetry" title="pydnp3.asiopal.ChannelRetry"><span class="pre">pydnp3.asiopal.ChannelRetry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.ChannelRetry.NextDelay" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ChannelRetry.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiopal.ChannelRetry.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>__init__(self: pydnp3.asiopal.ChannelRetry, minOpenRetry: pydnp3.openpal.TimeDuration, maxOpenRetry: pydnp3.openpal.TimeDuration) -&gt; None</p>
+<p>Construct a channel retry config class.</p>
+</li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minOpenRetry</strong> – minimum connection retry interval on failure</p></li>
+<li><p><strong>maxOpenRetry</strong> – maximum connection retry interval on failure</p></li>
+<li><p><strong>strategy</strong> – strategy to use</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic" start="2">
+<li><p>__init__(self: pydnp3.asiopal.ChannelRetry, minOpenRetry: pydnp3.openpal.TimeDuration, maxOpenRetry: pydnp3.openpal.TimeDuration, strategy: pydnp3.asiopal.IOpenDelayStrategy) -&gt; None</p>
+<p>Construct a channel retry config class.</p>
+</li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minOpenRetry</strong> – minimum connection retry interval on failure</p></li>
+<li><p><strong>maxOpenRetry</strong> – maximum connection retry interval on failure</p></li>
+<li><p><strong>strategy</strong> – strategy to use</p></li>
+</ul>
+</dd>
+</dl>
+<ol class="arabic simple" start="3">
+<li><p>__init__(self: pydnp3.asiopal.ChannelRetry) -&gt; None</p></li>
+</ol>
+<p>Default configuration of exponential backoff from 1 sec to 1 minute.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ChannelRetry.maxOpenRetry">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">maxOpenRetry</span></span><a class="headerlink" href="#pydnp3.asiopal.ChannelRetry.maxOpenRetry" title="Permalink to this definition"></a></dt>
+<dd><p>Maximum connection retry interval on failure.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ChannelRetry.minOpenRetry">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">minOpenRetry</span></span><a class="headerlink" href="#pydnp3.asiopal.ChannelRetry.minOpenRetry" title="Permalink to this definition"></a></dt>
+<dd><p>Minimum connection retry interval on failure.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Configure">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">Configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">settings:</span> <span class="pre">pydnp3.asiopal.SerialSettings</span></em>, <em class="sig-param"><span class="pre">port:</span> <span class="pre">asio::basic_serial_port&lt;asio::serial_port_service&gt;</span></em>, <em class="sig-param"><span class="pre">ec:</span> <span class="pre">std::error_code</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.asiopal.Configure" title="Permalink to this definition"></a></dt>
+<dd><p>Serial port configuration functions free to keep the classes simple.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">Executor</span></span><a class="headerlink" href="#pydnp3.asiopal.Executor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="openpal.html#pydnp3.openpal.IExecutor" title="pydnp3.openpal.IExecutor"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.IExecutor</span></code></a></p>
+<p>Implementation of openpal::IExecutor backed by asio::strand. 
+Shutdown life-cycle guarantees are provided by using std::shared_ptr.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.BlockUntil">
+<span class="sig-name descname"><span class="pre">BlockUntil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.Executor.BlockUntil" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.BlockUntilAndFlush">
+<span class="sig-name descname"><span class="pre">BlockUntilAndFlush</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.Executor.BlockUntilAndFlush" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.Create">
+<span class="sig-name descname"><span class="pre">Create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">io</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.IO" title="pydnp3.asiopal.IO"><span class="pre">pydnp3.asiopal.IO</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.Executor.Create" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>shared_ptr to openpal.Executor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.Fork">
+<span class="sig-name descname"><span class="pre">Fork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.Executor.Fork" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new Executor that shares the underling std::shared_ptr&lt;IO&gt;.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.GetTime">
+<span class="sig-name descname"><span class="pre">GetTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.Executor.GetTime" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.Post">
+<span class="sig-name descname"><span class="pre">Post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">runnable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.Executor.Post" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.ReturnFrom">
+<span class="sig-name descname"><span class="pre">ReturnFrom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiopal.Executor.ReturnFrom" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>ReturnFrom(self: pydnp3.asiopal.Executor, action: Callable[[], bool]) -&gt; bool</p></li>
+<li><p>ReturnFrom(self: pydnp3.asiopal.Executor, action: Callable[[], pydnp3.opendnp3.StackStatistics]) -&gt; pydnp3.opendnp3.StackStatistics</p></li>
+<li><p>ReturnFrom(self: pydnp3.asiopal.Executor, action: Callable[[], pydnp3.opendnp3.LinkStatistics]) -&gt; pydnp3.opendnp3.LinkStatistics</p></li>
+<li><p>ReturnFrom(self: pydnp3.asiopal.Executor, action: Callable[[], pydnp3.openpal.LogFilters]) -&gt; pydnp3.openpal.LogFilters</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.Start">
+<span class="sig-name descname"><span class="pre">Start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiopal.Executor.Start" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Start(self: pydnp3.asiopal.Executor, duration: pydnp3.openpal.TimeDuration, runnable: Callable[[], None]) -&gt; pydnp3.openpal.ITimer</p></li>
+<li><p>Start(self: pydnp3.asiopal.Executor, duration: pydnp3.openpal.MonotonicTimestamp, runnable: Callable[[], None]) -&gt; pydnp3.openpal.ITimer</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Executor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">io</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.IO" title="pydnp3.asiopal.IO"><span class="pre">pydnp3.asiopal.IO</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.Executor.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ExponentialBackoffStrategy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">ExponentialBackoffStrategy</span></span><a class="headerlink" href="#pydnp3.asiopal.ExponentialBackoffStrategy" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.asiopal.IOpenDelayStrategy" title="pydnp3.asiopal.IOpenDelayStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiopal.IOpenDelayStrategy</span></code></a></p>
+<p>Implements IOpenDelayStrategy using exponential-backoff.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ExponentialBackoffStrategy.GetNextDelay">
+<span class="sig-name descname"><span class="pre">GetNextDelay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.ExponentialBackoffStrategy" title="pydnp3.asiopal.ExponentialBackoffStrategy"><span class="pre">pydnp3.asiopal.ExponentialBackoffStrategy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">current</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.ExponentialBackoffStrategy.GetNextDelay" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ExponentialBackoffStrategy.Instance">
+<span class="sig-name descname"><span class="pre">Instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiopal.IOpenDelayStrategy" title="pydnp3.asiopal.IOpenDelayStrategy"><span class="pre">pydnp3.asiopal.IOpenDelayStrategy</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.ExponentialBackoffStrategy.Instance" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ExponentialBackoffStrategy.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiopal.ExponentialBackoffStrategy.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IListener">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">IListener</span></span><a class="headerlink" href="#pydnp3.asiopal.IListener" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.asiopal.IResource" title="pydnp3.asiopal.IResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiopal.IResource</span></code></a></p>
+<p>Represents a running TCP or TLS listener that can be shutdown so that no new connections are accepted.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IListener.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.IListener" title="pydnp3.asiopal.IListener"><span class="pre">pydnp3.asiopal.IListener</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.IListener.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IO">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">IO</span></span><a class="headerlink" href="#pydnp3.asiopal.IO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Container class for an asio::io_service.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IO.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.IO" title="pydnp3.asiopal.IO"><span class="pre">pydnp3.asiopal.IO</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.IO.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IOpenDelayStrategy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">IOpenDelayStrategy</span></span><a class="headerlink" href="#pydnp3.asiopal.IOpenDelayStrategy" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>A strategy interface for controlling how connection are retried</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IOpenDelayStrategy.GetNextDelay">
+<span class="sig-name descname"><span class="pre">GetNextDelay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.IOpenDelayStrategy" title="pydnp3.asiopal.IOpenDelayStrategy"><span class="pre">pydnp3.asiopal.IOpenDelayStrategy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">current</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.IOpenDelayStrategy.GetNextDelay" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IOpenDelayStrategy.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.IOpenDelayStrategy" title="pydnp3.asiopal.IOpenDelayStrategy"><span class="pre">pydnp3.asiopal.IOpenDelayStrategy</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.IOpenDelayStrategy.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IResource">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">IResource</span></span><a class="headerlink" href="#pydnp3.asiopal.IResource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Anything that can be shutdown.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IResource.Shutdown">
+<span class="sig-name descname"><span class="pre">Shutdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.IResource" title="pydnp3.asiopal.IResource"><span class="pre">pydnp3.asiopal.IResource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.IResource.Shutdown" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.IResource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.IResource" title="pydnp3.asiopal.IResource"><span class="pre">pydnp3.asiopal.IResource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.IResource.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">SerialSettings</span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Settings structure for the serial port.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.SerialSettings" title="pydnp3.asiopal.SerialSettings"><span class="pre">pydnp3.asiopal.SerialSettings</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Defaults to the familiar 9600 8/N/1, no flow control.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings.asyncOpenDelay">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">asyncOpenDelay</span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings.asyncOpenDelay" title="Permalink to this definition"></a></dt>
+<dd><p>Some physical layers need time to settle so that the first tx isn’t lost.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings.baud">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">baud</span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings.baud" title="Permalink to this definition"></a></dt>
+<dd><p>Baud rate of the port, i.e. 9600 or 57600.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings.dataBits">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dataBits</span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings.dataBits" title="Permalink to this definition"></a></dt>
+<dd><p>Data bits, usually 8.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings.deviceName">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">deviceName</span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings.deviceName" title="Permalink to this definition"></a></dt>
+<dd><p>name of the port, i.e. COM1 or /dev/tty0.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings.flowType">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">flowType</span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings.flowType" title="Permalink to this definition"></a></dt>
+<dd><p>Flow control setting, usually FLOW_NONE.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings.parity">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">parity</span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings.parity" title="Permalink to this definition"></a></dt>
+<dd><p>Parity setting for the port, usually PAR_NONE.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SerialSettings.stopBits">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">stopBits</span></span><a class="headerlink" href="#pydnp3.asiopal.SerialSettings.stopBits" title="Permalink to this definition"></a></dt>
+<dd><p>Stop bits, usually set to 1.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SocketHelpers">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">SocketHelpers</span></span><a class="headerlink" href="#pydnp3.asiopal.SocketHelpers" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Bind a socket object to a local endpoint given an address. If the address is empty, 0.0.0.0 is used.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SocketHelpers.BindToLocalAddress">
+<span class="sig-name descname"><span class="pre">BindToLocalAddress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">arg0:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">arg1:</span> <span class="pre">asio::ip::basic_endpoint&lt;asio::ip::tcp&gt;</span></em>, <em class="sig-param"><span class="pre">arg2:</span> <span class="pre">asio::basic_stream_socket&lt;asio::ip::tcp</span></em>, <em class="sig-param"><span class="pre">asio::stream_socket_service&lt;asio::ip::tcp&gt;</span> <span class="pre">&gt;</span></em>, <em class="sig-param"><span class="pre">arg3:</span> <span class="pre">std::error_code</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.SocketHelpers.BindToLocalAddress" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.SocketHelpers.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiopal.SocketHelpers.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TCPServer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">TCPServer</span></span><a class="headerlink" href="#pydnp3.asiopal.TCPServer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.asiopal.IListener" title="pydnp3.asiopal.IListener"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiopal.IListener</span></code></a></p>
+<p>Binds and listens on an IPv4 TCP port. 
+Meant to be used exclusively as a shared_ptr.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TCPServer.Shutdown">
+<span class="sig-name descname"><span class="pre">Shutdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.TCPServer" title="pydnp3.asiopal.TCPServer"><span class="pre">pydnp3.asiopal.TCPServer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.TCPServer.Shutdown" title="Permalink to this definition"></a></dt>
+<dd><p>Implement IListener.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TCPServer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiopal.TCPServer</span></em>, <em class="sig-param"><span class="pre">logger:</span> <span class="pre">pydnp3.openpal.Logger</span></em>, <em class="sig-param"><span class="pre">executor:</span> <span class="pre">pydnp3.asiopal.Executor</span></em>, <em class="sig-param"><span class="pre">endpoint:</span> <span class="pre">pydnp3.asiopal.IPEndpoint</span></em>, <em class="sig-param"><span class="pre">ec:</span> <span class="pre">std::error_code</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.TCPServer.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">TLSConfig</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>TLS configuration information.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.TLSConfig" title="pydnp3.asiopal.TLSConfig"><span class="pre">pydnp3.asiopal.TLSConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">peerCertFilePath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">localCertFilePath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">privateKeyFilePath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxVerifyDepth</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowTLSv10</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowTLSv11</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowTLSv12</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cipherList</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Construct a TLS configuration.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>peerCertFilePath</strong> – Certificate file used to verify the peer or server. Can be CA file or a self-signed cert provided by other party.</p></li>
+<li><p><strong>localCertFilePath</strong> – File that contains the certificate (or certificate chain) that will be presented to the remote side of the connection</p></li>
+<li><p><strong>privateKeyFilePath</strong> – File that contains the private key corresponding to the local certificate</p></li>
+<li><p><strong>maxVerifyDepth</strong> – The maximum certificate chain verification depth (0 == self-signed only)</p></li>
+<li><p><strong>allowTLSv10</strong> – Allow TLS version 1.0 (default false)</p></li>
+<li><p><strong>allowTLSv11</strong> – Allow TLS version 1.1 (default false)</p></li>
+<li><p><strong>allowTLSv12</strong> – Allow TLS version 1.2 (default true)</p></li>
+<li><p><strong>cipherList</strong> – The openssl cipher-list, defaults to empty string which does not modify the default cipher list</p></li>
+</ul>
+</dd>
+</dl>
+<p>localCertFilePath and privateKeyFilePath can optionally be the same file, i.e. a PEM that contains both pieces of data.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.allowTLSv10">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">allowTLSv10</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.allowTLSv10" title="Permalink to this definition"></a></dt>
+<dd><p>Allow TLS version 1.0 (default false).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.allowTLSv11">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">allowTLSv11</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.allowTLSv11" title="Permalink to this definition"></a></dt>
+<dd><p>Allow TLS version 1.1 (default false).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.allowTLSv12">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">allowTLSv12</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.allowTLSv12" title="Permalink to this definition"></a></dt>
+<dd><p>Allow TLS version 1.2 (default true).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.cipherList">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">cipherList</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.cipherList" title="Permalink to this definition"></a></dt>
+<dd><p>Openssl format cipher list</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.localCertFilePath">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">localCertFilePath</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.localCertFilePath" title="Permalink to this definition"></a></dt>
+<dd><p>File that contains the certificate (or certificate chain) that will be presented to the remote side of the connection.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.maxVerifyDepth">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">maxVerifyDepth</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.maxVerifyDepth" title="Permalink to this definition"></a></dt>
+<dd><p>Max verification depth (defaults to 0 - peer certificate only).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.peerCertFilePath">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">peerCertFilePath</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.peerCertFilePath" title="Permalink to this definition"></a></dt>
+<dd><p>Certificate file used to verify the peer or server. Can be CA file or a self-signed cert provided by other party.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiopal.TLSConfig.privateKeyFilePath">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">privateKeyFilePath</span></span><a class="headerlink" href="#pydnp3.asiopal.TLSConfig.privateKeyFilePath" title="Permalink to this definition"></a></dt>
+<dd><p>File that contains the private key corresponding to the local certificate.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ThreadPool">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">ThreadPool</span></span><a class="headerlink" href="#pydnp3.asiopal.ThreadPool" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>A thread pool that calls asio::io_service::run.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ThreadPool.CreateExecutor">
+<span class="sig-name descname"><span class="pre">CreateExecutor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.ThreadPool" title="pydnp3.asiopal.ThreadPool"><span class="pre">pydnp3.asiopal.ThreadPool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiopal.Executor" title="pydnp3.asiopal.Executor"><span class="pre">pydnp3.asiopal.Executor</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.ThreadPool.CreateExecutor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ThreadPool.Shutdown">
+<span class="sig-name descname"><span class="pre">Shutdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.ThreadPool" title="pydnp3.asiopal.ThreadPool"><span class="pre">pydnp3.asiopal.ThreadPool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.ThreadPool.Shutdown" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.ThreadPool.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiopal.ThreadPool.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>__init__(self: pydnp3.asiopal.ThreadPool, logger: pydnp3.openpal.Logger, io: pydnp3.asiopal.IO, concurrency: int) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.asiopal.ThreadPool, logger: pydnp3.openpal.Logger, io: pydnp3.asiopal.IO, concurrency: int, onThreadStart: Callable[[], None]) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.asiopal.ThreadPool, logger: pydnp3.openpal.Logger, io: pydnp3.asiopal.IO, concurrency: int, onThreadStart: Callable[[], None], onThreadExit: Callable[[], None]) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Timer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><a class="headerlink" href="#pydnp3.asiopal.Timer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Implementation of openpal::ITimer backed by asio::basic_waitable_timer&lt;steady_clock&gt;.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Timer.Cancel">
+<span class="sig-name descname"><span class="pre">Cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.Timer" title="pydnp3.asiopal.Timer"><span class="pre">pydnp3.asiopal.Timer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.Timer.Cancel" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Timer.ExpireAt">
+<span class="sig-name descname"><span class="pre">ExpireAt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.Timer" title="pydnp3.asiopal.Timer"><span class="pre">pydnp3.asiopal.Timer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.MonotonicTimestamp" title="pydnp3.openpal.MonotonicTimestamp"><span class="pre">pydnp3.openpal.MonotonicTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.Timer.ExpireAt" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.Timer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiopal.Timer</span></em>, <em class="sig-param"><span class="pre">service:</span> <span class="pre">asio::io_service</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.Timer.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.UTCTimeSource">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">UTCTimeSource</span></span><a class="headerlink" href="#pydnp3.asiopal.UTCTimeSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="openpal.html#pydnp3.openpal.IUTCTimeSource" title="pydnp3.openpal.IUTCTimeSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.IUTCTimeSource</span></code></a></p>
+<p>Interface that defines a method to get UTC timestamps</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.UTCTimeSource.Instance">
+<span class="sig-name descname"><span class="pre">Instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.IUTCTimeSource" title="pydnp3.openpal.IUTCTimeSource"><span class="pre">pydnp3.openpal.IUTCTimeSource</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.UTCTimeSource.Instance" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.UTCTimeSource.Now">
+<span class="sig-name descname"><span class="pre">Now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.UTCTimeSource" title="pydnp3.asiopal.UTCTimeSource"><span class="pre">pydnp3.asiopal.UTCTimeSource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.UTCTimestamp" title="pydnp3.openpal.UTCTimestamp"><span class="pre">pydnp3.openpal.UTCTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.asiopal.UTCTimeSource.Now" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.UTCTimeSource.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiopal.UTCTimeSource.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiopal.steady_clock_t">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiopal.</span></span><span class="sig-name descname"><span class="pre">steady_clock_t</span></span><a class="headerlink" href="#pydnp3.asiopal.steady_clock_t" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Custom steady clock implementation to handle the situation where the Windows steady clock implementation is not monotonic. 
+Normal steady clock implementation is used on other platforms.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.steady_clock_t.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiopal.steady_clock_t" title="pydnp3.asiopal.steady_clock_t"><span class="pre">pydnp3.asiopal.steady_clock_t</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiopal.steady_clock_t.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiopal.steady_clock_t.now">
+<span class="sig-name descname"><span class="pre">now</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime.timedelta</span></span></span><a class="headerlink" href="#pydnp3.asiopal.steady_clock_t.now" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="asiodnp3.html" class="btn btn-neutral float-left" title="pydnp3.asiodnp3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="opendnp3.html" class="btn btn-neutral float-right" title="pydnp3.opendnp3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright TODO.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

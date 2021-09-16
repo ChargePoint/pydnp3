@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pydnp3.asiodnp3 &mdash; PyDNP3  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pydnp3.asiopal" href="asiopal.html" />
+    <link rel="prev" title="Welcome to PyDNP3’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PyDNP3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pydnp3.asiodnp3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asiopal.html">pydnp3.asiopal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html">pydnp3.opendnp3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#module-pydnp3.opendnp3.measurements">pydnp3.opendnp3.measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#pydnp3-opendnp3-flags">pydnp3.opendnp3.flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opendnp3.html#pydnp3-opendnp3-levels">pydnp3.opendnp3.levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openpal.html">pydnp3.openpal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openpal.html#pydnp3-openpal-logflags">pydnp3.openpal.logflags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openpal.html#pydnp3-openpal-sizes">pydnp3.openpal.sizes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyDNP3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>pydnp3.asiodnp3</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/asiodnp3.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pydnp3.asiodnp3">
+<span id="pydnp3-asiodnp3"></span><h1>pydnp3.asiodnp3<a class="headerlink" href="#module-pydnp3.asiodnp3" title="Permalink to this headline"></a></h1>
+<p>Bindings for asiodnp3 namespace</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.ConsoleLogger">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">ConsoleLogger</span></span><a class="headerlink" href="#pydnp3.asiodnp3.ConsoleLogger" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="openpal.html#pydnp3.openpal.ILogHandler" title="pydnp3.openpal.ILogHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.openpal.ILogHandler</span></code></a></p>
+<p>LogHandler that prints all log messages to the console.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.ConsoleLogger.Create">
+<span class="sig-name descname"><span class="pre">Create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">printLocation</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.ILogHandler" title="pydnp3.openpal.ILogHandler"><span class="pre">pydnp3.openpal.ILogHandler</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.ConsoleLogger.Create" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>printLocation</strong> – defaults to False</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to openpal.ILogHandler</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.ConsoleLogger.Log">
+<span class="sig-name descname"><span class="pre">Log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.ConsoleLogger" title="pydnp3.asiodnp3.ConsoleLogger"><span class="pre">pydnp3.asiodnp3.ConsoleLogger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.LogEntry" title="pydnp3.openpal.LogEntry"><span class="pre">pydnp3.openpal.LogEntry</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.ConsoleLogger.Log" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Callback method for log messages.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>entry</strong> – the log message to handle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.ConsoleLogger.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.ConsoleLogger" title="pydnp3.asiodnp3.ConsoleLogger"><span class="pre">pydnp3.asiodnp3.ConsoleLogger</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">printLocation</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.ConsoleLogger.__init__" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>printLocation</strong> – defaults to False</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">DNP3Manager</span></span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Root DNP3 object used to create channels and sessions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager.AddSerial">
+<span class="sig-name descname"><span class="pre">AddSerial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DNP3Manager" title="pydnp3.asiodnp3.DNP3Manager"><span class="pre">pydnp3.asiodnp3.DNP3Manager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retry</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="asiopal.html#pydnp3.asiopal.ChannelRetry" title="pydnp3.asiopal.ChannelRetry"><span class="pre">pydnp3.asiopal.ChannelRetry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="asiopal.html#pydnp3.asiopal.SerialSettings" title="pydnp3.asiopal.SerialSettings"><span class="pre">pydnp3.asiopal.SerialSettings</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">listener</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannelListener" title="pydnp3.asiodnp3.IChannelListener"><span class="pre">pydnp3.asiodnp3.IChannelListener</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager.AddSerial" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a persistent TCP serial channel.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – Alias that will be used for logging purposes with this channel</p></li>
+<li><p><strong>levels</strong> – Bitfield that describes the logging level for this channel and associated sessions</p></li>
+<li><p><strong>retry</strong> – Retry parameters for failed channels</p></li>
+<li><p><strong>settings</strong> – settings object that fully parameterizes the serial port</p></li>
+<li><p><strong>listener</strong> – optional callback interface (can be nullptr) for info about the running channel</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to a channel interface</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager.AddTCPClient">
+<span class="sig-name descname"><span class="pre">AddTCPClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DNP3Manager" title="pydnp3.asiodnp3.DNP3Manager"><span class="pre">pydnp3.asiodnp3.DNP3Manager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retry</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="asiopal.html#pydnp3.asiopal.ChannelRetry" title="pydnp3.asiopal.ChannelRetry"><span class="pre">pydnp3.asiopal.ChannelRetry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listener</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannelListener" title="pydnp3.asiodnp3.IChannelListener"><span class="pre">pydnp3.asiodnp3.IChannelListener</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager.AddTCPClient" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a persistent TCP client channel. Automatically attempts to reconnect.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – Alias that will be used for logging purposes with this channel</p></li>
+<li><p><strong>levels</strong> – Bitfield that describes the logging level for this channel and associated sessions</p></li>
+<li><p><strong>retry</strong> – Retry parameters for failed channels</p></li>
+<li><p><strong>host</strong> – IP address of remote outstation (i.e. 127.0.0.1 or www.google.com)</p></li>
+<li><p><strong>local</strong> – adapter address on which to attempt the connection (use 0.0.0.0 for all adapters)</p></li>
+<li><p><strong>port</strong> – Port of remote outstation is listening on</p></li>
+</ul>
+</dd>
+</dl>
+<p>:param listener optional callback interface (can be nullptr) for info about the running channel 
+:return: shared_ptr to a channel interface</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager.AddTCPServer">
+<span class="sig-name descname"><span class="pre">AddTCPServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DNP3Manager" title="pydnp3.asiodnp3.DNP3Manager"><span class="pre">pydnp3.asiodnp3.DNP3Manager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retry</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="asiopal.html#pydnp3.asiopal.ChannelRetry" title="pydnp3.asiopal.ChannelRetry"><span class="pre">pydnp3.asiopal.ChannelRetry</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listener</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannelListener" title="pydnp3.asiodnp3.IChannelListener"><span class="pre">pydnp3.asiodnp3.IChannelListener</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager.AddTCPServer" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a persistent TCP server channel. Only accepts a single connection at a time.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – Alias that will be used for logging purposes with this channel</p></li>
+<li><p><strong>levels</strong> – Bitfield that describes the logging level for this channel and associated sessions</p></li>
+<li><p><strong>retry</strong> – Retry parameters for failed channels</p></li>
+<li><p><strong>endpoint</strong> – Network adapter to listen on, i.e. 127.0.0.1 or 0.0.0.0</p></li>
+<li><p><strong>port</strong> – Port to listen on</p></li>
+<li><p><strong>listener</strong> – optional callback interface (can be nullptr) for info about the running channel</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to a channel interface</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager.AddTLSClient">
+<span class="sig-name descname"><span class="pre">AddTLSClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.DNP3Manager</span></em>, <em class="sig-param"><span class="pre">id:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">levels:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">retry:</span> <span class="pre">pydnp3.asiopal.ChannelRetry</span></em>, <em class="sig-param"><span class="pre">host:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">local:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">port:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.asiopal.TLSConfig</span></em>, <em class="sig-param"><span class="pre">listener:</span> <span class="pre">pydnp3.asiodnp3.IChannelListener</span></em>, <em class="sig-param"><span class="pre">ec:</span> <span class="pre">std::error_code</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager.AddTLSClient" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a TLS client channel.</p>
+</div></blockquote>
+<p>:throw std::system_error Throws underlying ASIO exception of TLS configuration is invalid 
+:param id: Alias that will be used for logging purposes with this channel 
+:param levels: Bitfield that describes the logging level for this channel and associated sessions 
+:param retry: Retry parameters for failed channels 
+:param host: IP address of remote outstation (i.e. 127.0.0.1 or www.google.com) 
+:param local: adapter address on which to attempt the connection (use 0.0.0.0 for all adapters) 
+:param port: Port of remote outstation is listening on 
+:param config: TLS configuration information 
+:param listener: optional callback interface (can be nullptr) for info about the running channel 
+:param ec: An error code. If set, a nullptr will be returned 
+:return: shared_ptr to a channel interface</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager.AddTLSServer">
+<span class="sig-name descname"><span class="pre">AddTLSServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.DNP3Manager</span></em>, <em class="sig-param"><span class="pre">id:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">levels:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">retry:</span> <span class="pre">pydnp3.asiopal.ChannelRetry</span></em>, <em class="sig-param"><span class="pre">endpoint:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">port:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.asiopal.TLSConfig</span></em>, <em class="sig-param"><span class="pre">listener:</span> <span class="pre">pydnp3.asiodnp3.IChannelListener</span></em>, <em class="sig-param"><span class="pre">ec:</span> <span class="pre">std::error_code</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager.AddTLSServer" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a TLS server channel.</p>
+</div></blockquote>
+<p>:throw std::system_error Throws underlying ASIO exception of TLS configuration is invalid 
+:param id: Alias that will be used for logging purposes with this channel 
+:param levels: Bitfield that describes the logging level for this channel and associated sessions 
+:param retry: Retry parameters for failed channels 
+:param endpoint: Network adapter to listen on, i.e. 127.0.0.1 or 0.0.0.0 
+:param port: Port to listen on 
+:param config: TLS configuration information 
+:param listener: optional callback interface (can be nullptr) for info about the running channel 
+:param ec: An error code. If set, a nullptr will be returned 
+:return: shared_ptr to a channel interface</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager.CreateListener">
+<span class="sig-name descname"><span class="pre">CreateListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager.CreateListener" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>CreateListener(self: pydnp3.asiodnp3.DNP3Manager, loggerid: str, loglevel: pydnp3.openpal.LogFilters, endpoint: pydnp3.asiopal.IPEndpoint, callbacks: pydnp3.asiodnp3.IListenCallbacks, ec: std::error_code) -&gt; pydnp3.asiopal.IListener</p>
+<p>Create a TCP listener that will be used to accept incoming connections.</p>
+</li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>shared_ptr to a listener interface</p>
+</dd>
+</dl>
+<ol class="arabic" start="2">
+<li><p>CreateListener(self: pydnp3.asiodnp3.DNP3Manager, loggerid: str, loglevel: pydnp3.openpal.LogFilters, endpoint: pydnp3.asiopal.IPEndpoint, config: pydnp3.asiopal.TLSConfig, callbacks: pydnp3.asiodnp3.IListenCallbacks, ec: std::error_code) -&gt; pydnp3.asiopal.IListener</p>
+<p>Create a TLS listener that will be used to accept incoming connections.</p>
+</li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>shared_ptr to a listener interface</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager.Shutdown">
+<span class="sig-name descname"><span class="pre">Shutdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DNP3Manager" title="pydnp3.asiodnp3.DNP3Manager"><span class="pre">pydnp3.asiodnp3.DNP3Manager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager.Shutdown" title="Permalink to this definition"></a></dt>
+<dd><p>Permanently shutdown the manager and all sub-objects that have been created. Stop the thread pool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DNP3Manager.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiodnp3.DNP3Manager.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic">
+<li><p>__init__(self: pydnp3.asiodnp3.DNP3Manager, concurrencyHint: int) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.asiodnp3.DNP3Manager, concurrencyHint: int, handler: pydnp3.openpal.ILogHandler) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.asiodnp3.DNP3Manager, concurrencyHint: int, handler: pydnp3.openpal.ILogHandler, onThreadStart: Callable[[], None]) -&gt; None</p></li>
+<li><p>__init__(self: pydnp3.asiodnp3.DNP3Manager, concurrencyHint: int, handler: pydnp3.openpal.ILogHandler, onThreadStart: Callable[[], None], onThreadExit: Callable[[], None]) -&gt; None</p>
+<p>Construct a manager:</p>
+</li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>concurrencyHint</strong> – How many threads to allocate in the thread pool</p></li>
+<li><p><strong>handler</strong> – Callback interface for log messages</p></li>
+</ul>
+</dd>
+</dl>
+<p>:param onThreadStart Action to run when a thread pool thread starts 
+:param onThreadExit Action to run just before a thread pool thread exits</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultListenCallbacks">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">DefaultListenCallbacks</span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultListenCallbacks" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.asiodnp3.IListenCallbacks" title="pydnp3.asiodnp3.IListenCallbacks"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></code></a></p>
+<p>Callback interface invoked when a new connection is accepted.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultListenCallbacks.AcceptCertificate">
+<span class="sig-name descname"><span class="pre">AcceptCertificate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultListenCallbacks" title="pydnp3.asiodnp3.DefaultListenCallbacks"><span class="pre">pydnp3.asiodnp3.DefaultListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.X509Info" title="pydnp3.asiodnp3.X509Info"><span class="pre">pydnp3.asiodnp3.X509Info</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultListenCallbacks.AcceptCertificate" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Ask user code if the following preverified certificate should be accepted. 
+If true, the certificate should be accepted, false otherwise.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionid</strong> (<em>unsigned long</em>) – Incrementing id used to uniquely identify the session</p></li>
+<li><p><strong>info</strong> – Information from the x509 certificate</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultListenCallbacks.AcceptConnection">
+<span class="sig-name descname"><span class="pre">AcceptConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultListenCallbacks" title="pydnp3.asiodnp3.DefaultListenCallbacks"><span class="pre">pydnp3.asiodnp3.DefaultListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipaddress</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultListenCallbacks.AcceptConnection" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Ask user code if the following connection should be accepted. 
+If true, the connection is accepted and a link frame parser is created to handle incoming frame data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionid</strong> (<em>unsigned long</em>) – Incrementing id used to uniquely identify the session</p></li>
+<li><p><strong>ipaddress</strong> – The IP address of the connecting host. Can optionally be used for connection filtering</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultListenCallbacks.GetFirstFrameTimeout">
+<span class="sig-name descname"><span class="pre">GetFirstFrameTimeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultListenCallbacks" title="pydnp3.asiodnp3.DefaultListenCallbacks"><span class="pre">pydnp3.asiodnp3.DefaultListenCallbacks</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultListenCallbacks.GetFirstFrameTimeout" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the amount of time the session should wait for the first frame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultListenCallbacks.OnCertificateError">
+<span class="sig-name descname"><span class="pre">OnCertificateError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultListenCallbacks" title="pydnp3.asiodnp3.DefaultListenCallbacks"><span class="pre">pydnp3.asiodnp3.DefaultListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.X509Info" title="pydnp3.asiodnp3.X509Info"><span class="pre">pydnp3.asiodnp3.X509Info</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultListenCallbacks.OnCertificateError" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Called when a certificate fails verification.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionid</strong> (<em>unsigned long</em>) – Incrementing id used to uniquely identify the session</p></li>
+<li><p><strong>info</strong> – Information from the x509 certificate</p></li>
+<li><p><strong>error</strong> – Error code with reason for failed verification</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultListenCallbacks.OnConnectionClose">
+<span class="sig-name descname"><span class="pre">OnConnectionClose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultListenCallbacks" title="pydnp3.asiodnp3.DefaultListenCallbacks"><span class="pre">pydnp3.asiodnp3.DefaultListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterSession" title="pydnp3.asiodnp3.IMasterSession"><span class="pre">pydnp3.asiodnp3.IMasterSession</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultListenCallbacks.OnConnectionClose" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Called when a socket closes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionid</strong> (<em>unsigned long</em>) – Incrementing id used to uniquely identify the session</p></li>
+<li><p><strong>session</strong> – Possibly NULL shared_ptr to the master session if it was created</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultListenCallbacks.OnFirstFrame">
+<span class="sig-name descname"><span class="pre">OnFirstFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultListenCallbacks" title="pydnp3.asiodnp3.DefaultListenCallbacks"><span class="pre">pydnp3.asiodnp3.DefaultListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pydnp3.opendnp3.LinkHeaderFields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.ISessionAcceptor" title="pydnp3.asiodnp3.ISessionAcceptor"><span class="pre">pydnp3.asiodnp3.ISessionAcceptor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultListenCallbacks.OnFirstFrame" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Called when the first link-layer frame is received for a session.</p>
+</div></blockquote>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultListenCallbacks.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultListenCallbacks" title="pydnp3.asiodnp3.DefaultListenCallbacks"><span class="pre">pydnp3.asiodnp3.DefaultListenCallbacks</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultListenCallbacks.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">DefaultMasterApplication</span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.IMasterApplication" title="pydnp3.opendnp3.IMasterApplication"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.opendnp3.IMasterApplication</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.AssignClassDuringStartup">
+<span class="sig-name descname"><span class="pre">AssignClassDuringStartup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="pydnp3.asiodnp3.DefaultMasterApplication"><span class="pre">pydnp3.asiodnp3.DefaultMasterApplication</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.AssignClassDuringStartup" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.ConfigureAssignClassRequest">
+<span class="sig-name descname"><span class="pre">ConfigureAssignClassRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="pydnp3.asiodnp3.DefaultMasterApplication"><span class="pre">pydnp3.asiodnp3.DefaultMasterApplication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.Header" title="pydnp3.opendnp3.Header"><span class="pre">pydnp3.opendnp3.Header</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.ConfigureAssignClassRequest" title="Permalink to this definition"></a></dt>
+<dd><p>Configure the request headers for assign class. 
+Only called if AssignClassDuringStartup returns true. 
+The user only needs to call the function for each header type to be written.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.Create">
+<span class="sig-name descname"><span class="pre">Create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.IMasterApplication" title="pydnp3.opendnp3.IMasterApplication"><span class="pre">pydnp3.opendnp3.IMasterApplication</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.Create" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>shared_ptr to opendnp3.IMasterApplication</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.Now">
+<span class="sig-name descname"><span class="pre">Now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="pydnp3.asiodnp3.DefaultMasterApplication"><span class="pre">pydnp3.asiodnp3.DefaultMasterApplication</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.UTCTimestamp" title="pydnp3.openpal.UTCTimestamp"><span class="pre">pydnp3.openpal.UTCTimestamp</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.Now" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a UTCTimestamp of the current time</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.OnReceiveIIN">
+<span class="sig-name descname"><span class="pre">OnReceiveIIN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="pydnp3.asiodnp3.DefaultMasterApplication"><span class="pre">pydnp3.asiodnp3.DefaultMasterApplication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">iin</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.IINField" title="pydnp3.opendnp3.IINField"><span class="pre">pydnp3.opendnp3.IINField</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.OnReceiveIIN" title="Permalink to this definition"></a></dt>
+<dd><p>Called when a response or unsolicited response is receive from the outstation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.OnStateChange">
+<span class="sig-name descname"><span class="pre">OnStateChange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="pydnp3.asiodnp3.DefaultMasterApplication"><span class="pre">pydnp3.asiodnp3.DefaultMasterApplication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.LinkStatus" title="pydnp3.opendnp3.LinkStatus"><span class="pre">pydnp3.opendnp3.LinkStatus</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.OnStateChange" title="Permalink to this definition"></a></dt>
+<dd><p>Called when a the reset/unreset status of the link layer changes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.OnTaskComplete">
+<span class="sig-name descname"><span class="pre">OnTaskComplete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="pydnp3.asiodnp3.DefaultMasterApplication"><span class="pre">pydnp3.asiodnp3.DefaultMasterApplication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.TaskInfo" title="pydnp3.opendnp3.TaskInfo"><span class="pre">pydnp3.opendnp3.TaskInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.OnTaskComplete" title="Permalink to this definition"></a></dt>
+<dd><p>Task completion notification.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.OnTaskStart">
+<span class="sig-name descname"><span class="pre">OnTaskStart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="pydnp3.asiodnp3.DefaultMasterApplication"><span class="pre">pydnp3.asiodnp3.DefaultMasterApplication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.MasterTaskType" title="pydnp3.opendnp3.MasterTaskType"><span class="pre">pydnp3.opendnp3.MasterTaskType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.TaskId" title="pydnp3.opendnp3.TaskId"><span class="pre">pydnp3.opendnp3.TaskId</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.OnTaskStart" title="Permalink to this definition"></a></dt>
+<dd><p>Task start notification.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.DefaultMasterApplication.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.DefaultMasterApplication" title="pydnp3.asiodnp3.DefaultMasterApplication"><span class="pre">pydnp3.asiodnp3.DefaultMasterApplication</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.DefaultMasterApplication.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.Error">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#pydnp3.asiodnp3.Error" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Members:</p>
+<p>SHUTTING_DOWN</p>
+<p>NO_TLS_SUPPORT</p>
+<p>NO_SERIAL_SUPPORT</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.Error.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.Error" title="pydnp3.asiodnp3.Error"><span class="pre">pydnp3.asiodnp3.Error</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.Error.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IChannel</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="asiopal.html#pydnp3.asiopal.IResource" title="pydnp3.asiopal.IResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiopal.IResource</span></code></a></p>
+<p>Represents a communication channel upon which masters and outstations can be bound.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannel.AddMaster">
+<span class="sig-name descname"><span class="pre">AddMaster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SOEHandler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.ISOEHandler" title="pydnp3.opendnp3.ISOEHandler"><span class="pre">pydnp3.opendnp3.ISOEHandler</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.IMasterApplication" title="pydnp3.opendnp3.IMasterApplication"><span class="pre">pydnp3.opendnp3.IMasterApplication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.MasterStackConfig" title="pydnp3.asiodnp3.MasterStackConfig"><span class="pre">pydnp3.asiodnp3.MasterStackConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IMaster" title="pydnp3.asiodnp3.IMaster"><span class="pre">pydnp3.asiodnp3.IMaster</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannel.AddMaster" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a master to the channel.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – An ID that gets used for logging.</p></li>
+<li><p><strong>SOEHandler</strong> – Callback object for all received measurements</p></li>
+<li><p><strong>application</strong> – The master application bound to the master session</p></li>
+<li><p><strong>config</strong> – Configuration object that controls how the master behaves</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to the running master</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannel.AddOutstation">
+<span class="sig-name descname"><span class="pre">AddOutstation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commandHandler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.ICommandHandler" title="pydnp3.opendnp3.ICommandHandler"><span class="pre">pydnp3.opendnp3.ICommandHandler</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.IOutstationApplication" title="pydnp3.opendnp3.IOutstationApplication"><span class="pre">pydnp3.opendnp3.IOutstationApplication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.OutstationStackConfig" title="pydnp3.asiodnp3.OutstationStackConfig"><span class="pre">pydnp3.asiodnp3.OutstationStackConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IOutstation" title="pydnp3.asiodnp3.IOutstation"><span class="pre">pydnp3.asiodnp3.IOutstation</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannel.AddOutstation" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add an outstation to the channel.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – An ID that gets used for logging</p></li>
+<li><p><strong>commandHandler</strong> – Callback object for handling command requests</p></li>
+<li><p><strong>application</strong> – Callback object for user code</p></li>
+<li><p><strong>config</strong> – Configuration object that controls how the outstation behaves</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to the running outstation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannel.GetLogFilters">
+<span class="sig-name descname"><span class="pre">GetLogFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannel.GetLogFilters" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the current logger settings for this channel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannel.GetStatistics">
+<span class="sig-name descname"><span class="pre">GetStatistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.LinkStatistics" title="pydnp3.opendnp3.LinkStatistics"><span class="pre">pydnp3.opendnp3.LinkStatistics</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannel.GetStatistics" title="Permalink to this definition"></a></dt>
+<dd><p>Synchronously read the channel statistics.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannel.SetLogFilters">
+<span class="sig-name descname"><span class="pre">SetLogFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannel.SetLogFilters" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filters</strong> – adjust the filters to this value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannel.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannel" title="pydnp3.asiodnp3.IChannel"><span class="pre">pydnp3.asiodnp3.IChannel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannel.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannelListener">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IChannelListener</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannelListener" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Callback interface for receiving information about a running channel.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannelListener.OnStateChange">
+<span class="sig-name descname"><span class="pre">OnStateChange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannelListener" title="pydnp3.asiodnp3.IChannelListener"><span class="pre">pydnp3.asiodnp3.IChannelListener</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.ChannelState" title="pydnp3.opendnp3.ChannelState"><span class="pre">pydnp3.opendnp3.ChannelState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannelListener.OnStateChange" title="Permalink to this definition"></a></dt>
+<dd><p>Receive callbacks for state transitions on the channels executor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IChannelListener.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IChannelListener" title="pydnp3.asiodnp3.IChannelListener"><span class="pre">pydnp3.asiodnp3.IChannelListener</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IChannelListener.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IListenCallbacks">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IListenCallbacks</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IListenCallbacks" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Callback interface invoked when a new connection is accepted.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IListenCallbacks.AcceptCertificate">
+<span class="sig-name descname"><span class="pre">AcceptCertificate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IListenCallbacks" title="pydnp3.asiodnp3.IListenCallbacks"><span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.X509Info" title="pydnp3.asiodnp3.X509Info"><span class="pre">pydnp3.asiodnp3.X509Info</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IListenCallbacks.AcceptCertificate" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Ask user code if the following preverified certificate should be accepted. 
+If true, the certificate should be accepted, false otherwise.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionid</strong> (<em>unsigned long</em>) – Incrementing id used to uniquely identify the session</p></li>
+<li><p><strong>info</strong> – Information from the x509 certificate</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IListenCallbacks.AcceptConnection">
+<span class="sig-name descname"><span class="pre">AcceptConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IListenCallbacks" title="pydnp3.asiodnp3.IListenCallbacks"><span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipaddress</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IListenCallbacks.AcceptConnection" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Ask user code if the following connection should be accepted. 
+If true, the connection is accepted and a link frame parser is created to handle incoming frame data.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionid</strong> (<em>unsigned long</em>) – Incrementing id used to uniquely identify the session</p></li>
+<li><p><strong>ipaddress</strong> – The IP address of the connecting host. Can optionally be used for connection filtering</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IListenCallbacks.GetFirstFrameTimeout">
+<span class="sig-name descname"><span class="pre">GetFirstFrameTimeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IListenCallbacks" title="pydnp3.asiodnp3.IListenCallbacks"><span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openpal.html#pydnp3.openpal.TimeDuration" title="pydnp3.openpal.TimeDuration"><span class="pre">pydnp3.openpal.TimeDuration</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IListenCallbacks.GetFirstFrameTimeout" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the amount of time the session should wait for the first frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IListenCallbacks.OnCertificateError">
+<span class="sig-name descname"><span class="pre">OnCertificateError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IListenCallbacks" title="pydnp3.asiodnp3.IListenCallbacks"><span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.X509Info" title="pydnp3.asiodnp3.X509Info"><span class="pre">pydnp3.asiodnp3.X509Info</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IListenCallbacks.OnCertificateError" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Called when a certificate fails verification.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionid</strong> (<em>unsigned long</em>) – Incrementing id used to uniquely identify the session</p></li>
+<li><p><strong>info</strong> – Information from the x509 certificate</p></li>
+<li><p><strong>error</strong> – Error code with reason for failed verification</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IListenCallbacks.OnConnectionClose">
+<span class="sig-name descname"><span class="pre">OnConnectionClose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IListenCallbacks" title="pydnp3.asiodnp3.IListenCallbacks"><span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterSession" title="pydnp3.asiodnp3.IMasterSession"><span class="pre">pydnp3.asiodnp3.IMasterSession</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IListenCallbacks.OnConnectionClose" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Called when a socket closes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionid</strong> (<em>unsigned long</em>) – Incrementing id used to uniquely identify the session</p></li>
+<li><p><strong>session</strong> – Possibly NULL shared_ptr to the master session if it was created</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IListenCallbacks.OnFirstFrame">
+<span class="sig-name descname"><span class="pre">OnFirstFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IListenCallbacks" title="pydnp3.asiodnp3.IListenCallbacks"><span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pydnp3.opendnp3.LinkHeaderFields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.ISessionAcceptor" title="pydnp3.asiodnp3.ISessionAcceptor"><span class="pre">pydnp3.asiodnp3.ISessionAcceptor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IListenCallbacks.OnFirstFrame" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Called when the first link-layer frame is received for a session.</p>
+</div></blockquote>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IListenCallbacks.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IListenCallbacks" title="pydnp3.asiodnp3.IListenCallbacks"><span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IListenCallbacks.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMaster">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IMaster</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMaster" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.asiodnp3.IMasterOperations" title="pydnp3.asiodnp3.IMasterOperations"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiodnp3.IMasterOperations</span></code></a>, <a class="reference internal" href="#pydnp3.asiodnp3.IStack" title="pydnp3.asiodnp3.IStack"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiodnp3.IStack</span></code></a></p>
+<p>Interface that represents a running master session.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMaster.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMaster" title="pydnp3.asiodnp3.IMaster"><span class="pre">pydnp3.asiodnp3.IMaster</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMaster.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IMasterOperations</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.ICommandProcessor" title="pydnp3.opendnp3.ICommandProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.opendnp3.ICommandProcessor</span></code></a></p>
+<p>All the operations that the user can perform on a running master.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.AddAllObjectsScan">
+<span class="sig-name descname"><span class="pre">AddAllObjectsScan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations</span></em>, <em class="sig-param"><span class="pre">gvId:</span> <span class="pre">pydnp3.opendnp3.GroupVariationID</span></em>, <em class="sig-param"><span class="pre">period:</span> <span class="pre">pydnp3.openpal.TimeDuration</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d2230b0&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterScan" title="pydnp3.asiodnp3.IMasterScan"><span class="pre">pydnp3.asiodnp3.IMasterScan</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.AddAllObjectsScan" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a scan that requests all objects using qualifier code 0x06.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to asiodnp3.IMasterScan - a proxy class used to manipulate the scan</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.AddClassScan">
+<span class="sig-name descname"><span class="pre">AddClassScan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations</span></em>, <em class="sig-param"><span class="pre">field:</span> <span class="pre">pydnp3.opendnp3.ClassField</span></em>, <em class="sig-param"><span class="pre">period:</span> <span class="pre">pydnp3.openpal.TimeDuration</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d223170&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterScan" title="pydnp3.asiodnp3.IMasterScan"><span class="pre">pydnp3.asiodnp3.IMasterScan</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.AddClassScan" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a class-based scan to the master.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to asiodnp3.IMasterScan - a proxy class used to manipulate the scan</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.AddRangeScan">
+<span class="sig-name descname"><span class="pre">AddRangeScan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations</span></em>, <em class="sig-param"><span class="pre">gvId:</span> <span class="pre">pydnp3.opendnp3.GroupVariationID</span></em>, <em class="sig-param"><span class="pre">start:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">stop:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">period:</span> <span class="pre">pydnp3.openpal.TimeDuration</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d223230&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterScan" title="pydnp3.asiodnp3.IMasterScan"><span class="pre">pydnp3.asiodnp3.IMasterScan</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.AddRangeScan" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a start/stop (range) scan to the master.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to asiodnp3.IMasterScan - a proxy class used to manipulate the scan.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.AddScan">
+<span class="sig-name descname"><span class="pre">AddScan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations,</span> <span class="pre">period:</span> <span class="pre">pydnp3.openpal.TimeDuration,</span> <span class="pre">headers:</span> <span class="pre">List[pydnp3.opendnp3.Header],</span> <span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756dc648f0&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterScan" title="pydnp3.asiodnp3.IMasterScan"><span class="pre">pydnp3.asiodnp3.IMasterScan</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.AddScan" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Add a recurring user-defined scan from a vector of headers.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shared_ptr to asiodnp3.IMasterScan - a proxy class used to manipulate the scan</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.PerformFunction">
+<span class="sig-name descname"><span class="pre">PerformFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations,</span> <span class="pre">name:</span> <span class="pre">str,</span> <span class="pre">func:</span> <span class="pre">pydnp3.opendnp3.FunctionCode,</span> <span class="pre">headers:</span> <span class="pre">List[pydnp3.opendnp3.Header],</span> <span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d2232b0&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.PerformFunction" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Perform any operation that requires just a function code</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.Restart">
+<span class="sig-name descname"><span class="pre">Restart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations,</span> <span class="pre">op:</span> <span class="pre">pydnp3.opendnp3.RestartType,</span> <span class="pre">callback:</span> <span class="pre">Callable[[pydnp3.opendnp3.RestartOperationResult],</span> <span class="pre">None],</span> <span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756dc66730&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.Restart" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Perform a cold or warm restart and get back the time-to-complete value</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.Scan">
+<span class="sig-name descname"><span class="pre">Scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations,</span> <span class="pre">headers:</span> <span class="pre">List[pydnp3.opendnp3.Header],</span> <span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d2232f0&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.Scan" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Initiate a single user defined scan via a vector of headers.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.ScanAllObjects">
+<span class="sig-name descname"><span class="pre">ScanAllObjects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations</span></em>, <em class="sig-param"><span class="pre">gvId:</span> <span class="pre">pydnp3.opendnp3.GroupVariationID</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d223330&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.ScanAllObjects" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Initiate a single scan that requests all objects (0x06 qualifier code) for a certain group and variation.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.ScanClasses">
+<span class="sig-name descname"><span class="pre">ScanClasses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations</span></em>, <em class="sig-param"><span class="pre">field:</span> <span class="pre">pydnp3.opendnp3.ClassField</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d2233f0&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.ScanClasses" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Initiate a single class-based scan.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.ScanRange">
+<span class="sig-name descname"><span class="pre">ScanRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations</span></em>, <em class="sig-param"><span class="pre">gvId:</span> <span class="pre">pydnp3.opendnp3.GroupVariationID</span></em>, <em class="sig-param"><span class="pre">start:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">stop:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d223470&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.ScanRange" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Initiate a single start/stop (range) scan</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.SetLogFilters">
+<span class="sig-name descname"><span class="pre">SetLogFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterOperations" title="pydnp3.asiodnp3.IMasterOperations"><span class="pre">pydnp3.asiodnp3.IMasterOperations</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.SetLogFilters" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filters</strong> – Adjust the filters to this value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.Write">
+<span class="sig-name descname"><span class="pre">Write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.IMasterOperations</span></em>, <em class="sig-param"><span class="pre">value:</span> <span class="pre">pydnp3.opendnp3.TimeAndInterval</span></em>, <em class="sig-param"><span class="pre">index:</span> <span class="pre">int</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">pydnp3.opendnp3.TaskConfig</span> <span class="pre">=</span> <span class="pre">&lt;pydnp3.opendnp3.TaskConfig</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f756d223570&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.Write" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Write a time and interval object to a specific index</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> – defaults to opendnp3.TaskConfig.Default()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterOperations.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterOperations" title="pydnp3.asiodnp3.IMasterOperations"><span class="pre">pydnp3.asiodnp3.IMasterOperations</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterOperations.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterScan">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IMasterScan</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterScan" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Interface for interacting with a permanently bound scan.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterScan.Demand">
+<span class="sig-name descname"><span class="pre">Demand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterScan" title="pydnp3.asiodnp3.IMasterScan"><span class="pre">pydnp3.asiodnp3.IMasterScan</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterScan.Demand" title="Permalink to this definition"></a></dt>
+<dd><p>Request that the scan be performed as soon as possible.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterScan.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterScan" title="pydnp3.asiodnp3.IMasterScan"><span class="pre">pydnp3.asiodnp3.IMasterScan</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterScan.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterSession">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IMasterSession</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterSession" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.asiodnp3.IMasterOperations" title="pydnp3.asiodnp3.IMasterOperations"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiodnp3.IMasterOperations</span></code></a></p>
+<p>Interface that represents an emphemeral master session.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterSession.BeginShutdown">
+<span class="sig-name descname"><span class="pre">BeginShutdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterSession" title="pydnp3.asiodnp3.IMasterSession"><span class="pre">pydnp3.asiodnp3.IMasterSession</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterSession.BeginShutdown" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterSession.GetStackStatistics">
+<span class="sig-name descname"><span class="pre">GetStackStatistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterSession" title="pydnp3.asiodnp3.IMasterSession"><span class="pre">pydnp3.asiodnp3.IMasterSession</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.StackStatistics" title="pydnp3.opendnp3.StackStatistics"><span class="pre">pydnp3.opendnp3.StackStatistics</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterSession.GetStackStatistics" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IMasterSession.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterSession" title="pydnp3.asiodnp3.IMasterSession"><span class="pre">pydnp3.asiodnp3.IMasterSession</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IMasterSession.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IOutstation">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IOutstation</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IOutstation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.asiodnp3.IStack" title="pydnp3.asiodnp3.IStack"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiodnp3.IStack</span></code></a></p>
+<p>Interface representing a running outstation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IOutstation.Apply">
+<span class="sig-name descname"><span class="pre">Apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IOutstation" title="pydnp3.asiodnp3.IOutstation"><span class="pre">pydnp3.asiodnp3.IOutstation</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">updates</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pydnp3.asiodnp3.Updates</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IOutstation.Apply" title="Permalink to this definition"></a></dt>
+<dd><p>Apply a set of measurement updates to the outstation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IOutstation.SetLogFilters">
+<span class="sig-name descname"><span class="pre">SetLogFilters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IOutstation" title="pydnp3.asiodnp3.IOutstation"><span class="pre">pydnp3.asiodnp3.IOutstation</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.LogFilters" title="pydnp3.openpal.LogFilters"><span class="pre">pydnp3.openpal.LogFilters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IOutstation.SetLogFilters" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filters</strong> – Adjust the filters to this value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IOutstation.SetRestartIIN">
+<span class="sig-name descname"><span class="pre">SetRestartIIN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IOutstation" title="pydnp3.asiodnp3.IOutstation"><span class="pre">pydnp3.asiodnp3.IOutstation</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IOutstation.SetRestartIIN" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the restart IIN bit. 
+Normally applications should not touch this bit, but it is provided for simulating restarts.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IOutstation.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IOutstation" title="pydnp3.asiodnp3.IOutstation"><span class="pre">pydnp3.asiodnp3.IOutstation</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IOutstation.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.ISessionAcceptor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">ISessionAcceptor</span></span><a class="headerlink" href="#pydnp3.asiodnp3.ISessionAcceptor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Callback interface invoked when a new connection is accepted</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.ISessionAcceptor.AcceptSession">
+<span class="sig-name descname"><span class="pre">AcceptSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.ISessionAcceptor" title="pydnp3.asiodnp3.ISessionAcceptor"><span class="pre">pydnp3.asiodnp3.ISessionAcceptor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SOEHandler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.ISOEHandler" title="pydnp3.opendnp3.ISOEHandler"><span class="pre">pydnp3.opendnp3.ISOEHandler</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.IMasterApplication" title="pydnp3.opendnp3.IMasterApplication"><span class="pre">pydnp3.opendnp3.IMasterApplication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.MasterStackConfig" title="pydnp3.asiodnp3.MasterStackConfig"><span class="pre">pydnp3.asiodnp3.MasterStackConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IMasterSession" title="pydnp3.asiodnp3.IMasterSession"><span class="pre">pydnp3.asiodnp3.IMasterSession</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.ISessionAcceptor.AcceptSession" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>shared_ptr to asiodnp3.IMasterSession</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.ISessionAcceptor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.ISessionAcceptor" title="pydnp3.asiodnp3.ISessionAcceptor"><span class="pre">pydnp3.asiodnp3.ISessionAcceptor</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.ISessionAcceptor.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IStack">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">IStack</span></span><a class="headerlink" href="#pydnp3.asiodnp3.IStack" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="asiopal.html#pydnp3.asiopal.IResource" title="pydnp3.asiopal.IResource"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiopal.IResource</span></code></a></p>
+<p>Base class for masters or outstations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IStack.Disable">
+<span class="sig-name descname"><span class="pre">Disable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IStack" title="pydnp3.asiodnp3.IStack"><span class="pre">pydnp3.asiodnp3.IStack</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IStack.Disable" title="Permalink to this definition"></a></dt>
+<dd><p>Synchronously disable communications.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IStack.Enable">
+<span class="sig-name descname"><span class="pre">Enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IStack" title="pydnp3.asiodnp3.IStack"><span class="pre">pydnp3.asiodnp3.IStack</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IStack.Enable" title="Permalink to this definition"></a></dt>
+<dd><p>Synchronously enable communications.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IStack.GetStackStatistics">
+<span class="sig-name descname"><span class="pre">GetStackStatistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IStack" title="pydnp3.asiodnp3.IStack"><span class="pre">pydnp3.asiodnp3.IStack</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.StackStatistics" title="pydnp3.opendnp3.StackStatistics"><span class="pre">pydnp3.opendnp3.StackStatistics</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IStack.GetStackStatistics" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>stack statistics counters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.IStack.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.IStack" title="pydnp3.asiodnp3.IStack"><span class="pre">pydnp3.asiodnp3.IStack</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.IStack.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.MasterStackConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">MasterStackConfig</span></span><a class="headerlink" href="#pydnp3.asiodnp3.MasterStackConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>A composite configuration struct that contains all the config information for a dnp3 master stack.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.MasterStackConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.MasterStackConfig" title="pydnp3.asiodnp3.MasterStackConfig"><span class="pre">pydnp3.asiodnp3.MasterStackConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.MasterStackConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.MasterStackConfig.link">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">link</span></span><a class="headerlink" href="#pydnp3.asiodnp3.MasterStackConfig.link" title="Permalink to this definition"></a></dt>
+<dd><p>Link layer config.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.MasterStackConfig.master">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">master</span></span><a class="headerlink" href="#pydnp3.asiodnp3.MasterStackConfig.master" title="Permalink to this definition"></a></dt>
+<dd><p>Master config.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.MasterTCPServer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">MasterTCPServer</span></span><a class="headerlink" href="#pydnp3.asiodnp3.MasterTCPServer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="asiopal.html#pydnp3.asiopal.TCPServer" title="pydnp3.asiopal.TCPServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiopal.TCPServer</span></code></a></p>
+<p>Binds and listens on an IPv4 TCP port. Meant to be used exclusively as a shared_ptr.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.MasterTCPServer.Create">
+<span class="sig-name descname"><span class="pre">Create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.openpal.Logger</span></em>, <em class="sig-param"><span class="pre">arg0:</span> <span class="pre">pydnp3.asiopal.Executor</span></em>, <em class="sig-param"><span class="pre">arg1:</span> <span class="pre">pydnp3.asiopal.IPEndpoint</span></em>, <em class="sig-param"><span class="pre">arg2:</span> <span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></em>, <em class="sig-param"><span class="pre">arg3:</span> <span class="pre">pydnp3.asiopal.ResourceManager</span></em>, <em class="sig-param"><span class="pre">arg4:</span> <span class="pre">std::error_code</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.MasterTCPServer" title="pydnp3.asiodnp3.MasterTCPServer"><span class="pre">pydnp3.asiodnp3.MasterTCPServer</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.MasterTCPServer.Create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.MasterTCPServer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pydnp3.asiodnp3.MasterTCPServer</span></em>, <em class="sig-param"><span class="pre">logger:</span> <span class="pre">pydnp3.openpal.Logger</span></em>, <em class="sig-param"><span class="pre">executor:</span> <span class="pre">pydnp3.asiopal.Executor</span></em>, <em class="sig-param"><span class="pre">endpoint:</span> <span class="pre">pydnp3.asiopal.IPEndpoint</span></em>, <em class="sig-param"><span class="pre">callbacks:</span> <span class="pre">pydnp3.asiodnp3.IListenCallbacks</span></em>, <em class="sig-param"><span class="pre">manager:</span> <span class="pre">pydnp3.asiopal.ResourceManager</span></em>, <em class="sig-param"><span class="pre">ec:</span> <span class="pre">std::error_code</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.MasterTCPServer.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.OutstationStackConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">OutstationStackConfig</span></span><a class="headerlink" href="#pydnp3.asiodnp3.OutstationStackConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>A composite configuration struct that contains all the config information for a dnp3 outstation stack.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.OutstationStackConfig.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.OutstationStackConfig" title="pydnp3.asiodnp3.OutstationStackConfig"><span class="pre">pydnp3.asiodnp3.OutstationStackConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbSizes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.DatabaseSizes" title="pydnp3.opendnp3.DatabaseSizes"><span class="pre">pydnp3.opendnp3.DatabaseSizes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.OutstationStackConfig.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.OutstationStackConfig.dbConfig">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dbConfig</span></span><a class="headerlink" href="#pydnp3.asiodnp3.OutstationStackConfig.dbConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Configuration of the database.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.OutstationStackConfig.link">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">link</span></span><a class="headerlink" href="#pydnp3.asiodnp3.OutstationStackConfig.link" title="Permalink to this definition"></a></dt>
+<dd><p>Link layer config.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.OutstationStackConfig.outstation">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">outstation</span></span><a class="headerlink" href="#pydnp3.asiodnp3.OutstationStackConfig.outstation" title="Permalink to this definition"></a></dt>
+<dd><p>Outstation config.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.PrintingChannelListener">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">PrintingChannelListener</span></span><a class="headerlink" href="#pydnp3.asiodnp3.PrintingChannelListener" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydnp3.asiodnp3.IChannelListener" title="pydnp3.asiodnp3.IChannelListener"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.asiodnp3.IChannelListener</span></code></a></p>
+<p>Callback interface for receiving information about a running channel.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.PrintingChannelListener.Create">
+<span class="sig-name descname"><span class="pre">Create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pydnp3.asiodnp3.IChannelListener" title="pydnp3.asiodnp3.IChannelListener"><span class="pre">pydnp3.asiodnp3.IChannelListener</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.PrintingChannelListener.Create" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>shared_ptr to asiodnp3.IChannelListener</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.PrintingChannelListener.OnStateChange">
+<span class="sig-name descname"><span class="pre">OnStateChange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.PrintingChannelListener" title="pydnp3.asiodnp3.PrintingChannelListener"><span class="pre">pydnp3.asiodnp3.PrintingChannelListener</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.ChannelState" title="pydnp3.opendnp3.ChannelState"><span class="pre">pydnp3.opendnp3.ChannelState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.PrintingChannelListener.OnStateChange" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.PrintingChannelListener.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.PrintingChannelListener" title="pydnp3.asiodnp3.PrintingChannelListener"><span class="pre">pydnp3.asiodnp3.PrintingChannelListener</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.PrintingChannelListener.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.PrintingSOEHandler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">PrintingSOEHandler</span></span><a class="headerlink" href="#pydnp3.asiodnp3.PrintingSOEHandler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.ISOEHandler" title="pydnp3.opendnp3.ISOEHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydnp3.opendnp3.ISOEHandler</span></code></a></p>
+<p>ISOEHandler singleton that prints to the console.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.PrintingSOEHandler.Create">
+<span class="sig-name descname"><span class="pre">Create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="opendnp3.html#pydnp3.opendnp3.ISOEHandler" title="pydnp3.opendnp3.ISOEHandler"><span class="pre">pydnp3.opendnp3.ISOEHandler</span></a></span></span><a class="headerlink" href="#pydnp3.asiodnp3.PrintingSOEHandler.Create" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>shared_ptr to opendnp3.ISOEHandler</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.PrintingSOEHandler.Process">
+<span class="sig-name descname"><span class="pre">Process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydnp3.asiodnp3.PrintingSOEHandler.Process" title="Permalink to this definition"></a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedBinary) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedDoubleBitBinary) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedAnalog) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedCounter) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedFrozenCounter) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedBinaryOutputStatus) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedAnalogOutputStatus) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedOctetString) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedTimeAndInterval) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedBinaryCommandEvent) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedAnalogCommandEvent) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionIndexedSecurityStat) -&gt; None</p></li>
+<li><p>Process(self: pydnp3.asiodnp3.PrintingSOEHandler, info: pydnp3.opendnp3.HeaderInfo, values: pydnp3.opendnp3.ICollectionDNPTime) -&gt; None</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.PrintingSOEHandler.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.PrintingSOEHandler" title="pydnp3.asiodnp3.PrintingSOEHandler"><span class="pre">pydnp3.asiodnp3.PrintingSOEHandler</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.PrintingSOEHandler.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.X509Info">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">X509Info</span></span><a class="headerlink" href="#pydnp3.asiodnp3.X509Info" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Select information from a preverified x509 certificate that user can can inspect an optionally reject.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.X509Info.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.X509Info" title="pydnp3.asiodnp3.X509Info"><span class="pre">pydnp3.asiodnp3.X509Info</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sha1thumbprint</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openpal.html#pydnp3.openpal.RSlice" title="pydnp3.openpal.RSlice"><span class="pre">pydnp3.openpal.RSlice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">subjectName</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.X509Info.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.X509Info.depth">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">depth</span></span><a class="headerlink" href="#pydnp3.asiodnp3.X509Info.depth" title="Permalink to this definition"></a></dt>
+<dd><p>The depth of the certificate in the chain.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.X509Info.sha1thumbprint">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sha1thumbprint</span></span><a class="headerlink" href="#pydnp3.asiodnp3.X509Info.sha1thumbprint" title="Permalink to this definition"></a></dt>
+<dd><p>The sha1 thumbprint.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.X509Info.subjectName">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">subjectName</span></span><a class="headerlink" href="#pydnp3.asiodnp3.X509Info.subjectName" title="Permalink to this definition"></a></dt>
+<dd><p>The extracted subject name.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydnp3.asiodnp3.make_error_code">
+<span class="sig-prename descclassname"><span class="pre">pydnp3.asiodnp3.</span></span><span class="sig-name descname"><span class="pre">make_error_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">err</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#pydnp3.asiodnp3.Error" title="pydnp3.asiodnp3.Error"><span class="pre">pydnp3.asiodnp3.Error</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">std::error_code</span></span></span><a class="headerlink" href="#pydnp3.asiodnp3.make_error_code" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to PyDNP3’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="asiopal.html" class="btn btn-neutral float-right" title="pydnp3.asiopal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright TODO.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
