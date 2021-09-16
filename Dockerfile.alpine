@@ -1,0 +1,36 @@
+FROM python:3.9-alpine AS compile-image
+
+RUN apk update
+RUN apk add cmake make g++ linux-headers python3-dev git
+
+ENV PATH=/root/.local/bin:$PATH
+
+WORKDIR /usr/src/build
+COPY src src
+COPY deps deps
+COPY .git/modules/deps/dnp3 .git/modules/deps/dnp3
+COPY setup.py requirements.txt imasteroperations.patch settings.cmake CMakeLists.txt __init__.py ./
+
+RUN pip wheel -w wheels -e .
+# CMD ["watch", "-n1", "echo"]
+
+FROM python:3.9-alpine AS docs-build-image
+COPY --from=compile-image /usr/src/build/wheels /usr/src/app/wheels
+
+WORKDIR /usr/src/app
+
+RUN apk update
+RUN apk add libstdc++ make
+
+RUN pip install wheels/pydnp3*
+
+COPY docs-builder/requirements_docs.txt docs-builder/requirements_docs.txt
+RUN pip install -r docs-builder/requirements_docs.txt
+
+COPY docs-builder docs-builder
+
+WORKDIR /usr/src/app/docs-builder
+RUN make html
+RUN make rst
+
+# CMD ["watch", "-n1", "echo"]

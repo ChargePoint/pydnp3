@@ -1,0 +1,6 @@
+# documentation building
+sphinx
+sphinxcontrib-restbuilder
+sphinxcontrib-programoutput
+autodoc_pydantic
+sphinx-rtd-theme

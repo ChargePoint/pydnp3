@@ -1,0 +1,7 @@
+__pycache__
+.mypy_cache
+src/.pytest_cache
+*.egg-info
+tests
+wheel
+*.sh
