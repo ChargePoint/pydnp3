@@ -41,3 +41,9 @@ copy-wheel-to-host:
 	rename linux alpine-linux .tmp-wheels-from-alpine/pydnp3-*.whl
 	cp .tmp-wheels-from-alpine/pydnp3-*.whl wheel
 	rm -rf .tmp-wheels-from-alpine
+
+local-setup:
+	pip install wheel
+
+local-build-wheel:
+	pip wheel -w wheel -e .
