@@ -1,3 +1,4 @@
+MANYLINUX2010_DOCKERFILE=Dockerfile.cp310.manylinux2010
 DOCKER_NAME=edfre-pydnp3
 DOCKER_NAME_MANYLINUX=edfre-pydnp3-manylinux2010
 
@@ -12,7 +13,7 @@ sh:
 	docker exec -it $(DOCKER_NAME) sh
 
 manylinux2010-build-container:
-	docker build . -f Dockerfile.manylinux2010 -t $(DOCKER_NAME_MANYLINUX)
+	docker build . -f $(MANYLINUX2010_DOCKERFILE) -t $(DOCKER_NAME_MANYLINUX)
 
 manylinux2010-run: manylinux2010-build-container
 	-docker rm $(DOCKER_NAME_MANYLINUX)

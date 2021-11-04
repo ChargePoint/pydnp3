@@ -6,6 +6,18 @@ Note:  This is a work in progress.  See [Issues](http://github.com/Kisensum/pydn
 
 **Supported Platforms:** Linux, MacOS
 
+## Building wheels
+
+```
+make manylinux2010-build-wheel
+make manylinux2010-copy-wheel-to-host
+```
+
+To change the Python version, change the `MANYLINUX2010_DOCKERFILE`
+variable in the Makefile. You may need to create a new Dockerfile.
+See the existing manylinux2010 Dockerfiles for a comment indicating
+what directory to change to use another CPython manylinux2010 version.
+
 ## Dependencies
 To build the library from source, you must have:
 

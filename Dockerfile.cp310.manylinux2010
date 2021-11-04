@@ -1,0 +1,24 @@
+FROM quay.io/pypa/manylinux2010_x86_64 AS compile-image
+
+RUN yum update
+
+ENV PATH=/root/.local/bin:$PATH
+# Modify this variable to change Python versions
+ENV PATH=/opt/python/cp310-cp310/bin:$PATH
+
+WORKDIR /usr/src/build
+COPY src src
+COPY deps deps
+COPY .git/modules/deps/dnp3 .git/modules/deps/dnp3
+COPY setup.py requirements.txt imasteroperations.patch settings.cmake CMakeLists.txt __init__.py ./
+
+RUN pip wheel -w wheels -e .
+
+# CMD ["bash", "-c", "while true; do printf ''; done"]
+
+FROM python:3.10-slim
+COPY --from=compile-image /usr/src/build/wheels /usr/src/app/wheels
+
+WORKDIR /usr/src/app
+
+RUN pip install wheels/pydnp3*
