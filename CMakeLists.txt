@@ -15,6 +15,7 @@ endif()
 
 message("CMake build is: ${CMAKE_BUILD_TYPE}")
 
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}")
 
 #include(${PROJECT_SOURCE_DIR}/settings.cmake)
 
@@ -44,8 +45,17 @@ include_directories(deps/dnp3/cpp/libs/src)
 include_directories(deps/dnp3/deps/asio/asio/include)
 add_definitions(-DASIO_STANDALONE)
 
-pybind11_add_module(pydnp3 MODULE src/pydnp3.cpp src/pydnp3asiodnp3.cpp src/pydnp3asiopal.cpp src/pydnp3opendnp3.cpp src/pydnp3openpal.cpp)
+pybind11_add_module(pydnp3
+  MODULE
+    src/pydnp3.cpp
+    src/pydnp3asiodnp3.cpp
+    src/pydnp3asiopal.cpp
+    src/pydnp3opendnp3.cpp
+    src/pydnp3opendnp3_1.cpp
+    src/pydnp3opendnp3_2.cpp
+    src/pydnp3opendnp3_3.cpp
+    src/pydnp3opendnp3_4.cpp
+    src/pydnp3openpal.cpp
+
+)
 target_link_libraries(pydnp3 PRIVATE asiopal asiodnp3 openpal opendnp3)
-
-
-
