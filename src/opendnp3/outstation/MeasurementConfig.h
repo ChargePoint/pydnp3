@@ -31,6 +31,7 @@
 #ifndef PYDNP3_OPENDNP3_OUTSTATION_MEASUREMENTCONFIG_H
 #define PYDNP3_OPENDNP3_OUTSTATION_MEASUREMENTCONFIG_H
 
+#include <string>
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
@@ -41,7 +42,7 @@
 namespace py = pybind11;
 
 template <class Info>
-void declareStaticConfig(py::module &m, string const &type)
+void declareStaticConfig(py::module &m, std::string const &type)
 {
     // ----- struct: opendnp3::StaticConfig<Info> -----
     py::class_<opendnp3::StaticConfig<Info>, opendnp3::IndexConfig>(m, ("StaticConfig" + type).c_str(),
@@ -63,7 +64,7 @@ void declareStaticConfig(py::module &m, string const &type)
 }
 
 template <class Info>
-void declareEventConfig(py::module &m, string const &type)
+void declareEventConfig(py::module &m, std::string const &type)
 {
     declareStaticConfig<Info>(m, type);
 
@@ -91,7 +92,7 @@ void declareEventConfig(py::module &m, string const &type)
 }
 
 template <class Info>
-void declareDeadbandConfig(py::module &m, string const &type)
+void declareDeadbandConfig(py::module &m, std::string const &type)
 {
     declareEventConfig<Info>(m, type);
 
