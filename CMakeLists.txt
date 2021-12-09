@@ -19,7 +19,6 @@ set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}")
 
 #include(${PROJECT_SOURCE_DIR}/settings.cmake)
 
-
 # other options off-by-default that you can enable
 option(WERROR "Set all warnings to errors" OFF)
 option(STATICLIBS "Builds static versions of all installed libraries" OFF)
@@ -28,11 +27,8 @@ option(PROFILE "Builds the libraries with profiling support (gcc only)" OFF)
 
 set(CMAKE_REQUIRED_FLAGS ${CMAKE_CXX_FLAGS})
 
-set(STATICLIBS ON)
-
-if(NOT CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
-endif()
+# todo: ideally setup this from setup.py invocation
+set(STATICLIBS OFF)
 
 add_subdirectory(deps/pybind11)
 add_subdirectory(deps/dnp3)
