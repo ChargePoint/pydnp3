@@ -34,7 +34,10 @@
 #include <pybind11/pybind11.h>
 #include <Python.h>
 
+
 #include <opendnp3/app/Indexed.h>
+#include <opendnp3/app/OctetString.h>
+#include <opendnp3/master/CommandPointResult.h>
 #include <opendnp3/app/parsing/ICollection.h>
 
 #ifdef PYDNP3_OPENDNP3

@@ -37,7 +37,7 @@ class CMakeBuild(build_ext):
         cmake_args = ['-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + extdir,
                       '-DPYTHON_EXECUTABLE=' + sys.executable]
 
-        cfg = 'Debug' if self.debug else 'Release'
+        cfg = 'Debug'
         build_args = ['--config', cfg]
 
         if platform.system() == "Windows":
@@ -47,8 +47,7 @@ class CMakeBuild(build_ext):
             build_args += ['--', '/m']
         else:
             cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
-            cmake_args += ['-DSTATICLIBS=ON']
-            build_args += ['--', '-j2']
+            build_args += ['--', 'VERBOSE=1']
 
         env = os.environ.copy()
         env['CXXFLAGS'] = '{} -DVERSION_INFO=\\"{}\\"'.format(env.get('CXXFLAGS', ''),

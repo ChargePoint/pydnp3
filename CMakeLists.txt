@@ -15,9 +15,9 @@ endif()
 
 message("CMake build is: ${CMAKE_BUILD_TYPE}")
 
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}")
 
 #include(${PROJECT_SOURCE_DIR}/settings.cmake)
-
 
 # other options off-by-default that you can enable
 option(WERROR "Set all warnings to errors" OFF)
@@ -27,11 +27,8 @@ option(PROFILE "Builds the libraries with profiling support (gcc only)" OFF)
 
 set(CMAKE_REQUIRED_FLAGS ${CMAKE_CXX_FLAGS})
 
-set(STATICLIBS ON)
-
-if(NOT CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
-endif()
+# todo: ideally setup this from setup.py invocation
+set(STATICLIBS OFF)
 
 add_subdirectory(deps/pybind11)
 add_subdirectory(deps/dnp3)
@@ -44,8 +41,17 @@ include_directories(deps/dnp3/cpp/libs/src)
 include_directories(deps/dnp3/deps/asio/asio/include)
 add_definitions(-DASIO_STANDALONE)
 
-pybind11_add_module(pydnp3 MODULE src/pydnp3.cpp src/pydnp3asiodnp3.cpp src/pydnp3asiopal.cpp src/pydnp3opendnp3.cpp src/pydnp3openpal.cpp)
+pybind11_add_module(pydnp3
+  MODULE
+    src/pydnp3.cpp
+    src/pydnp3asiodnp3.cpp
+    src/pydnp3asiopal.cpp
+    src/pydnp3opendnp3.cpp
+    src/pydnp3opendnp3_1.cpp
+    src/pydnp3opendnp3_2.cpp
+    src/pydnp3opendnp3_3.cpp
+    src/pydnp3opendnp3_4.cpp
+    src/pydnp3openpal.cpp
+
+)
 target_link_libraries(pydnp3 PRIVATE asiopal asiodnp3 openpal opendnp3)
-
-
-
