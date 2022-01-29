@@ -44,6 +44,11 @@ include_directories(deps/dnp3/cpp/libs/src)
 include_directories(deps/dnp3/deps/asio/asio/include)
 add_definitions(-DASIO_STANDALONE)
 
+# Linux only!
+# target_link_options has a bug for "$"; see
+# https://discourse.cmake.org/t/how-not-to-have-dollar-sign-in-target-link-options-mangled/3939/5
+set(CMAKE_MODULE_LINKER_FLAGS "-Wl,-rpath=$ORIGIN")
+
 pybind11_add_module(pydnp3 MODULE src/pydnp3.cpp src/pydnp3asiodnp3.cpp src/pydnp3asiopal.cpp src/pydnp3opendnp3.cpp src/pydnp3openpal.cpp)
 target_link_libraries(pydnp3 PRIVATE asiopal asiodnp3 openpal opendnp3)
 
