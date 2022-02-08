@@ -1,6 +1,3 @@
-[submodule "deps/pybind11"]
-	path = deps/pybind11
-	url = https://github.com/Kisensum/pybind11.git
 [submodule "deps/dnp3"]
 	path = deps/dnp3
 	url = https://github.com/automatak/dnp3.git
