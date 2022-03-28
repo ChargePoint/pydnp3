@@ -6,21 +6,27 @@ Note:  This is a work in progress.  See [Issues](http://github.com/Kisensum/pydn
 
 **Supported Platforms:** Linux, MacOS
 
-## Building wheels
+## Building `manylinux2010` wheels
 
 ```
 make manylinux2010-build-wheel
 make manylinux2010-copy-wheel-to-host
 ```
 
+Python's manylinux2010 wheels should work on most common Linux distributions.
+
 To change the Python version, change the `MANYLINUX2010_DOCKERFILE`
 variable in the Makefile. You may need to create a new Dockerfile.
 See the existing manylinux2010 Dockerfiles for a comment indicating
 what directory to change to use another CPython manylinux2010 version.
 
-## Dependencies
+## Building wheels for other OSs and architectures
+
+### Dependencies
+
 To build the library from source, you must have:
 
+* The required version of Python and pip
 * A toolchain with a C++14 compiler
 * CMake >= 2.8.12 (https://cmake.org/download/)
 
@@ -31,14 +37,30 @@ This repository includes two repositories as submodules (under `deps/`):
 required to compile some of the pydnp3 wrapper code. It will be replaced with pybind11 proper
 when the issue is resolved.
 
-## Build & Install
-At the moment, this library must be built from source:
+#### MacOS
+
+Use brew to install cmake.
+
+Use either pyenv, asdf, or brew to install the right version of Python.
+Verify the Python version with:
+
 ```
-    $ clone --recursive http://github.com/Kisensum/pydnp3
-    $ cd pydnp3
-    $ python setup.py install
+$ pip --version
+pip 22.0.2 from /usr/local/lib/python3.10/site-packages/pip (python 3.10)
 ```
 
+You may need to use `pip3` instead of `pip`.
+If so, change the commands in the Makefile.
+
+### Build
+
+```
+make local-setup local-build-wheel
+```
+
+The wheel will be found in the `wheels/` directory.
+
+If necessary, upload this wheel to the git repo.
 
 ## Documentation
 
